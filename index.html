@@ -1,145 +1,566 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="es"> <!--<![endif]-->
 <head>
-    <meta charset="utf-8">
-    <title>Python, openERP, y algo mas</title>
-    <link rel="stylesheet" type="text/css" href="https://rafnixg.github.io/theme/css/screen.min.css">
-    <link rel="stylesheet" type="text/css" href="https://rafnixg.github.io/theme/css/highlight.min.css">
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
-    <link rel="publisher" href="">
-    <link rel="apple-touch-startup-image" href="https://rafnixg.github.io/theme/images/logo.png">
-    <link type="text/plain" rel="socialmedia" href="https://rafnixg.github.io/socialmedia.txt">
-    <link rel="dns-prefetch" href="https://rafnixg.github.io"/>
-    <link rel="dns-prefetch" href="//www.gstatic.com"/>
-    <link rel="dns-prefetch" href="//fonts.gstatic.com"/>
-    <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
-    <link rel="dns-prefetch" href="//accounts.google.com"/>
-    <link rel="dns-prefetch" href="//ssl.google-analytics.com"/>
-    <link rel="dns-prefetch" href="//www.google-analytics.com"/>
-    <link rel="dns-prefetch" href="//googleads.g.doubleclick.net"/>
-    <link rel="dns-prefetch" href="//pagead2.googlesyndication.com"/>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <meta name="application-name" content="Python, openERP, y algo mas"/>
-    <meta name="msapplication-starturl" content="http:https://rafnixg.github.io"/>
-    <meta name="msapplication-tooltip" content=""/>
-    <meta name="msapplication-window" content="width=1024;height=768"/>
-    <meta name="msapplication-task" content="name=Python, openERP, y algo mas;action-uri=http:https://rafnixg.github.io;icon-uri=https://rafnixg.github.io/theme/images/favicon.ico"/>
-    <meta name="msapplication-TileImage" content="https://rafnixg.github.io/theme/images/apple-touch-icon-144x144.png"/>
-    <meta name="msapplication-TileColor" content="#1F1F21"/>    
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta http-equiv="imagetoolbar" content="no">
-    <meta http-equiv="pragma" content="cache">
-    <meta http-equiv="cache-control" content="cache">
-    <meta http-equiv="vary" content="content-language">
-    <meta http-equiv="Cache-control" content="max-age=2592000, public">
-    <meta http-equiv="content-style-type" content="text/css">
-    <meta name="application-name" content="Python, openERP, y algo mas">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="google-site-verification" content="">
-    <meta name="alexaVerifyID" content=""/> 
-    <meta name="wot-verification" content=""/>
-    <meta name="msvalidate.01" content="" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="medium" content="mult">
-    <meta name="adblock" content="disable">
-    <meta name="rating" content="General">
-    <meta name="resource-type" content="document">
-    <meta name="revisit-after" content="1 days">
-    <meta name="revisit" content="1">
-    <meta name="robots" content="index,follow">
-    <meta name="no-email-collection" content="http://www.unspam.com/noemailcollection/">
-    
-    <link rel="apple-touch-icon" sizes="152x152" href="https://rafnixg.github.io/theme/images/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="https://rafnixg.github.io/theme/images/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="https://rafnixg.github.io/theme/images/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="https://rafnixg.github.io/theme/images/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="https://rafnixg.github.io/theme/images/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="https://rafnixg.github.io/theme/images/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="https://rafnixg.github.io/theme/images/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="57x57" href="https://rafnixg.github.io/theme/images/apple-touch-icon-57x57.png">
-    <link rel="icon" type="image/png" href="https://rafnixg.github.io/theme/images/favicon-196x196.png" sizes="196x196">
-    <link rel="icon" type="image/png" href="https://rafnixg.github.io/theme/images/favicon-160x160.png" sizes="160x160">
-    <link rel="icon" type="image/png" href="https://rafnixg.github.io/theme/images/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="https://rafnixg.github.io/theme/images/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="https://rafnixg.github.io/theme/images/favicon-16x16.png" sizes="16x16">
-    <link rel="shortcut icon" href="https://rafnixg.github.io/theme/images/favicon.ico">
-    <script type="text/javascript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-63609229-1', 'auto');ga('send', 'pageview');var _qevents = _qevents || [];</script>
+
+   
+   <meta charset="utf-8">
+	<title>Rafnix Guzmán</title>
+	<meta name="description" content="Diseñador y Desarollador Web">
+	<meta name="author" content="@rafnixg">
+
+   
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	
+   <link rel="stylesheet" href="css/default.css">
+	<link rel="stylesheet" href="css/layout.css">
+   <link rel="stylesheet" href="css/media-queries.css">
+   <link rel="stylesheet" href="css/magnific-popup.css">
+
+   
+	<script src="js/modernizr.js"></script>
+
+	<link rel="shortcut icon" href="favicon.png" >
+
 </head>
-<body class="home-template nav-closed" itemscope itemtype="http://schema.org/WebPage">
-    <meta itemprop="name" content="Python, openERP, y algo mas">
-    <meta itemprop="url" content="https://rafnixg.github.io">
-    <meta itemprop="headline" content="Python, openERP, y algo mas || ">
-    <meta itemprop="description about" content="">
-    <meta itemprop="keywords" content="gnu, linux, software libre, código abierto, tecnología">
-    <meta itemprop="primaryImageOfPage" content="https://rafnixg.github.io/theme/images/logo.png">
-    <meta itemprop="inLanguage" content="es">
-<nav class="nav">
-    <h3 class="nav-title">Menu</h3>
-    <a href="#" class="nav-close">
-        <span class="hidden">Close</span>
-    </a>
-    <ul role="menubar">
-            <li class="nav-current" role="presentation"><a  href="https://rafnixg.github.io/archives.html" title="Python, openERP, y algo mas | Archives" itemprop="name" itemprop="significantLink">Archives</a></li>        
-    </ul>
-    <a class="subscribe-button icon-feed" href='http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp%3A%2F%2Ffeeds.feedburner.com%2FElBlogDeAbr4xas'  target='blank'>Subscribe</a>
-</nav>
-<span class="nav-cover"></span>    <div class="site-wrapper">
-        <header class="main-header " style="background-image: url(https://rafnixg.github.io/theme/images/banner-bg.jpg)" itemscope itemtype="http://schema.org/WPHeader">
-            <nav class="main-nav overlay clearfix">
-                <a class="menu-button" href="#">
-                    <span class="burger">&#9776;</span>
-                    <span class="word">Menu</span>
-                </a>
-            </nav>
-            <div class="vertical">
-                <div class="main-header-content inner">
-                    <h1 class="page-title" itemprop="headline">Python, openERP, y algo mas</h1>
-                    <h2 class="page-description" itemprop="description"></h2>
-                </div>
+
+<body>
+
+   
+   <header id="home">
+
+      <nav id="nav-wrap">
+
+         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+	      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+
+         <ul id="nav" class="nav">
+            <li class="current"><a class="smoothscroll" href="#home">Inicio</a></li>
+            <li><a class="smoothscroll" href="#about">Acerca de</a></li>
+	         <li><a class="smoothscroll" href="#resume">Resumen</a></li>
+            <li><a class="smoothscroll" href="#portfolio">Trabajos</a></li>
+            <!-- <li><a class="smoothscroll" href="#testimonials">Testimonials</a></li> -->
+           <!--  <li><a class="smoothscroll" href="#contact">Contacto</a></li> -->
+         </ul> <!-- end #nav -->
+
+      </nav> <!-- end #nav-wrap -->
+
+      <div class="row banner">
+         <div class="banner-text">
+            <h1 class="responsive-headline">Rafnix Guzmán</h1>
+            <h3>Yo soy un <span>Diseñador</span> y <span>Desarrollador web</span> Venezolano. <span>Activista</span> de las tecnologías libres. Sigue <a class="smoothscroll" href="#about">Bajando</a>
+            y conoce más <a class="smoothscroll" href="#about">acerca de mi</a>.</h3>
+            <hr />
+            <ul class="social">
+               <li><a href="https://www.facebook.com/mick7seven"><i class="fa fa-facebook"></i></a></li>
+               <li><a href="https://twitter.com/rafnixg"><i class="fa fa-twitter"></i></a></li>
+               <li><a href="https://www.linkedin.com/in/rafnix-guzman-a2656ab0"><i class="fa fa-linkedin"></i></a></li>
+               <li><a href="https://www.instagram.com/rafnixg/"><i class="fa fa-instagram"></i></a></li>
+            </ul>
+         </div>
+      </div>
+
+      <p class="scrolldown">
+         <a class="smoothscroll" href="#about"><i class="icon-down-circle"></i></a>
+      </p>
+
+   </header> 
+
+
+   
+   <section id="about">
+
+      <div class="row">
+
+         <div class="three columns">
+
+            <img class="profile-pic"  src="images/profilepic.jpg" alt="" />
+
+         </div>
+
+         <div class="nine columns main-col">
+
+            <h2>Acerca de Mi</h2>
+
+            <p>Soy un joven entusiasta de las tecnologías libres, usuario Debian desde hace mas de 4 años, soy desarrollador web, adicto a las nuevas tecnologías web HTML5, CSS3, JS, Angular JS, entre otros. 
+            </p>
+
+            <div class="row">
+
+               <div class="columns contact-details">
+
+                  <h2>Detalles de Contacto</h2>
+                  <p class="address">
+						   <span>Rafnix Guzmán</span><br>
+						   <span>Tinaquillo<br>
+						         Cojedes, Venezuela
+                     </span><br>
+						   <span>(58) 426-1254971</span><br>
+                     <span>rafnixg@gmail.com</span>
+					   </p>
+
+               </div>
+
+               <div class="columns download">
+                  <p>
+                     <a href="#" class="button"><i class="fa fa-download"></i>Descargar CV</a>
+                  </p>
+               </div>
+
+            </div> <!-- end row -->
+
+         </div> <!-- end .main-col -->
+
+      </div>
+
+   </section> <!-- About Section End-->
+
+
+   
+   <section id="resume">
+
+      
+      <div class="row education">
+
+         <div class="three columns header-col">
+            <h1><span>Educación</span></h1>
+         </div>
+
+         <div class="nine columns main-col">
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>Universidad de Carabobo</h3>
+                  <p class="info">Ingeniería en Telecomunicaciones <span>&bull;</span> <em class="date">Actualidad</em></p>
+
+                  
+
+               </div>
+
+            </div> <!-- item end -->
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>UPTP "Juan de Jesús Montilla"</h3>
+                  <p class="info">T.S.U en Informática <span>&bull;</span> <em class="date">2014</em></p>
+
+                 
+
+               </div>
+
+            </div> <!-- item end -->
+
+         </div> <!-- main-col end -->
+
+      </div> <!-- End Education -->
+
+
+      <div class="row education">
+
+         <div class="three columns header-col">
+            <h1><span>Cursos</span></h1>
+         </div>
+
+         <div class="nine columns main-col">
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>Code School</h3>
+                  <p class="info">JavaScript Road Trip Part 1 <span>&bull;</span> <em class="date">Julio 2015</em></p>
+
+                  
+
+               </div>
+
+            </div> <!-- item end -->
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>Code School</h3>
+                  <p class="info">Shaping up with Angular.js <span>&bull;</span> <em class="date">Julio 2015</em></p>
+
+                 
+
+               </div>
+
+            </div> <!-- item end -->
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>Acamica</h3>
+                  <p class="info">Maquetando el monstruo web <span>&bull;</span> <em class="date">Diciembre 2013</em></p>
+
+               </div>
+
+            </div> <!-- item end -->
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>Acamica</h3>
+                  <p class="info">Introducción al desarrollo de aplicaciones web <span>&bull;</span> <em class="date">Noviembre 2014</em></p>
+
+               </div>
+
+            </div> <!-- item end -->
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>Codecademy</h3>
+                  <p class="info">JavaScript <span>&bull;</span> <em class="date">abril 2014</em></p>
+
+               </div>
+
+            </div> <!-- item end -->
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>Codecademy</h3>
+                  <p class="info">HTML & CSS <span>&bull;</span> <em class="date">Marzo 2014</em></p>
+
+                 
+
+               </div>
+
+            </div> <!-- item end -->
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>Codecademy</h3>
+                  <p class="info">jQuery <span>&bull;</span> <em class="date">Mayo 2014</em></p>
+               </div>
+
+            </div> <!-- item end -->
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>Academia de Software Libre - Carabobo</h3>
+                  <p class="info">Programacion Web <span>&bull;</span> <em class="date">junio 2015</em></p>
+               </div>
+
+            </div> <!-- item end -->
+
+         </div> <!-- main-col end -->
+
+      </div> <!-- End Education -->
+
+
+      
+      <div class="row work">
+
+         <div class="three columns header-col">
+            <h1><span>Trabajos</span></h1>
+         </div>
+
+         <div class="nine columns main-col">
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>WebsTinaquillo</h3>
+                  <p class="info">Full Stack <span>&bull;</span> <em class="date">Enero 2012 -  Marzo 2015</em></p>
+
+               </div>
+
+            </div> <!-- item end -->
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>Gweb</h3>
+                  <p class="info">Desarrollador Web<span>&bull;</span> <em class="date">Marzo 2015 - Actualidad</em></p>
+
+               </div>
+
+            </div> <!-- item end -->
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>Triskal Media Producciones, S.A.</h3>
+                  <p class="info">Desarrollador Web<span>&bull;</span> <em class="date">Marzo 2015 - Actualidad</em></p>
+
+               </div>
+
+            </div> <!-- item end -->
+
+         </div> <!-- main-col end -->
+
+      </div> <!-- End Work -->
+
+
+      
+      <div class="row skill">
+
+         <div class="three columns header-col">
+            <h1><span>Destrezas</span></h1>
+         </div>
+
+         <div class="nine columns main-col">
+
+            <p>Las destrezas que poseo en el diseño y desarrollo web son las siguientes:
+            </p>
+
+				<div class="bars">
+
+				   <ul class="skills">
+
+                  <li><span class="bar-expand html5"></span><em>HTML5</em></li>
+                  <li><span class="bar-expand css"></span><em>CSS</em></li>
+                  <li><span class="bar-expand jquery"></span><em>jQuery</em></li>
+					   <li><span class="bar-expand javascript"></span><em>JavaScript</em></li>
+                  <li><span class="bar-expand php"></span><em>PHP</em></li>
+						<li><span class="bar-expand wordpress"></span><em>Wordpress</em></li>
+						
+					</ul>
+
+				</div><!-- end skill-bars -->
+
+			</div> <!-- main-col end -->
+
+      </div> <!-- End skills -->
+
+   </section> <!-- Resume Section End-->
+
+
+   <!-- Portfolio Section
+   ================================================== -->
+   <section id="portfolio">
+
+      <div class="row">
+
+         <div class="twelve columns collapsed">
+
+            <h1>Revisa mis últimos trabajos.</h1>
+
+            <!-- portfolio-wrapper -->
+            <div id="portfolio-wrapper" class="bgrid-halves s-bgrid-thirds cf">
+
+          	   <div class="columns portfolio-item">
+                  <div class="item-wrap">
+
+                     <a href="#modal-01" title="">
+                        <img alt="" src="images/portfolio/kona.jpg">
+                        <div class="overlay">
+                           <div class="portfolio-item-meta">
+          					      <h5>Laboratorio Kona C.A</h5>
+                              <p>Desarrollo Web</p>
+          					   </div>
+                        </div>
+                        <div class="link-icon"><i class="icon-plus"></i></div>
+                     </a>
+
+                  </div>
+          		</div> <!-- item end -->
+
+               <div class="columns portfolio-item">
+                  <div class="item-wrap">
+
+                     <a href="#modal-02" title="">
+                        <img alt="" src="images/portfolio/epale.jpg">
+                        <div class="overlay">
+                           <div class="portfolio-item-meta">
+          					      <h5>Revista Epale CCS</h5>
+                              <p>Retoques de Diseño</p>
+          					   </div>
+                        </div>
+                        <div class="link-icon"><i class="icon-plus"></i></div>
+                     </a>
+
+                  </div>
+          		</div> <!-- item end -->
+
+
+            </div> <!-- portfolio-wrapper end -->
+
+         </div> <!-- twelve columns end -->
+
+
+         
+
+         <div id="modal-01" class="popup-modal mfp-hide">
+
+		      <img class="scale-with-grid" src="images/portfolio/modals/kona.jpg" alt="" />
+
+		      <div class="description-box">
+			      <h4>Laboratorio Kona C.A</h4>
+			      <p>Diseño y Desarrollo web para Laboratorio Kona C.A, implementación de un carrito de compras, solicitudes de servicios en linea, sistema de usuarios y carga de resultados.</p>
+               <span class="categories"><i class="fa fa-tag"></i>Diseño Web, Desarrollo Web</span>
+		      </div>
+
+            <div class="link-box">
+               <!-- <a href="http://www.behance.net">Details</a> -->
+		         <a class="popup-modal-dismiss">Cerrar</a>
             </div>
-            <a class="scroll-down icon-arrow-left blink_me" href="#content" data-offset="-45">
-                <span class="hidden">Scroll Down</span>
-            </a>
-        </header>
-<main id="content" class="content" role="main" itemprop="mainContentOfPage" itemscope="" itemtype="http://schema.org/Blog">
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-            <header class="post-header" itemprop="headline">
-                <h2 class="post-title">
-                    <a href="https://rafnixg.github.io/2015/06/03/instalar-odoo.html" rel="bookmark">
-                        Instalar Odoo y no morir en el intento
-                    </a>
-                </h2>
-            </header>
-            <section class="post-excerpt">
-                <p>Instalacion de odoo de forma sencilla</p>
-                <p><a class="read-more" itemprop="url" href="https://rafnixg.github.io/2015/06/03/instalar-odoo.html" title="Read this article" rel="bookmark">Leer m&aacute;s &raquo;</a></p>
-            </section>
-            <footer class="post-meta">
-                <span class="entry-author" itemscope="" itemtype="http://schema.org/Person" itemprop="author">
-                    <span itemprop="name">Rafnix Guzman</span></span>
-                <time itemprop="datePublished" class="post-date" datetime="2015YYY-20M-%DD">miércoles, junio 03, 2015</time>
-            </footer>        
-        </article>
-    <nav class="pagination" role="navigation">
-            <span class="page-number">Page 1 of 1</span>
-    </nav>
-</main>
-        <footer class="site-footer clearfix" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
-            <section class="copyright">
-                <a itemprop="url" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" class="tooltip" data-tooltip="CC BY-NC-SA" target="_blank">
-                CC Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
-            </section>
-            <section class="poweredby">Proudly published with <a href="https://getpelican.org">Pelican</a></section>
-        </footer>
-    </div>
-    <script type="text/javascript" src="https://rafnixg.github.io/theme/js/jquery-1.11.2.min.js"></script>
-    <script type="text/javascript" src="https://rafnixg.github.io/theme/js/jquery.fitvids.min.js"></script>
-    <script type="text/javascript" src="https://rafnixg.github.io/theme/js/index.min.js"></script>
-</body>    
+
+	      </div><!-- modal-01 End -->
+
+         <div id="modal-02" class="popup-modal mfp-hide">
+
+		      <img class="scale-with-grid" src="images/portfolio/modals/epale.jpg" alt="" />
+
+		      <div class="description-box">
+			      <h4>Revista Epale CCS</h4>
+			      <p>Mejora de la estética web para Revista Epale CCS</p>
+               <span class="categories"><i class="fa fa-tag"></i>Diseño Web</span>
+		      </div>
+
+            <div class="link-box">
+               <!-- <a href="http://www.behance.net">Details</a> -->
+		         <a class="popup-modal-dismiss">Cerrar</a>
+            </div>
+
+	      </div><!-- modal-02 End -->
+
+
+
+      </div> <!-- row End -->
+
+   </section> <!-- Portfolio Section End-->
+
+
+  
+   <section id="call-to-action">
+
+      <div class="row">
+
+         <div class="two columns header-col">
+
+            <h1><span>Rafnix Guzmán</span></h1>
+
+         </div>
+
+         <div class="seven columns">
+
+            <h2>Contactame</h2>
+            <p>Por las <span>Redes Sociales</span>. o por Correo Electronico <span>rafnixg@gmail.com</span></p>
+
+         </div>
+
+         <div class="three columns action">
+
+            <a href="http://triskal.com.ve" class="button">Visita Triskal</a>
+
+         </div>
+
+      </div>
+
+   </section> <!-- Call-To-Action Section End-->
+
+
+   <!-- Testimonials Section
+   ================================================== -->
+   <section id="testimonials">
+
+      <div class="text-container">
+
+         <div class="row">
+
+            <div class="two columns header-col">
+
+               <h1><span>Client Testimonials</span></h1>
+
+            </div>
+
+            <div class="ten columns flex-container">
+
+               <div class="flexslider">
+
+                  <ul class="slides">
+
+                     <li>
+                        <blockquote>
+                           <p>Comentar el código es como limpiar el cuarto de baño; nadie quiere hacerlo, pero el resultado es siempre una experiencia más agradable para uno mismo y sus invitados.
+                           </p>
+                           <cite>Ryan Campbell</cite>
+                        </blockquote>
+                     </li> <!-- slide ends -->
+
+                     <li>
+                        <blockquote>
+                           <p>El deseo de ser recompensado por la creatividad de uno no justifica privar al mundo en general de toda o parte de esa creatividad.
+                           </p>
+                           <cite>Richard Stallman</cite>
+                        </blockquote>
+                     </li> <!-- slide ends -->
+                     
+
+                  </ul>
+
+               </div> <!-- div.flexslider ends -->
+
+            </div> <!-- div.flex-container ends -->
+
+         </div> <!-- row ends -->
+
+       </div>  <!-- text-container ends -->
+
+   </section> <!-- Testimonials Section End-->
+
+
+
+
+   <!-- footer
+   ================================================== -->
+   <footer>
+
+      <div class="row">
+
+         <div class="twelve columns">
+
+            <ul class="social-links">
+               <li><a href="https://www.facebook.com/mick7seven"><i class="fa fa-facebook"></i></a></li>
+               <li><a href="https://twitter.com/rafnixg"><i class="fa fa-twitter"></i></a></li>
+               <li><a href="https://www.linkedin.com/in/rafnix-guzman-a2656ab0"><i class="fa fa-linkedin"></i></a></li>
+               <li><a href="https://www.instagram.com/rafnixg/"><i class="fa fa-instagram"></i></a></li>
+            </ul>
+
+            <ul class="copyright">
+               <li>&copy; Copyright 2016 Rafnix Guzmán</li>
+               <li>Diseñada y Desarrollada por <a title="Rafnix" href="#">Rafnix Guzmán</a></li>   
+            </ul>
+
+         </div>
+
+         <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
+
+      </div>
+
+   </footer> <!-- Footer End-->
+
+   <!-- Java Script
+   ================================================== -->
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+
+   <script src="js/jquery.flexslider.js"></script>
+   <script src="js/waypoints.js"></script>
+   <script src="js/jquery.fittext.js"></script>
+   <script src="js/magnific-popup.js"></script>
+   <script src="js/init.js"></script>
+
+</body>
+
 </html>
