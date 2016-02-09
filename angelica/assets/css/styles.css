@@ -1,0 +1,109 @@
+/*-------------------------
+	Simple reset
+--------------------------*/
+
+
+*{
+	margin:0;
+	padding:0;
+}
+
+
+/*-------------------------
+	General Styles
+--------------------------*/
+
+
+html{
+	
+	position:relative;
+	background: url("../img/bg.png");
+}
+
+body{
+	
+	min-height: 600px;
+	color:#efefef;
+	font:14px/1.3 'Indie Flower',Arial, sans-serif;
+}
+
+a, a:visited {
+	text-decoration:none;
+	outline:none;
+	color:#54a6de;
+}
+
+a:hover{
+	text-decoration:underline;
+}
+
+section, footer{
+	display: block;
+}
+
+h1{
+font-size: 55px;
+}
+h2{
+	font-size: 28px;
+}
+/*----------------------------
+	Main Section
+-----------------------------*/
+header{
+	margin: 100px 0px 25px 0;
+	text-align: center;
+}
+#sub-count{
+	text-align: center;
+
+}
+#texto{
+	text-align: center;
+	font-size: 28px;
+	margin-top: 10px;
+}
+#texto h2 span{
+	color:#553982;
+	
+}
+#video{
+	text-align: center;
+	
+	margin: 61px 0;
+}
+
+/*----------------------------
+	The Footer
+-----------------------------*/
+
+
+footer{
+	background-color: #28324e;
+
+	box-shadow: 0 -1px 2px #28324e;
+	height: 45px;
+	
+	position: absolute;
+	width: 100%;
+
+}
+
+footer h2{
+	color: #EEEEEE;
+	font-size: 16px;
+	font-weight: normal;
+	text-align: center;
+	padding: 13px 0 0;
+	
+	
+}
+
+.angelica{
+color:#a38f84;
+font-weight: bold;
+}
+.mick{
+color:#a38f84;
+font-weight: bold;
+}
