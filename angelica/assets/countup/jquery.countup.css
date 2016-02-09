@@ -24,10 +24,19 @@
 	color:#fff;
 	letter-spacing:-1px;
 }
+
+/*-----------------------------------
+	Color de Fondo de los Digitos 
+-----------------------------------*/
+
 .countDays .digit{background-color:#41a85f }
 .countHours .digit{background-color:#00a885 }
 .countMinutes .digit{background-color:#3d8eb9 }
 .countSeconds .digit{background-color:#2969b0 }
+
+/*-----------------------------------
+	Gradiente Bicolor 50:50 
+-----------------------------------*/
 
 .countDays .digit.static{
 	box-shadow:1px 1px 1px rgba(4, 4, 4, 0.35);
@@ -100,6 +109,8 @@
 		color-stop(0.5, #2969b0)
 	);
 }
+
+
 /**
  * You can use these classes to hide parts
  * of the countdown that you don't need.
@@ -126,7 +137,7 @@
 	position:absolute;
 	width:5px;
 	height:5px;
-	background-color:#444;
+	background-color:#fefefe;
 	border-radius:50%;
 	left:50%;
 	margin-left:-3px;
