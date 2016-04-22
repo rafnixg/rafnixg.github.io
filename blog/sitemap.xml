@@ -5,55 +5,55 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://rafnixg.github.io/blog/</loc>
-<lastmod>2016-04-21T23:03:58-00:00</lastmod>
+<lastmod>2016-04-21T23:09:34-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
 <loc>http://rafnixg.github.io/blog/archives.html</loc>
-<lastmod>2016-04-21T23:03:58-00:00</lastmod>
+<lastmod>2016-04-21T23:09:34-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
 <loc>http://rafnixg.github.io/blog/tags.html</loc>
-<lastmod>2016-04-21T23:03:58-00:00</lastmod>
+<lastmod>2016-04-21T23:09:34-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
 <loc>http://rafnixg.github.io/blog/categories.html</loc>
-<lastmod>2016-04-21T23:03:58-00:00</lastmod>
+<lastmod>2016-04-21T23:09:34-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://rafnixg.github.io/blog/my-super-post.html</loc>
+<loc>http://rafnixg.github.io/blog/2010/12/03/my-super-post.html</loc>
 <lastmod>2010-12-03T10:20:00-04:30</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://rafnixg.github.io/blog/prueba-mision-sucre.html</loc>
+<loc>http://rafnixg.github.io/blog/2010/12/03/prueba-mision-sucre.html</loc>
 <lastmod>2010-12-05T19:30:00-04:30</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://rafnixg.github.io/blog/prueba-noticias.html</loc>
+<loc>http://rafnixg.github.io/blog/2010/12/03/prueba-noticias.html</loc>
 <lastmod>2010-12-05T19:30:00-04:30</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://rafnixg.github.io/blog/tuto.html</loc>
+<loc>http://rafnixg.github.io/blog/2010/12/03/tuto.html</loc>
 <lastmod>2010-12-05T19:30:00-04:30</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.6</priority>
