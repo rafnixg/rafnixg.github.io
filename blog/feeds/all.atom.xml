@@ -1,2 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Rafnixg</title><link href="http://rafnixg.github.io/blog/" rel="alternate"></link><link href="http://rafnixg.github.io/blog/feeds/all.atom.xml" rel="self"></link><id>http://rafnixg.github.io/blog/</id><updated>2016-04-21T23:32:00-05:30</updated><entry><title>Bienvenida</title><link href="http://rafnixg.github.io/blog/2016/04/21/bienvenida.html" rel="alternate"></link><published>2016-04-21T23:32:00-05:30</published><author><name>Rafnix Guzmán</name></author><id>tag:rafnixg.github.io,2016-04-21:blog/2016/04/21/bienvenida.html</id><summary type="html">&lt;p&gt;Bienvenidos a mi nuevo blog un espacio para comparti mis conocimientos de tecnologia y programación.&lt;/p&gt;</summary><category term="inicio"></category><category term="bienvenida"></category></entry></feed>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Rafnixg</title><link href="http://localhost:8000/" rel="alternate"></link><link href="http://localhost:8000/feeds/all.atom.xml" rel="self"></link><id>http://localhost:8000/</id><updated>2016-04-24T09:53:00-05:30</updated><entry><title>Asignación de Algoritmia</title><link href="http://localhost:8000/2016/04/24/asignacion-de-algoritmia.html" rel="alternate"></link><published>2016-04-24T09:53:00-05:30</published><author><name>Rafnix Guzmán</name></author><id>tag:localhost:8000,2016-04-24:2016/04/24/asignacion-de-algoritmia.html</id><summary type="html">&lt;p&gt;Aquí les dejo los lineamientos para el taller que deben entregar el día Sábado 30 de Abril del 2016.&lt;/p&gt;
+&lt;h4&gt;Deben responder las siguientes interrogantes:&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;¿Qué es un algoritmo y para qué sirve?&lt;/li&gt;
+&lt;li&gt;¿Qué es un lenguaje de programación y para qué sirve?&lt;/li&gt;
+&lt;li&gt;¿Cuales son las propiedades de un algoritmo?&lt;/li&gt;
+&lt;li&gt;¿Qué es una variable?&lt;/li&gt;
+&lt;li&gt;¿Cuales son los tipos de operaciones?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Deben realizar los siguientes pseudocódigos:&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Desarrolle un algoritmo que dos números retorne el resultado de la: suma, resta, multiplicación y división.&lt;/li&gt;
+&lt;li&gt;Diseñe un algoritmo que dado un numero indique si es positivo o negativo.&lt;/li&gt;
+&lt;li&gt;Una tienda ofrece un descuento del 15% a sus clientes que hagan una compra mayor a 5000Bs, dado el monto total de la compra del cliente diga cuanto es el monto total a pagar por el cliente.&lt;/li&gt;
+&lt;li&gt;Diseñe un algoritmo que dado un numero calcule en cuadrado de dicho numero.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Lineamientos&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Debe ser entregado en hoja blanca&lt;/li&gt;
+&lt;li&gt;La asignación es individual&lt;/li&gt;
+&lt;li&gt;Se premia la creatividad.&lt;/li&gt;
+&lt;li&gt;Día de entrega 30 de Abril del 2016 &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Recomendaciones&lt;/h4&gt;
+&lt;p&gt;Leer los documentos en PDF que les pase en clase, allí encontraran ejercicios resueltos y toda la teoría vista en clase, que servirá de apoyo para la realización de esta asignación.&lt;/p&gt;</summary><category term="PNFI"></category><category term="Mision Sucre"></category><category term="Asignacion"></category><category term="Algoritmia"></category><category term="Programacion"></category></entry><entry><title>Bienvenida</title><link href="http://localhost:8000/2016/04/21/bienvenida.html" rel="alternate"></link><published>2016-04-21T23:32:00-05:30</published><author><name>Rafnix Guzmán</name></author><id>tag:localhost:8000,2016-04-21:2016/04/21/bienvenida.html</id><summary type="html">&lt;p&gt;Bienvenidos a mi nuevo blog un espacio para comparti mis conocimientos de tecnologia y programación.&lt;/p&gt;</summary><category term="inicio"></category><category term="bienvenida"></category></entry></feed>
