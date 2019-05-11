@@ -7,13 +7,13 @@ Slug: entornos-virtuales-en-python-usando-pipenv
 Authors: Rafnix Guzmán
 Summary: Una pequeña guía de como usar entornos virtuales de forma fácil en Python
 
-Cuando iniciamos en el desarrollo con Python muchas veces no nos damos cuenta del dolor de cabeza que es mantener varios proyectos con diferentes versiones de dependencias en nuestra entorno de desarrollo local, a medida que vamos evolucionando vamos adquiriendo nuevas herramientas que mejoren nuestro flujo de trabajo, como el uso de entornos virtuales o manejadores de paquetes, entre otras, Pipenv es una de estas herramientas que nos ayudan mucho a integrar y mejorar nuestros flujos en Python, tanto es asi que su eslogan por asi decirlo es *"Python Development Workflow for Humans"*.
+Cuando iniciamos en el desarrollo con Python muchas veces no nos damos cuenta del dolor de cabeza que es mantener varios proyectos con diferentes versiones de dependencias en nuestra entorno de desarrollo local, a medida que vamos evolucionando vamos adquiriendo nuevas herramientas que mejoren nuestro flujo de trabajo, como el uso de entornos virtuales o manejadores de paquetes, entre otras, Pipenv es una de estas herramientas que nos ayudan mucho a integrar y mejorar nuestros flujos en Python, tanto es así que su eslogan por así decirlo es *"Python Development Workflow for Humans"*.
 
 Esta herramienta básicamente nos ayuda a optimizar nuestro flujo de desarrollo unificando *pip* y *virtualenv* en una sola herramienta que funciona por linea de comandos *(Terminal)*, lo que nos daria un entorno aislado en el cual instalar nuestras dependencia y luego replicar este mismo entorno en otra maquina gracias a el archivo que se genera **[Pipfile](https://github.com/pypa/pipfile)**, que viene a ser el sustituto del archivo que genera pip  **requirements.txt**
 
 ## Instalando Pipenv
 
-El proceso de instalación de Pipenv es muy sencillo, en esta ocasión voy a detallar 2 formas de instalar usando lo indicado en la [documentacion oficial](https://pipenv-es.readthedocs.io/es/latest/).
+El proceso de instalación de Pipenv es muy sencillo, en esta ocasión voy a detallar 2 formas de instalar usando lo indicado en la [documentación oficial](https://pipenv-es.readthedocs.io/es/latest/).
 
 Si estas usando Ubuntu 16.04:
 ```bash
@@ -23,7 +23,7 @@ $ sudo apt update
 $ sudo apt install pipenv
 ```
 
-Esta otra opcion es por si ya tienes instalado pip:
+Esta otra opción es por si ya tienes instalado pip:
 ```bash
 $ pip install pipenv
 ```
@@ -99,7 +99,7 @@ Con esto tendremos nuestro server Flask corriendo nuestro archivo `apps.py`.
 
 A lo largo de este post hemos visto como el flujo de trabajo se puede optimizar con el uso de esta herramienta, ya que no debemos generar los entornos virtuales por separado usando algo como `virtualenv` con el que como yo muchas personas no han estado conformes, también hemos visto como instalar paquetes usando pipenv tan fácil como si usáramos `pip`, queda de parte de cada quien darle una probada a esta herramienta y ver si le ayuda a optimizar su flujo de desarrollo y mantener un poco más homogéneo los ambientes de desarrollo.
 
-Si deseas que siga publicando contenido sobre entornos virtuales, pip, o explique más afondo los ficheros `Pipfile`o `Pipfile.lock`, que otros comandos puede ejecutar Pipenv, solo házmelo saber en un comentario o a través de mi cuenta twtter [@rafnixg](https://twitter.com/rafnixg)
+Si deseas que siga publicando contenido sobre entornos virtuales, pip, o explique más a fondo los ficheros `Pipfile`o `Pipfile.lock`, que otros comandos puede ejecutar Pipenv, solo házmelo saber en un comentario o a través de mi cuenta twitter [@rafnixg](https://twitter.com/rafnixg)
 
 **Referencias**
 [Documentación Pipenv](https://pipenv-es.readthedocs.io/es/latest/)
