@@ -1,2 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>rafnixg</title><link href="https://rafnixg.github.io/" rel="alternate"></link><link href="https://rafnixg.github.io/feeds/all.atom.xml" rel="self"></link><id>https://rafnixg.github.io/</id><updated>2019-05-20T20:15:00+02:00</updated><entry><title>Hello World</title><link href="https://rafnixg.github.io/Hello-world.html" rel="alternate"></link><published>2019-05-10T20:15:00+02:00</published><updated>2019-05-20T20:15:00+02:00</updated><author><name>Rafnix Guzmán</name></author><id>tag:rafnixg.github.io,2019-05-10:/Hello-world.html</id><summary type="html">&lt;p&gt;Descripcion corta.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is the &lt;em&gt;first post&lt;/em&gt; from my Pelican blog. &lt;strong&gt;YAY!&lt;/strong&gt;&lt;/p&gt;</content><category term="first"></category><category term="misc"></category></entry></feed>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Rafnixg - Bitácora de un programador autodidacta(a los golpes)</title><link href="https://rafnixg.github.io/" rel="alternate"></link><link href="https://rafnixg.github.io/feeds/all.atom.xml" rel="self"></link><id>https://rafnixg.github.io/</id><updated>2019-05-21T11:15:00-05:00</updated><subtitle>Bitácora de un programador autodidacta(a los golpes)</subtitle><entry><title>Entornos virtuales en Python usando Pipenv</title><link href="https://rafnixg.github.io/entornos-virtuales-en-python-usando-pipenv.html" rel="alternate"></link><published>2019-05-11T11:15:00-05:00</published><updated>2019-05-21T11:15:00-05:00</updated><author><name>Rafnix Guzmán</name></author><id>tag:rafnixg.github.io,2019-05-11:/entornos-virtuales-en-python-usando-pipenv.html</id><summary type="html">&lt;p&gt;Una pequeña guía de como usar entornos virtuales de forma fácil en Python&lt;/p&gt;</summary><content type="html">&lt;p&gt;Cuando iniciamos en el desarrollo con Python muchas veces no nos damos cuenta del dolor de cabeza que es mantener varios proyectos con diferentes versiones de dependencias en nuestra entorno de desarrollo local, a medida que vamos evolucionando vamos adquiriendo nuevas herramientas que mejoren nuestro flujo de trabajo, como el uso de entornos virtuales o manejadores de paquetes, entre otras, Pipenv es una de estas herramientas que nos ayudan mucho a integrar y mejorar nuestros flujos en Python, tanto es asi que su eslogan por asi decirlo es &lt;em&gt;"Python Development Workflow for Humans"&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Esta herramienta básicamente nos ayuda a optimizar nuestro flujo de desarrollo unificando &lt;em&gt;pip&lt;/em&gt; y &lt;em&gt;virtualenv&lt;/em&gt; en una sola herramienta que funciona por linea de comandos &lt;em&gt;(Terminal)&lt;/em&gt;, lo que nos daria un entorno aislado en el cual instalar nuestras dependencia y luego replicar este mismo entorno en otra maquina gracias a el archivo que se genera &lt;strong&gt;&lt;a href="https://github.com/pypa/pipfile"&gt;Pipfile&lt;/a&gt;&lt;/strong&gt;, que viene a ser el sustituto del archivo que genera pip  &lt;strong&gt;requirements.txt&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;Instalando Pipenv&lt;/h2&gt;
+&lt;p&gt;El proceso de instalación de Pipenv es muy sencillo, en esta ocasión voy a detallar 2 formas de instalar usando lo indicado en la &lt;a href="https://pipenv-es.readthedocs.io/es/latest/"&gt;documentacion oficial&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Si estas usando Ubuntu 16.04:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt install software-properties-common python-software-properties
+$ sudo add-apt-repository ppa:pypa/ppa
+$ sudo apt update
+$ sudo apt install pipenv
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Esta otra opcion es por si ya tienes instalado pip:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ pip install pipenv
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Como acabamos de ver la instalación es muy sencilla, de igual manera si tienen algún problema con la instalación me pueden escribir.&lt;/p&gt;
+&lt;h2&gt;Usando Pipenv&lt;/h2&gt;
+&lt;p&gt;Para efectos de este ejemplo vamos a generar una aplicación sencilla usando &lt;code&gt;Flask&lt;/code&gt; y haremos el típico &lt;em&gt;Hola Mundo&lt;/em&gt;, ya que este post no se trata de desarrollo de apps usando &lt;code&gt;Flask&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Primero creamos nuestro entorno virtual para aislar nuestra aplicación:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ pipenv shell
+
+Creating a virtualenv &lt;span class="k"&gt;for&lt;/span&gt; this project…
+Pipfile: /home/usuario/nombre_del_proyecto/Pipfile
+Using /usr/bin/python3 &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;.6.7&lt;span class="o"&gt;)&lt;/span&gt; to create virtualenv…
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Con la ejecución de este comando se crea un entorno virtual si no existe, ademas de crear 2 archivos: &lt;code&gt;Pipfile&lt;/code&gt; y &lt;code&gt;Pipfile.lock&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Si se instala en un proyecto preexistente Pipenv convierte tu archivo &lt;em&gt;requirements.txt&lt;/em&gt; en &lt;em&gt;Pipfile&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Para este proyecto se ha creado un entorno con una versión de python 3, si necesitas instalar una versión de python 2 solo debes agregar el argumento --two, también funciona para python 3 el argumento --three.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ pipenv shell --two    &lt;span class="c1"&gt;#Genera entorno en Python2&lt;/span&gt;
+$ pipenv shell --three  &lt;span class="c1"&gt;#Genera entorno en Python3&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Ahora procedemos a instalar los paquetes que necesitamos, en nuestro caso Flask, pero supondremos que necesitamos una versión especifica para este ejemplo usaremos la versión 1.0, para el momento de escribir este post la versión latest de Flask es la 1.0.2&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ pipenv install &lt;span class="nv"&gt;flask&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.0
+
+Installing &lt;span class="nv"&gt;flask&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.0…
+Adding flask to Pipfile&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;s &lt;span class="o"&gt;[&lt;/span&gt;packages&lt;span class="o"&gt;]&lt;/span&gt;…
+✔ Installation Succeeded 
+Pipfile.lock not found, creating…
+Locking &lt;span class="o"&gt;[&lt;/span&gt;dev-packages&lt;span class="o"&gt;]&lt;/span&gt; dependencies…
+Locking &lt;span class="o"&gt;[&lt;/span&gt;packages&lt;span class="o"&gt;]&lt;/span&gt; dependencies…
+✔ Success! 
+Updated Pipfile.lock &lt;span class="o"&gt;(&lt;/span&gt;db0e09&lt;span class="o"&gt;)&lt;/span&gt;!
+Installing dependencies from Pipfile.lock &lt;span class="o"&gt;(&lt;/span&gt;db0e09&lt;span class="o"&gt;)&lt;/span&gt;…
+  🐍   ▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉ &lt;span class="m"&gt;6&lt;/span&gt;/6 —
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Con esto ya tendremos Flask instalado en nuestro entorno virtual, y procedemos a realizar nuestro desarrollo.&lt;/p&gt;
+&lt;p&gt;Crean un archivo llamado &lt;code&gt;apps.py&lt;/code&gt; con este contenido dentro:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;
+&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="vm"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="nd"&gt;@app.route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;/&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;hello&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Hello World!&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Por ultimo iniciamos nuestro servidor Flask&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nv"&gt;FLASK_APP&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;apps.py flask run
+
+ * Serving Flask app &lt;span class="s2"&gt;&amp;quot;apps.py&amp;quot;&lt;/span&gt;
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://127.0.0.1:5000/ &lt;span class="o"&gt;(&lt;/span&gt;Press CTRL+C to quit&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Con esto tendremos nuestro server Flask corriendo nuestro archivo &lt;code&gt;apps.py&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Consideraciones finales&lt;/h2&gt;
+&lt;p&gt;A lo largo de este post hemos visto como el flujo de trabajo se puede optimizar con el uso de esta herramienta, ya que no debemos generar los entornos virtuales por separado usando algo como &lt;code&gt;virtualenv&lt;/code&gt; con el que como yo muchas personas no han estado conformes, también hemos visto como instalar paquetes usando pipenv tan fácil como si usáramos &lt;code&gt;pip&lt;/code&gt;, queda de parte de cada quien darle una probada a esta herramienta y ver si le ayuda a optimizar su flujo de desarrollo y mantener un poco más homogéneo los ambientes de desarrollo.&lt;/p&gt;
+&lt;p&gt;Si deseas que siga publicando contenido sobre entornos virtuales, pip, o explique más afondo los ficheros &lt;code&gt;Pipfile&lt;/code&gt;o &lt;code&gt;Pipfile.lock&lt;/code&gt;, que otros comandos puede ejecutar Pipenv, solo házmelo saber en un comentario o a través de mi cuenta twtter &lt;a href="https://twitter.com/rafnixg"&gt;@rafnixg&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Referencias&lt;/strong&gt;
+&lt;a href="https://pipenv-es.readthedocs.io/es/latest/"&gt;Documentación Pipenv&lt;/a&gt;&lt;/p&gt;</content><category term="pipenv"></category><category term="python"></category><category term="herramientas"></category></entry><entry><title>Hello World</title><link href="https://rafnixg.github.io/Hello-world.html" rel="alternate"></link><published>2019-05-10T20:15:00-05:00</published><updated>2019-05-20T20:15:00-05:00</updated><author><name>Rafnix Guzmán</name></author><id>tag:rafnixg.github.io,2019-05-10:/Hello-world.html</id><summary type="html">&lt;p&gt;Un poco sabre mi.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Soy un curioso crónico, explayador de ideas y adicto a experimentar con tecnología y todos esos bit que la rodean, programador python autodidacta(a los golpes), aunque a algunos le parece extraño porque soy programador tengo buen ojo para el diseño, amante del café en todo momento y de la planificación.&lt;/p&gt;
+&lt;p&gt;Desde pequeño he tenido curiosidad por las computadoras, y la iniciativa de compartir mis experiencias, de allí la idea de crear este espacio para documentar lo que aprenda, afianzar lo que se y compartirlo, lo haré como a mi me gustaría leerlo, tendremos un poco de Python, Odoo, pgSQL, Docker y muchas otras tecnologías o herramientas que me ayuden en este viaje como programador autodidacta(a los golpes)&lt;/p&gt;</content><category term="first"></category><category term="misc"></category></entry></feed>
