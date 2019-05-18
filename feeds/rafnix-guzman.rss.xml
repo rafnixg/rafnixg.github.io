@@ -1,5 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Rafnixg - Bitácora de un programador autodidacta(a los golpes) - Rafnix Guzmán</title><link>https://rafnixg.github.io/</link><description>Bitácora de un programador autodidacta(a los golpes)</description><lastBuildDate>Tue, 21 May 2019 11:15:00 -0500</lastBuildDate><item><title>Entornos virtuales en Python usando Pipenv</title><link>https://rafnixg.github.io/entornos-virtuales-en-python-usando-pipenv.html</link><description>&lt;p&gt;Cuando iniciamos en el desarrollo con Python muchas veces no nos damos cuenta del dolor de cabeza que es mantener varios proyectos con diferentes versiones de dependencias en nuestra entorno de desarrollo local, a medida que vamos evolucionando vamos adquiriendo nuevas herramientas que mejoren nuestro flujo de trabajo, como el uso de entornos virtuales o manejadores de paquetes, entre otras, Pipenv es una de estas herramientas que nos ayudan mucho a integrar y mejorar nuestros flujos en Python, tanto es así que su eslogan por así decirlo es &lt;em&gt;"Python Development Workflow for Humans"&lt;/em&gt;.&lt;/p&gt;
+<rss version="2.0"><channel><title>Rafnixg - Bitácora de un programador autodidacta(a los golpes) - Rafnix Guzmán</title><link>https://rafnixg.github.io/</link><description>Bitácora de un programador autodidacta(a los golpes)</description><lastBuildDate>Tue, 21 May 2019 11:15:00 -0500</lastBuildDate><item><title>Crea tu blog con python usando GitHub Pages y Pelican</title><link>https://rafnixg.github.io/crea-tu-blog-con-python-usando-github-pages-y-pelican.html</link><description>&lt;p&gt;Cuando comencé a darle vuelta a la idea de empezar un blog de nuevo me vinieron muchas ideas de como hacerlo a la mente, como el de usar el famoso &lt;a href="https://wordpress.org"&gt;Wordpress&lt;/a&gt;, teniendo en cuenta que el blog lo quería hacer para hablar un poco de python y las tecnologías que iba a ir conociendo y aprendiendo decidí mejor usar Pelican ya que esta desarrollado en Python.&lt;/p&gt;
+&lt;h2&gt;¿Qué es Pelican?&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://blog.getpelican.com/"&gt;Pelican&lt;/a&gt; es un generador de sitios estáticos desarrollado en python que nos permite escribir los post en archivos escritos en reStructuredText, Markdown, o AsciiDoc, y estos serán luego procesados para generar un sitio web estático como este blog, por lo que no necesitaremos una base de datos ni un servidor web que soporte un lenguaje de Backend como lo es GitHub Pages.&lt;/p&gt;
+&lt;h2&gt;¿Qué es GitHub Pages?&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://pages.github.com/"&gt;GitHub Pages&lt;/a&gt; es un hosting de sitios estáticos y como su pagina web lo indica, esta diseñado para hostear directamente en un repositorio de GitHub la pagina web de nuestros proyecto, paginas personales o de organizaciones, ademas de ser un servicio gratuito.&lt;/p&gt;
+&lt;p&gt;Gracias a estas características, podemos fácilmente crear nuestros sitios estáticos y subirlos a un repositorio de GitHub que debe tener la siguiente estructura &lt;code&gt;username.github.io&lt;/code&gt; mas adelante indicare como crear y configurar el repositorio para que pueda servir nuestro sitio web.&lt;/p&gt;
+&lt;p&gt;GitHub recomienda el uso de &lt;a href="https://jekyllrb.com/"&gt;Jekyll&lt;/a&gt; para generar nuestros sitios estáticos, pero este esta hecho en Ruby, lo que no es un problema si usas Ruby pero yo al ser un #PythonLover decidí usar Pelican que esta desarrollado en Python.&lt;/p&gt;
+&lt;h2&gt;Creando nuestro repositorio en GitHub&lt;/h2&gt;
+&lt;p&gt;Esta parte es la mas sencilla de post, ya que solo debemos entrar a nuestra cuenta de GitHub y crear un nuevo repositorio publico, que tenga el siguiente nombre.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;tu_username.github.io&lt;/code&gt;, en mi caso el repositorio donde se aloja este blog se llama &lt;a href="https://rafnixg.github.io"&gt;rafnixg.github.io&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Solo con esto ya tendremos nuestro Github Pages listo para comenzar a subir nuestro contenido estático.&lt;/p&gt;
+&lt;h2&gt;Instalando y configurando Pelican&lt;/h2&gt;
+&lt;p&gt;Instalar y tener Pelican funcionando es super sencillo. Pero si les quiero recomendar que toda la instalación se haga en un entorno virtual usando Pipenv, para mantener separado esta instalación de los demás paquetes de Python que tengan instalados en sus sistema, si no saben como usar Pipenv acá les dejo un post que tengo sobre este tema, &lt;a href="https://rafnixg.github.io/entornos-virtuales-en-python-usando-pipenv.html"&gt;Entornos virtuales en Python usando Pipenv&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Antes de iniciar con la instalación de pelican, debemos clonar nuestro repositorio donde esta hosteada nuestro blog, para esto solo debemos ubicarnos sonde queramos tener nuestro proyecto, en este caso yo lo hare en la raíz de mi sistema.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; ~
+$ git clone https://github.com/tu_username/tu_username.github.io.git
+$ &lt;span class="nb"&gt;cd&lt;/span&gt; tu_username.github.io
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Luego de esto, procedemos a instalar nuestro Pelican, lo primero que debemos hacer es crear un nuevo branch llamado &lt;code&gt;source&lt;/code&gt; donde ira todo nuestro código fuente y librerías, ya que para GitHub todo lo que este en la rama &lt;code&gt;master&lt;/code&gt; es lo que sera servido, para nuestro interés solo debemos subir a &lt;code&gt;master&lt;/code&gt; lo que pelican genera en su carpeta output, pero mas adelante nos preocuparemos de esto.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git checkout -b &lt;span class="nb"&gt;source&lt;/span&gt;
+$ pipenv shell
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Con esto ya tendremos nuestro entorno virtual para nuestra instalación de pelican, ahora procedemos a instalar &lt;code&gt;pelican&lt;/code&gt; que es nuestro generador de sitios estáticos, &lt;code&gt;markdown&lt;/code&gt; que nos ayudara para escribir nuestros post usando este lenguaje y &lt;code&gt;ghp-import&lt;/code&gt; que nos ayuda a publicar nuestro sitio a GitHub.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ pipenv install pelican markdown ghp-import
+
+Installing pelican…
+Adding pelican to Pipfile&lt;span class="s1"&gt;&amp;#39;s [packages]…&lt;/span&gt;
+&lt;span class="s1"&gt;✔ Installation Succeeded &lt;/span&gt;
+&lt;span class="s1"&gt;Installing markdown…&lt;/span&gt;
+&lt;span class="s1"&gt;Adding markdown to Pipfile&amp;#39;&lt;/span&gt;s &lt;span class="o"&gt;[&lt;/span&gt;packages&lt;span class="o"&gt;]&lt;/span&gt;…
+✔ Installation Succeeded 
+Installing ghp-import…
+Adding ghp-import to Pipfile&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;s &lt;span class="o"&gt;[&lt;/span&gt;packages&lt;span class="o"&gt;]&lt;/span&gt;…
+✔ Installation Succeeded 
+Pipfile.lock not found, creating…
+Locking &lt;span class="o"&gt;[&lt;/span&gt;dev-packages&lt;span class="o"&gt;]&lt;/span&gt; dependencies…
+Locking &lt;span class="o"&gt;[&lt;/span&gt;packages&lt;span class="o"&gt;]&lt;/span&gt; dependencies…
+✔ Success! 
+Updated Pipfile.lock &lt;span class="o"&gt;(&lt;/span&gt;b0c318&lt;span class="o"&gt;)&lt;/span&gt;!
+Installing dependencies from Pipfile.lock &lt;span class="o"&gt;(&lt;/span&gt;b0c318&lt;span class="o"&gt;)&lt;/span&gt;…
+  🐍   ▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉ &lt;span class="m"&gt;13&lt;/span&gt;/13 — 
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Ya con esto tenemos todo listo para empezar a usar Pelican asi que creemos nuestro primer blog usándolo.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ pelican-quickstart
+
+Welcome to pelican-quickstart v4.0.1.
+
+This script will &lt;span class="nb"&gt;help&lt;/span&gt; you create a new Pelican-based website.
+
+Please answer the following questions so this script can generate the files
+needed by Pelican.
+
+Using project associated with current virtual environment.Will save to:
+/home/username/blog/pelican
+
+&amp;gt; What will be the title of this web site? prueba pelican
+&amp;gt; Who will be the author of this web site? rafnix guzman
+&amp;gt; What will be the default language of this web site? &lt;span class="o"&gt;[&lt;/span&gt;es&lt;span class="o"&gt;]&lt;/span&gt; es
+&amp;gt; Do you want to specify a URL prefix? e.g., https://example.com   &lt;span class="o"&gt;(&lt;/span&gt;Y/n&lt;span class="o"&gt;)&lt;/span&gt; n
+&amp;gt; Do you want to &lt;span class="nb"&gt;enable&lt;/span&gt; article pagination? &lt;span class="o"&gt;(&lt;/span&gt;Y/n&lt;span class="o"&gt;)&lt;/span&gt; y
+&amp;gt; How many articles per page &lt;span class="k"&gt;do&lt;/span&gt; you want? &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; 
+&amp;gt; What is your &lt;span class="nb"&gt;time&lt;/span&gt; zone? &lt;span class="o"&gt;[&lt;/span&gt;Europe/Paris&lt;span class="o"&gt;]&lt;/span&gt; America/Lima
+&amp;gt; Do you want to generate a tasks.py/Makefile to automate generation and publishing? &lt;span class="o"&gt;(&lt;/span&gt;Y/n&lt;span class="o"&gt;)&lt;/span&gt; Y **# Responder Y, esto nos ayuda mucho!**
+&amp;gt; Do you want to upload your website using FTP? &lt;span class="o"&gt;(&lt;/span&gt;y/N&lt;span class="o"&gt;)&lt;/span&gt; n
+&amp;gt; Do you want to upload your website using SSH? &lt;span class="o"&gt;(&lt;/span&gt;y/N&lt;span class="o"&gt;)&lt;/span&gt; n
+&amp;gt; Do you want to upload your website using Dropbox? &lt;span class="o"&gt;(&lt;/span&gt;y/N&lt;span class="o"&gt;)&lt;/span&gt; n
+&amp;gt; Do you want to upload your website using S3? &lt;span class="o"&gt;(&lt;/span&gt;y/N&lt;span class="o"&gt;)&lt;/span&gt; n
+&amp;gt; Do you want to upload your website using Rackspace Cloud Files? &lt;span class="o"&gt;(&lt;/span&gt;y/N&lt;span class="o"&gt;)&lt;/span&gt; n
+&amp;gt; Do you want to upload your website using GitHub Pages? &lt;span class="o"&gt;(&lt;/span&gt;y/N&lt;span class="o"&gt;)&lt;/span&gt; y
+&amp;gt; Is this your personal page &lt;span class="o"&gt;(&lt;/span&gt;username.github.io&lt;span class="o"&gt;)&lt;/span&gt;? &lt;span class="o"&gt;(&lt;/span&gt;y/N&lt;span class="o"&gt;)&lt;/span&gt; y
+Done. Your new project is available at /home/username/blog/pelican
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Si tienen alguna duda respecto a la zona horaria aca les dejo una lista con todas las &lt;a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones"&gt;zonas horarias&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; Do you want to generate a tasks.py/Makefile to automate generation and publishing? &lt;span class="o"&gt;(&lt;/span&gt;Y/n&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;A esta pregunta deben responder (Y), ya que este Makefile nos ayudara a generar nuestro sitio de forma mas fácil, como podemos ver ya con esto se nos ha generado nuestro proyecto de pelican con el que podemos empezar a trabajar.&lt;/p&gt;
+&lt;h2&gt;Escribiendo nuestro primer post&lt;/h2&gt;
+&lt;p&gt;Vamos a crear nuestro primer post, para esto nos debemos ubicar en la carpeta &lt;code&gt;content&lt;/code&gt; y con nuestro editor de texto favorito procedemos a crear un archivo llamado hola-mundo.md (si, lo se, la imaginación esta a la orden del dia), este archivo luego puede ser borrado es solo para pruebas.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Title&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Hola&lt;/span&gt; &lt;span class="n"&gt;Mundo&lt;/span&gt;
+&lt;span class="n"&gt;Date&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;2019&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;05&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;18&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;30&lt;/span&gt;
+&lt;span class="n"&gt;Modified&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;2019&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;05&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;18&lt;/span&gt; &lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;30&lt;/span&gt;
+&lt;span class="n"&gt;Category&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;blog&lt;/span&gt;
+&lt;span class="n"&gt;Tags&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;principal&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;otros&lt;/span&gt;
+&lt;span class="n"&gt;Slug&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;hola&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;mundo&lt;/span&gt;
+&lt;span class="n"&gt;Authors&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Rafnix&lt;/span&gt; &lt;span class="n"&gt;Guzmán&lt;/span&gt;
+&lt;span class="n"&gt;Summary&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Mi&lt;/span&gt; &lt;span class="n"&gt;primer&lt;/span&gt; &lt;span class="n"&gt;post&lt;/span&gt; &lt;span class="n"&gt;usando&lt;/span&gt; &lt;span class="n"&gt;Pelican&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="n"&gt;GitHub&lt;/span&gt; &lt;span class="n"&gt;Pages&lt;/span&gt;
+
+&lt;span class="n"&gt;Aca&lt;/span&gt; &lt;span class="n"&gt;pueden&lt;/span&gt; &lt;span class="n"&gt;empezar&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;escribir&lt;/span&gt; &lt;span class="n"&gt;todo&lt;/span&gt; &lt;span class="n"&gt;lo&lt;/span&gt; &lt;span class="n"&gt;que&lt;/span&gt; &lt;span class="n"&gt;quieran&lt;/span&gt; &lt;span class="n"&gt;pueden&lt;/span&gt; &lt;span class="n"&gt;agregar&lt;/span&gt; &lt;span class="n"&gt;todas&lt;/span&gt; &lt;span class="n"&gt;las&lt;/span&gt; &lt;span class="n"&gt;sintaxis&lt;/span&gt; &lt;span class="n"&gt;de&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;Markdown&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;que&lt;/span&gt; &lt;span class="n"&gt;deseen&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+
+&lt;span class="err"&gt;##&lt;/span&gt; &lt;span class="n"&gt;Título&lt;/span&gt;
+&lt;span class="err"&gt;###&lt;/span&gt; &lt;span class="n"&gt;Subtítulo&lt;/span&gt;
+&lt;span class="n"&gt;Este&lt;/span&gt; &lt;span class="n"&gt;es&lt;/span&gt; &lt;span class="n"&gt;un&lt;/span&gt; &lt;span class="n"&gt;ejemplo&lt;/span&gt; &lt;span class="n"&gt;de&lt;/span&gt; &lt;span class="n"&gt;texto&lt;/span&gt; &lt;span class="n"&gt;que&lt;/span&gt; &lt;span class="n"&gt;da&lt;/span&gt; &lt;span class="n"&gt;entrada&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;una&lt;/span&gt; &lt;span class="n"&gt;lista&lt;/span&gt; &lt;span class="n"&gt;genérica&lt;/span&gt; &lt;span class="n"&gt;de&lt;/span&gt; &lt;span class="n"&gt;elementos&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;Elemento&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;Elemento&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;Elemento&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;
+
+&lt;span class="n"&gt;Este&lt;/span&gt; &lt;span class="n"&gt;es&lt;/span&gt; &lt;span class="n"&gt;un&lt;/span&gt; &lt;span class="n"&gt;ejemplo&lt;/span&gt; &lt;span class="n"&gt;de&lt;/span&gt; &lt;span class="n"&gt;texto&lt;/span&gt; &lt;span class="n"&gt;que&lt;/span&gt; &lt;span class="n"&gt;da&lt;/span&gt; &lt;span class="n"&gt;entrada&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;una&lt;/span&gt; &lt;span class="n"&gt;lista&lt;/span&gt; &lt;span class="n"&gt;numerada&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+
+&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Elemento&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Elemento&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Elemento&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;
+
+&lt;span class="n"&gt;Al&lt;/span&gt; &lt;span class="n"&gt;texto&lt;/span&gt; &lt;span class="n"&gt;en&lt;/span&gt; &lt;span class="n"&gt;Markdown&lt;/span&gt; &lt;span class="n"&gt;puedes&lt;/span&gt; &lt;span class="n"&gt;añadirle&lt;/span&gt; &lt;span class="n"&gt;formato&lt;/span&gt; &lt;span class="n"&gt;como&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;negrita&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt; &lt;span class="n"&gt;o&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;cursiva&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;de&lt;/span&gt; &lt;span class="n"&gt;una&lt;/span&gt; &lt;span class="n"&gt;manera&lt;/span&gt; &lt;span class="n"&gt;muy&lt;/span&gt; &lt;span class="n"&gt;sencilla&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+
+&lt;span class="n"&gt;Todo&lt;/span&gt; &lt;span class="n"&gt;esto&lt;/span&gt; &lt;span class="n"&gt;fue&lt;/span&gt; &lt;span class="n"&gt;extraído&lt;/span&gt; &lt;span class="n"&gt;de&lt;/span&gt; &lt;span class="n"&gt;este&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Post&lt;/span&gt; &lt;span class="n"&gt;sobre&lt;/span&gt; &lt;span class="n"&gt;markdown&lt;/span&gt;&lt;span class="o"&gt;](&lt;/span&gt;&lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="o"&gt;://&lt;/span&gt;&lt;span class="n"&gt;markdown&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;es&lt;/span&gt;&lt;span class="sr"&gt;/sintaxis-markdown/&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Probando nuestro blog en local&lt;/h2&gt;
+&lt;p&gt;Luego de escribir y guardar su primer post, procedemos a generar un servidor de pruebas para ver nuestro resultado antes de subir nuestra web a GitHub, estando en la raíz de nuestro proyecto ejecutamos el siguiente comando.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ make devserver
+
+pelican -lr /home/username/blog/pelican/content -o /home/username/blog/pelican/output -s /home/username/blog/pelican/pelicanconf.py 
+
+-&amp;gt; Modified: content, theme, settings. re-generating...
+Done: Processed &lt;span class="m"&gt;1&lt;/span&gt; article, &lt;span class="m"&gt;0&lt;/span&gt; drafts, &lt;span class="m"&gt;0&lt;/span&gt; pages, &lt;span class="m"&gt;0&lt;/span&gt; hidden pages and &lt;span class="m"&gt;0&lt;/span&gt; draft pages in &lt;span class="m"&gt;0&lt;/span&gt;.15 seconds.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Para entrar a nuestro servidor local de pruebas debemos ingresar a la siguiente URL &lt;a href="http://localhost:8000"&gt;http://localhost:8000&lt;/a&gt; con nuestro explorador favorito(espero no se IE, xD)&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Hola mundo Pelican" src="https://rafnixg.github.io/images/hola-mundo-pelican.jpg"&gt;&lt;/p&gt;
+&lt;h2&gt;Subir nuestro blog a GitHub Pages&lt;/h2&gt;
+&lt;p&gt;Ya con esto procederemos a preparar todo para subir lo a github, este primer comando sube nuestro código fuente.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git add -A &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; git commit -a -m &lt;span class="s1"&gt;&amp;#39;post hola-mundo.md&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; git push --all
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Ahora subimos todo a la rama &lt;code&gt;master&lt;/code&gt;, recuerdan que les dije que no se preocuparan por esto, es debido a que este comando hace toda esta preparación de subir todo lo que se encuentra en la carpeta &lt;code&gt;output&lt;/code&gt; a nuestra rama &lt;code&gt;master&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ make github
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Acá se les preguntaran sus credenciales de github, para poder subir a su repositorio todo el sitio estático ya generado, con esto su blog estará funcionando en https://su_username.github.io/&lt;/p&gt;
+&lt;p&gt;Para el próximo post veremos como configurar un &lt;code&gt;Thema&lt;/code&gt; y algunos &lt;code&gt;Plugins&lt;/code&gt; para potenciar el funcionamiento de Pelican, ademas de unas configuraciones extra que nos ayudaran a tener mejor SEO.&lt;/p&gt;
+&lt;p&gt;Nos vemos en el proximo post, muchas gracias por leerme y cualquier duda, comentario, o lo que sea, lo pueden dejar por aca o por mi cuenta de Twitter &lt;a href="https://twitter.com/rafnixg"&gt;@rafnixg&lt;/a&gt;.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Rafnix Guzmán</dc:creator><pubDate>Sat, 18 May 2019 10:30:00 -0500</pubDate><guid isPermaLink="false">tag:rafnixg.github.io,2019-05-18:/crea-tu-blog-con-python-usando-github-pages-y-pelican.html</guid><category>pipenv</category><category>python</category><category>herramientas</category></item><item><title>Entornos virtuales en Python usando Pipenv</title><link>https://rafnixg.github.io/entornos-virtuales-en-python-usando-pipenv.html</link><description>&lt;p&gt;Cuando iniciamos en el desarrollo con Python muchas veces no nos damos cuenta del dolor de cabeza que es mantener varios proyectos con diferentes versiones de dependencias en nuestra entorno de desarrollo local, a medida que vamos evolucionando vamos adquiriendo nuevas herramientas que mejoren nuestro flujo de trabajo, como el uso de entornos virtuales o manejadores de paquetes, entre otras, Pipenv es una de estas herramientas que nos ayudan mucho a integrar y mejorar nuestros flujos en Python, tanto es así que su eslogan por así decirlo es &lt;em&gt;"Python Development Workflow for Humans"&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Esta herramienta básicamente nos ayuda a optimizar nuestro flujo de desarrollo unificando &lt;em&gt;pip&lt;/em&gt; y &lt;em&gt;virtualenv&lt;/em&gt; en una sola herramienta que funciona por linea de comandos &lt;em&gt;(Terminal)&lt;/em&gt;, lo que nos daria un entorno aislado en el cual instalar nuestras dependencia y luego replicar este mismo entorno en otra maquina gracias a el archivo que se genera &lt;strong&gt;&lt;a href="https://github.com/pypa/pipfile"&gt;Pipfile&lt;/a&gt;&lt;/strong&gt;, que viene a ser el sustituto del archivo que genera pip  &lt;strong&gt;requirements.txt&lt;/strong&gt;&lt;/p&gt;
 &lt;h2&gt;Instalando Pipenv&lt;/h2&gt;
 &lt;p&gt;El proceso de instalación de Pipenv es muy sencillo, en esta ocasión voy a detallar 2 formas de instalar usando lo indicado en la &lt;a href="https://pipenv-es.readthedocs.io/es/latest/"&gt;documentación oficial&lt;/a&gt;.&lt;/p&gt;

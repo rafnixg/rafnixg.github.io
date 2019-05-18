@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet/less" type="text/css" href="https://rafnixg.github.io/theme/stylesheet/style.less">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js" type="text/javascript"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://rafnixg.github.io/theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="https://rafnixg.github.io/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="https://rafnixg.github.io/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="https://rafnixg.github.io/theme/font-awesome/css/solid.css">
+
+    <link href="https://rafnixg.github.io/static/custom.css" rel="stylesheet">
+
+    <link href="https://rafnixg.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Rafnixg - Bitácora de un programador autodidacta(a los golpes) Atom">
+
+    <link href="https://rafnixg.github.io/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Rafnixg - Bitácora de un programador autodidacta(a los golpes) RSS">
+
+
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft EDGE -->
+    <meta name="msapplication-TileColor" content="#333333">
+
+<meta name="author" content="Rafnix Guzmán" />
+<meta name="description" content="Si quieres tener tu propio blog usando GitHub Pages como hosting y ademas quieres hacerlo en Python, Pelican es la mejor opción." />
+<meta name="keywords" content="pipenv, python, herramientas">
+
+<meta property="og:site_name" content="Rafnixg - Bitácora de un programador autodidacta(a los golpes)"/>
+<meta property="og:title" content="Crea tu blog con python usando GitHub Pages y Pelican"/>
+<meta property="og:description" content="Si quieres tener tu propio blog usando GitHub Pages como hosting y ademas quieres hacerlo en Python, Pelican es la mejor opción."/>
+<meta property="og:locale" content="es_ES"/>
+<meta property="og:url" content="https://rafnixg.github.io/crea-tu-blog-con-python-usando-github-pages-y-pelican.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2019-05-18 10:30:00-05:00"/>
+<meta property="article:modified_time" content="2019-05-18 10:30:00-05:00"/>
+<meta property="article:author" content="https://rafnixg.github.io/author/rafnix-guzman.html">
+<meta property="article:section" content="Python"/>
+<meta property="article:tag" content="pipenv"/>
+<meta property="article:tag" content="python"/>
+<meta property="article:tag" content="herramientas"/>
+<meta property="og:image" content="">
+
+  <title>Rafnixg - Bitácora de un programador autodidacta(a los golpes) &ndash; Crea tu blog con python usando GitHub Pages y Pelican</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="https://rafnixg.github.io">
+        <img src="https://rafnixg.github.io/theme/img/profile.png" alt="Rafnixg" title="Rafnixg">
+      </a>
+      <h1><a href="https://rafnixg.github.io">Rafnixg</a></h1>
+
+<p>Bitácora de un programador autodidacta(a los golpes)</p>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-github" href="https://github.com/rafnixg" target="_blank">
+            <i class="fab fa-github">
+            </i>
+          </a></li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/rafnixg/" target="_blank">
+            <i class="fab fa-linkedin">
+            </i>
+          </a></li>
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/rafnixg" target="_blank">
+            <i class="fab fa-twitter">
+            </i>
+          </a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="https://rafnixg.github.io">    Home
+</a>
+
+
+      <a href="https://rafnixg.github.io/feeds/all.atom.xml">    Atom
+</a>
+
+      <a href="https://rafnixg.github.io/feeds/all.rss.xml">    RSS
+</a>
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="crea-tu-blog-con-python-usando-github-pages-y-pelican">Crea tu blog con python usando GitHub Pages y Pelican</h1>
+    <p>
+          Posted on Sat 18 May 2019 in <a href="https://rafnixg.github.io/category/python.html">Python</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>Cuando comencé a darle vuelta a la idea de empezar un blog de nuevo me vinieron muchas ideas de como hacerlo a la mente, como el de usar el famoso <a href="https://wordpress.org">Wordpress</a>, teniendo en cuenta que el blog lo quería hacer para hablar un poco de python y las tecnologías que iba a ir conociendo y aprendiendo decidí mejor usar Pelican ya que esta desarrollado en Python.</p>
+<h2>¿Qué es Pelican?</h2>
+<p><a href="https://blog.getpelican.com/">Pelican</a> es un generador de sitios estáticos desarrollado en python que nos permite escribir los post en archivos escritos en reStructuredText, Markdown, o AsciiDoc, y estos serán luego procesados para generar un sitio web estático como este blog, por lo que no necesitaremos una base de datos ni un servidor web que soporte un lenguaje de Backend como lo es GitHub Pages.</p>
+<h2>¿Qué es GitHub Pages?</h2>
+<p><a href="https://pages.github.com/">GitHub Pages</a> es un hosting de sitios estáticos y como su pagina web lo indica, esta diseñado para hostear directamente en un repositorio de GitHub la pagina web de nuestros proyecto, paginas personales o de organizaciones, ademas de ser un servicio gratuito.</p>
+<p>Gracias a estas características, podemos fácilmente crear nuestros sitios estáticos y subirlos a un repositorio de GitHub que debe tener la siguiente estructura <code>username.github.io</code> mas adelante indicare como crear y configurar el repositorio para que pueda servir nuestro sitio web.</p>
+<p>GitHub recomienda el uso de <a href="https://jekyllrb.com/">Jekyll</a> para generar nuestros sitios estáticos, pero este esta hecho en Ruby, lo que no es un problema si usas Ruby pero yo al ser un #PythonLover decidí usar Pelican que esta desarrollado en Python.</p>
+<h2>Creando nuestro repositorio en GitHub</h2>
+<p>Esta parte es la mas sencilla de post, ya que solo debemos entrar a nuestra cuenta de GitHub y crear un nuevo repositorio publico, que tenga el siguiente nombre.</p>
+<p><code>tu_username.github.io</code>, en mi caso el repositorio donde se aloja este blog se llama <a href="https://rafnixg.github.io">rafnixg.github.io</a></p>
+<p>Solo con esto ya tendremos nuestro Github Pages listo para comenzar a subir nuestro contenido estático.</p>
+<h2>Instalando y configurando Pelican</h2>
+<p>Instalar y tener Pelican funcionando es super sencillo. Pero si les quiero recomendar que toda la instalación se haga en un entorno virtual usando Pipenv, para mantener separado esta instalación de los demás paquetes de Python que tengan instalados en sus sistema, si no saben como usar Pipenv acá les dejo un post que tengo sobre este tema, <a href="https://rafnixg.github.io/entornos-virtuales-en-python-usando-pipenv.html">Entornos virtuales en Python usando Pipenv</a>.</p>
+<p>Antes de iniciar con la instalación de pelican, debemos clonar nuestro repositorio donde esta hosteada nuestro blog, para esto solo debemos ubicarnos sonde queramos tener nuestro proyecto, en este caso yo lo hare en la raíz de mi sistema.</p>
+<div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ~
+$ git clone https://github.com/tu_username/tu_username.github.io.git
+$ <span class="nb">cd</span> tu_username.github.io
+</pre></div>
+
+
+<p>Luego de esto, procedemos a instalar nuestro Pelican, lo primero que debemos hacer es crear un nuevo branch llamado <code>source</code> donde ira todo nuestro código fuente y librerías, ya que para GitHub todo lo que este en la rama <code>master</code> es lo que sera servido, para nuestro interés solo debemos subir a <code>master</code> lo que pelican genera en su carpeta output, pero mas adelante nos preocuparemos de esto.</p>
+<div class="highlight"><pre><span></span>$ git checkout -b <span class="nb">source</span>
+$ pipenv shell
+</pre></div>
+
+
+<p>Con esto ya tendremos nuestro entorno virtual para nuestra instalación de pelican, ahora procedemos a instalar <code>pelican</code> que es nuestro generador de sitios estáticos, <code>markdown</code> que nos ayudara para escribir nuestros post usando este lenguaje y <code>ghp-import</code> que nos ayuda a publicar nuestro sitio a GitHub.</p>
+<div class="highlight"><pre><span></span>$ pipenv install pelican markdown ghp-import
+
+Installing pelican…
+Adding pelican to Pipfile<span class="s1">&#39;s [packages]…</span>
+<span class="s1">✔ Installation Succeeded </span>
+<span class="s1">Installing markdown…</span>
+<span class="s1">Adding markdown to Pipfile&#39;</span>s <span class="o">[</span>packages<span class="o">]</span>…
+✔ Installation Succeeded 
+Installing ghp-import…
+Adding ghp-import to Pipfile<span class="err">&#39;</span>s <span class="o">[</span>packages<span class="o">]</span>…
+✔ Installation Succeeded 
+Pipfile.lock not found, creating…
+Locking <span class="o">[</span>dev-packages<span class="o">]</span> dependencies…
+Locking <span class="o">[</span>packages<span class="o">]</span> dependencies…
+✔ Success! 
+Updated Pipfile.lock <span class="o">(</span>b0c318<span class="o">)</span>!
+Installing dependencies from Pipfile.lock <span class="o">(</span>b0c318<span class="o">)</span>…
+  🐍   ▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉ <span class="m">13</span>/13 — 
+</pre></div>
+
+
+<p>Ya con esto tenemos todo listo para empezar a usar Pelican asi que creemos nuestro primer blog usándolo.</p>
+<div class="highlight"><pre><span></span>$ pelican-quickstart
+
+Welcome to pelican-quickstart v4.0.1.
+
+This script will <span class="nb">help</span> you create a new Pelican-based website.
+
+Please answer the following questions so this script can generate the files
+needed by Pelican.
+
+Using project associated with current virtual environment.Will save to:
+/home/username/blog/pelican
+
+&gt; What will be the title of this web site? prueba pelican
+&gt; Who will be the author of this web site? rafnix guzman
+&gt; What will be the default language of this web site? <span class="o">[</span>es<span class="o">]</span> es
+&gt; Do you want to specify a URL prefix? e.g., https://example.com   <span class="o">(</span>Y/n<span class="o">)</span> n
+&gt; Do you want to <span class="nb">enable</span> article pagination? <span class="o">(</span>Y/n<span class="o">)</span> y
+&gt; How many articles per page <span class="k">do</span> you want? <span class="o">[</span><span class="m">10</span><span class="o">]</span> 
+&gt; What is your <span class="nb">time</span> zone? <span class="o">[</span>Europe/Paris<span class="o">]</span> America/Lima
+&gt; Do you want to generate a tasks.py/Makefile to automate generation and publishing? <span class="o">(</span>Y/n<span class="o">)</span> Y **# Responder Y, esto nos ayuda mucho!**
+&gt; Do you want to upload your website using FTP? <span class="o">(</span>y/N<span class="o">)</span> n
+&gt; Do you want to upload your website using SSH? <span class="o">(</span>y/N<span class="o">)</span> n
+&gt; Do you want to upload your website using Dropbox? <span class="o">(</span>y/N<span class="o">)</span> n
+&gt; Do you want to upload your website using S3? <span class="o">(</span>y/N<span class="o">)</span> n
+&gt; Do you want to upload your website using Rackspace Cloud Files? <span class="o">(</span>y/N<span class="o">)</span> n
+&gt; Do you want to upload your website using GitHub Pages? <span class="o">(</span>y/N<span class="o">)</span> y
+&gt; Is this your personal page <span class="o">(</span>username.github.io<span class="o">)</span>? <span class="o">(</span>y/N<span class="o">)</span> y
+Done. Your new project is available at /home/username/blog/pelican
+</pre></div>
+
+
+<p>Si tienen alguna duda respecto a la zona horaria aca les dejo una lista con todas las <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">zonas horarias</a></p>
+<div class="highlight"><pre><span></span>&gt; Do you want to generate a tasks.py/Makefile to automate generation and publishing? <span class="o">(</span>Y/n<span class="o">)</span>
+</pre></div>
+
+
+<p>A esta pregunta deben responder (Y), ya que este Makefile nos ayudara a generar nuestro sitio de forma mas fácil, como podemos ver ya con esto se nos ha generado nuestro proyecto de pelican con el que podemos empezar a trabajar.</p>
+<h2>Escribiendo nuestro primer post</h2>
+<p>Vamos a crear nuestro primer post, para esto nos debemos ubicar en la carpeta <code>content</code> y con nuestro editor de texto favorito procedemos a crear un archivo llamado hola-mundo.md (si, lo se, la imaginación esta a la orden del dia), este archivo luego puede ser borrado es solo para pruebas.</p>
+<div class="highlight"><pre><span></span><span class="n">Title</span><span class="o">:</span> <span class="n">Hola</span> <span class="n">Mundo</span>
+<span class="n">Date</span><span class="o">:</span> <span class="mi">2019</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">18</span> <span class="mi">10</span><span class="o">:</span><span class="mi">30</span>
+<span class="n">Modified</span><span class="o">:</span> <span class="mi">2019</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">18</span> <span class="mi">11</span><span class="o">:</span><span class="mi">30</span>
+<span class="n">Category</span><span class="o">:</span> <span class="n">blog</span>
+<span class="n">Tags</span><span class="o">:</span> <span class="n">principal</span><span class="o">,</span> <span class="n">otros</span>
+<span class="n">Slug</span><span class="o">:</span> <span class="n">hola</span><span class="o">-</span><span class="n">mundo</span>
+<span class="n">Authors</span><span class="o">:</span> <span class="n">Rafnix</span> <span class="n">Guzmán</span>
+<span class="n">Summary</span><span class="o">:</span> <span class="n">Mi</span> <span class="n">primer</span> <span class="n">post</span> <span class="n">usando</span> <span class="n">Pelican</span> <span class="n">y</span> <span class="n">GitHub</span> <span class="n">Pages</span>
+
+<span class="n">Aca</span> <span class="n">pueden</span> <span class="n">empezar</span> <span class="n">a</span> <span class="n">escribir</span> <span class="n">todo</span> <span class="n">lo</span> <span class="n">que</span> <span class="n">quieran</span> <span class="n">pueden</span> <span class="n">agregar</span> <span class="n">todas</span> <span class="n">las</span> <span class="n">sintaxis</span> <span class="n">de</span> <span class="o">*</span><span class="n">Markdown</span><span class="o">*</span> <span class="n">que</span> <span class="n">deseen</span><span class="o">.</span>
+
+<span class="err">##</span> <span class="n">Título</span>
+<span class="err">###</span> <span class="n">Subtítulo</span>
+<span class="n">Este</span> <span class="n">es</span> <span class="n">un</span> <span class="n">ejemplo</span> <span class="n">de</span> <span class="n">texto</span> <span class="n">que</span> <span class="n">da</span> <span class="n">entrada</span> <span class="n">a</span> <span class="n">una</span> <span class="n">lista</span> <span class="n">genérica</span> <span class="n">de</span> <span class="n">elementos</span><span class="o">:</span>
+
+<span class="o">-</span> <span class="n">Elemento</span> <span class="mi">1</span>
+<span class="o">-</span> <span class="n">Elemento</span> <span class="mi">2</span>
+<span class="o">-</span> <span class="n">Elemento</span> <span class="mi">3</span>
+
+<span class="n">Este</span> <span class="n">es</span> <span class="n">un</span> <span class="n">ejemplo</span> <span class="n">de</span> <span class="n">texto</span> <span class="n">que</span> <span class="n">da</span> <span class="n">entrada</span> <span class="n">a</span> <span class="n">una</span> <span class="n">lista</span> <span class="n">numerada</span><span class="o">:</span>
+
+<span class="mi">1</span><span class="o">.</span> <span class="n">Elemento</span> <span class="mi">1</span>
+<span class="mi">2</span><span class="o">.</span> <span class="n">Elemento</span> <span class="mi">2</span>
+<span class="mi">3</span><span class="o">.</span> <span class="n">Elemento</span> <span class="mi">3</span>
+
+<span class="n">Al</span> <span class="n">texto</span> <span class="n">en</span> <span class="n">Markdown</span> <span class="n">puedes</span> <span class="n">añadirle</span> <span class="n">formato</span> <span class="n">como</span> <span class="o">**</span><span class="n">negrita</span><span class="o">**</span> <span class="n">o</span> <span class="o">*</span><span class="n">cursiva</span><span class="o">*</span> <span class="n">de</span> <span class="n">una</span> <span class="n">manera</span> <span class="n">muy</span> <span class="n">sencilla</span><span class="o">.</span>
+
+<span class="n">Todo</span> <span class="n">esto</span> <span class="n">fue</span> <span class="n">extraído</span> <span class="n">de</span> <span class="n">este</span> <span class="o">[</span><span class="n">Post</span> <span class="n">sobre</span> <span class="n">markdown</span><span class="o">](</span><span class="n">https</span><span class="o">://</span><span class="n">markdown</span><span class="o">.</span><span class="na">es</span><span class="sr">/sintaxis-markdown/</span><span class="o">)</span>
+</pre></div>
+
+
+<h2>Probando nuestro blog en local</h2>
+<p>Luego de escribir y guardar su primer post, procedemos a generar un servidor de pruebas para ver nuestro resultado antes de subir nuestra web a GitHub, estando en la raíz de nuestro proyecto ejecutamos el siguiente comando.</p>
+<div class="highlight"><pre><span></span>$ make devserver
+
+pelican -lr /home/username/blog/pelican/content -o /home/username/blog/pelican/output -s /home/username/blog/pelican/pelicanconf.py 
+
+-&gt; Modified: content, theme, settings. re-generating...
+Done: Processed <span class="m">1</span> article, <span class="m">0</span> drafts, <span class="m">0</span> pages, <span class="m">0</span> hidden pages and <span class="m">0</span> draft pages in <span class="m">0</span>.15 seconds.
+</pre></div>
+
+
+<p>Para entrar a nuestro servidor local de pruebas debemos ingresar a la siguiente URL <a href="http://localhost:8000">http://localhost:8000</a> con nuestro explorador favorito(espero no se IE, xD)</p>
+<p><img alt="Hola mundo Pelican" src="https://rafnixg.github.io/images/hola-mundo-pelican.jpg"></p>
+<h2>Subir nuestro blog a GitHub Pages</h2>
+<p>Ya con esto procederemos a preparar todo para subir lo a github, este primer comando sube nuestro código fuente.</p>
+<div class="highlight"><pre><span></span>$ git add -A <span class="o">&amp;&amp;</span> git commit -a -m <span class="s1">&#39;post hola-mundo.md&#39;</span> <span class="o">&amp;&amp;</span> git push --all
+</pre></div>
+
+
+<p>Ahora subimos todo a la rama <code>master</code>, recuerdan que les dije que no se preocuparan por esto, es debido a que este comando hace toda esta preparación de subir todo lo que se encuentra en la carpeta <code>output</code> a nuestra rama <code>master</code></p>
+<div class="highlight"><pre><span></span>$ make github
+</pre></div>
+
+
+<p>Acá se les preguntaran sus credenciales de github, para poder subir a su repositorio todo el sitio estático ya generado, con esto su blog estará funcionando en https://su_username.github.io/</p>
+<p>Para el próximo post veremos como configurar un <code>Thema</code> y algunos <code>Plugins</code> para potenciar el funcionamiento de Pelican, ademas de unas configuraciones extra que nos ayudaran a tener mejor SEO.</p>
+<p>Nos vemos en el proximo post, muchas gracias por leerme y cualquier duda, comentario, o lo que sea, lo pueden dejar por aca o por mi cuenta de Twitter <a href="https://twitter.com/rafnixg">@rafnixg</a>.</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://rafnixg.github.io/tag/pipenv.html">pipenv</a>
+      <a href="https://rafnixg.github.io/tag/python.html">python</a>
+      <a href="https://rafnixg.github.io/tag/herramientas.html">herramientas</a>
+    </p>
+  </div>
+
+
+
+
+
+<!-- Disqus -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'rafnixg-blog';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>
+        Please enable JavaScript to view comments.
+
+</noscript>
+<!-- End Disqus -->
+</article>
+
+    <footer>
+<p>
+  &copy;  2019 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+</p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Rafnixg - Bitácora de un programador autodidacta(a los golpes) ",
+  "url" : "https://rafnixg.github.io",
+  "image": "",
+  "description": "Rafnixg - Bitácora de un programador autodidacta(a los golpes)"
+}
+</script>
+
+</body>
+</html>
