@@ -10,15 +10,15 @@
 
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
-    <link rel="stylesheet/less" type="text/css" href="https://rafnixg.github.io/theme/stylesheet/style.less">
+    <link rel="stylesheet/less" type="text/css" href="./theme/stylesheet/style.less">
     <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js" type="text/javascript"></script>
 
-  <link rel="stylesheet" type="text/css" href="https://rafnixg.github.io/theme/pygments/monokai.min.css">
-  <link rel="stylesheet" type="text/css" href="https://rafnixg.github.io/theme/font-awesome/css/fontawesome.css">
-  <link rel="stylesheet" type="text/css" href="https://rafnixg.github.io/theme/font-awesome/css/brands.css">
-  <link rel="stylesheet" type="text/css" href="https://rafnixg.github.io/theme/font-awesome/css/solid.css">
+  <link rel="stylesheet" type="text/css" href="./theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/solid.css">
 
-    <link href="https://rafnixg.github.io/static/custom.css" rel="stylesheet">
+    <link href="./static/custom.css" rel="stylesheet">
 
     <link href="https://rafnixg.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Rafnixg - Bitácora de un programador autodidacta(a los golpes) Atom">
 
@@ -44,11 +44,11 @@
 <meta property="og:title" content="Entornos virtuales en Python usando Pipenv"/>
 <meta property="og:description" content="Una pequeña guía de como usar entornos virtuales de forma fácil en Python"/>
 <meta property="og:locale" content="es_ES"/>
-<meta property="og:url" content="https://rafnixg.github.io/entornos-virtuales-en-python-usando-pipenv.html"/>
+<meta property="og:url" content="./entornos-virtuales-en-python-usando-pipenv.html"/>
 <meta property="og:type" content="article"/>
 <meta property="article:published_time" content="2019-05-11 11:15:00-05:00"/>
 <meta property="article:modified_time" content="2019-05-21 11:15:00-05:00"/>
-<meta property="article:author" content="https://rafnixg.github.io/author/rafnix-guzman.html">
+<meta property="article:author" content="./author/rafnix-guzman.html">
 <meta property="article:section" content="Python"/>
 <meta property="article:tag" content="pipenv"/>
 <meta property="article:tag" content="python"/>
@@ -61,10 +61,10 @@
 <body>
   <aside>
     <div>
-      <a href="https://rafnixg.github.io">
-        <img src="https://rafnixg.github.io/theme/img/profile.png" alt="Rafnixg" title="Rafnixg">
+      <a href=".">
+        <img src="./theme/img/profile.png" alt="Rafnixg" title="Rafnixg">
       </a>
-      <h1><a href="https://rafnixg.github.io">Rafnixg</a></h1>
+      <h1><a href=".">Rafnixg</a></h1>
 
 <p>Bitácora de un programador autodidacta(a los golpes)</p>
 
@@ -92,7 +92,7 @@
   <main>
 
     <nav>
-      <a href="https://rafnixg.github.io">    Home
+      <a href=".">    Home
 </a>
 
 
@@ -108,7 +108,7 @@
       
     <h1 id="entornos-virtuales-en-python-usando-pipenv">Entornos virtuales en Python usando Pipenv</h1>
     <p>
-          Posted on Sat 11 May 2019 in <a href="https://rafnixg.github.io/category/python.html">Python</a>
+          Posted on Sat 11 May 2019 in <a href="./category/python.html">Python</a>
 
 
     </p>
@@ -116,10 +116,10 @@
 
 
   <div>
-    <p>Cuando iniciamos en el desarrollo con Python muchas veces no nos damos cuenta del dolor de cabeza que es mantener varios proyectos con diferentes versiones de dependencias en nuestra entorno de desarrollo local, a medida que vamos evolucionando vamos adquiriendo nuevas herramientas que mejoren nuestro flujo de trabajo, como el uso de entornos virtuales o manejadores de paquetes, entre otras, Pipenv es una de estas herramientas que nos ayudan mucho a integrar y mejorar nuestros flujos en Python, tanto es asi que su eslogan por asi decirlo es <em>"Python Development Workflow for Humans"</em>.</p>
+    <p>Cuando iniciamos en el desarrollo con Python muchas veces no nos damos cuenta del dolor de cabeza que es mantener varios proyectos con diferentes versiones de dependencias en nuestra entorno de desarrollo local, a medida que vamos evolucionando vamos adquiriendo nuevas herramientas que mejoren nuestro flujo de trabajo, como el uso de entornos virtuales o manejadores de paquetes, entre otras, Pipenv es una de estas herramientas que nos ayudan mucho a integrar y mejorar nuestros flujos en Python, tanto es así que su eslogan por así decirlo es <em>"Python Development Workflow for Humans"</em>.</p>
 <p>Esta herramienta básicamente nos ayuda a optimizar nuestro flujo de desarrollo unificando <em>pip</em> y <em>virtualenv</em> en una sola herramienta que funciona por linea de comandos <em>(Terminal)</em>, lo que nos daria un entorno aislado en el cual instalar nuestras dependencia y luego replicar este mismo entorno en otra maquina gracias a el archivo que se genera <strong><a href="https://github.com/pypa/pipfile">Pipfile</a></strong>, que viene a ser el sustituto del archivo que genera pip  <strong>requirements.txt</strong></p>
 <h2>Instalando Pipenv</h2>
-<p>El proceso de instalación de Pipenv es muy sencillo, en esta ocasión voy a detallar 2 formas de instalar usando lo indicado en la <a href="https://pipenv-es.readthedocs.io/es/latest/">documentacion oficial</a>.</p>
+<p>El proceso de instalación de Pipenv es muy sencillo, en esta ocasión voy a detallar 2 formas de instalar usando lo indicado en la <a href="https://pipenv-es.readthedocs.io/es/latest/">documentación oficial</a>.</p>
 <p>Si estas usando Ubuntu 16.04:</p>
 <div class="highlight"><pre><span></span>$ sudo apt install software-properties-common python-software-properties
 $ sudo add-apt-repository ppa:pypa/ppa
@@ -128,7 +128,7 @@ $ sudo apt install pipenv
 </pre></div>
 
 
-<p>Esta otra opcion es por si ya tienes instalado pip:</p>
+<p>Esta otra opción es por si ya tienes instalado pip:</p>
 <div class="highlight"><pre><span></span>$ pip install pipenv
 </pre></div>
 
@@ -195,15 +195,15 @@ Installing dependencies from Pipfile.lock <span class="o">(</span>db0e09<span cl
 <p>Con esto tendremos nuestro server Flask corriendo nuestro archivo <code>apps.py</code>.</p>
 <h2>Consideraciones finales</h2>
 <p>A lo largo de este post hemos visto como el flujo de trabajo se puede optimizar con el uso de esta herramienta, ya que no debemos generar los entornos virtuales por separado usando algo como <code>virtualenv</code> con el que como yo muchas personas no han estado conformes, también hemos visto como instalar paquetes usando pipenv tan fácil como si usáramos <code>pip</code>, queda de parte de cada quien darle una probada a esta herramienta y ver si le ayuda a optimizar su flujo de desarrollo y mantener un poco más homogéneo los ambientes de desarrollo.</p>
-<p>Si deseas que siga publicando contenido sobre entornos virtuales, pip, o explique más afondo los ficheros <code>Pipfile</code>o <code>Pipfile.lock</code>, que otros comandos puede ejecutar Pipenv, solo házmelo saber en un comentario o a través de mi cuenta twtter <a href="https://twitter.com/rafnixg">@rafnixg</a></p>
+<p>Si deseas que siga publicando contenido sobre entornos virtuales, pip, o explique más a fondo los ficheros <code>Pipfile</code>o <code>Pipfile.lock</code>, que otros comandos puede ejecutar Pipenv, solo házmelo saber en un comentario o a través de mi cuenta twitter <a href="https://twitter.com/rafnixg">@rafnixg</a></p>
 <p><strong>Referencias</strong>
 <a href="https://pipenv-es.readthedocs.io/es/latest/">Documentación Pipenv</a></p>
   </div>
   <div class="tag-cloud">
     <p>
-      <a href="https://rafnixg.github.io/tag/pipenv.html">pipenv</a>
-      <a href="https://rafnixg.github.io/tag/python.html">python</a>
-      <a href="https://rafnixg.github.io/tag/herramientas.html">herramientas</a>
+      <a href="./tag/pipenv.html">pipenv</a>
+      <a href="./tag/python.html">python</a>
+      <a href="./tag/herramientas.html">herramientas</a>
     </p>
   </div>
 
@@ -255,7 +255,7 @@ Installing dependencies from Pipfile.lock <span class="o">(</span>db0e09<span cl
   "@context" : "http://schema.org",
   "@type" : "Blog",
   "name": " Rafnixg - Bitácora de un programador autodidacta(a los golpes) ",
-  "url" : "https://rafnixg.github.io",
+  "url" : ".",
   "image": "",
   "description": "Rafnixg - Bitácora de un programador autodidacta(a los golpes)"
 }

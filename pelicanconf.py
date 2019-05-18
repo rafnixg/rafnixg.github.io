@@ -15,6 +15,7 @@ BROWSER_COLOR = '#333333'
 PYGMENTS_STYLE = 'monokai'
 ROBOTS = 'index, follow'
 THEME = 'theme/Flex/'
+#THEME = 'theme/pelican-themes/cebong/'
 PATH = 'content'
 STATIC_PATHS = ['images','extra']
 
