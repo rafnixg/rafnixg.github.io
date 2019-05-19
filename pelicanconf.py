@@ -11,13 +11,19 @@ SITESUBTITLE = 'Bitácora de un programador autodidacta(a los golpes)'
 SITEDESCRIPTION = 'Rafnixg - Bitácora de un programador autodidacta(a los golpes)'
 # SITELOGO = ''
 # FAVICON = '/images/favicon.ico'
+
 BROWSER_COLOR = '#333333'
-PYGMENTS_STYLE = 'monokai'
 ROBOTS = 'index, follow'
+
+PYGMENTS_STYLE = 'monokai'
 THEME = 'theme/Flex/'
-#THEME = 'theme/pelican-themes/cebong/'
+
 PATH = 'content'
 STATIC_PATHS = ['images','extra']
+
+PLUGIN_PATHS = ['pelican-plugins']
+PLUGINS = ["neighbors","sitemap",]
+# PLUGINS = ["representative_image","neighbors","sitemap",]
 
 TIMEZONE = 'America/Lima'
 
@@ -57,9 +63,25 @@ DEFAULT_PAGINATION = 10
 COPYRIGHT_YEAR = datetime.now().year
 
 DISQUS_SITENAME = "rafnixg-blog"
+GOOGLE_ANALYTICS = "UA-140411474-1"
 # ADD_THIS_ID = 'ra-55adbb025d4f7e55'
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 CUSTOM_CSS = 'static/custom.css'
 
 USE_LESS = True
+
+SITEMAP = {
+    'format': 'xml',
+    'priorities': {
+        'articles': 0.5,
+        'indexes': 0.5,
+        'pages': 0.5
+    },
+    'changefreqs': {
+        'articles': 'monthly',
+        'indexes': 'daily',
+        'pages': 'monthly'
+    },
+    'exclude': []
+}
