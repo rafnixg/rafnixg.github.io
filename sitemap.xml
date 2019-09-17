@@ -4,105 +4,105 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>https://rafnixg.github.io/</loc>
-<lastmod>2019-09-17T11:01:21-00:00</lastmod>
+<loc>http://rafnixg.xyz/</loc>
+<lastmod>2019-09-17T11:09:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://rafnixg.github.io/archives.html</loc>
-<lastmod>2019-09-17T11:01:21-00:00</lastmod>
+<loc>http://rafnixg.xyz/archives.html</loc>
+<lastmod>2019-09-17T11:09:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://rafnixg.github.io/tags.html</loc>
-<lastmod>2019-09-17T11:01:21-00:00</lastmod>
+<loc>http://rafnixg.xyz/tags.html</loc>
+<lastmod>2019-09-17T11:09:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://rafnixg.github.io/categories.html</loc>
-<lastmod>2019-09-17T11:01:21-00:00</lastmod>
+<loc>http://rafnixg.xyz/categories.html</loc>
+<lastmod>2019-09-17T11:09:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://rafnixg.github.io/crea-tu-blog-con-python-usando-github-pages-y-pelican.html</loc>
+<loc>http://rafnixg.xyz/crea-tu-blog-con-python-usando-github-pages-y-pelican.html</loc>
 <lastmod>2019-05-18T10:30:00-05:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://rafnixg.github.io/entornos-virtuales-en-python-usando-pipenv.html</loc>
+<loc>http://rafnixg.xyz/entornos-virtuales-en-python-usando-pipenv.html</loc>
 <lastmod>2019-05-21T11:15:00-05:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://rafnixg.github.io/Hello-world.html</loc>
+<loc>http://rafnixg.xyz/Hello-world.html</loc>
 <lastmod>2019-05-20T20:15:00-05:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://rafnixg.github.io/category/misc.html</loc>
+<loc>http://rafnixg.xyz/category/misc.html</loc>
 <lastmod>2019-05-20T20:15:00-05:08</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://rafnixg.github.io/category/python.html</loc>
+<loc>http://rafnixg.xyz/category/python.html</loc>
 <lastmod>2019-05-21T11:15:00-05:08</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://rafnixg.github.io/tag/pipenv.html</loc>
+<loc>http://rafnixg.xyz/tag/pipenv.html</loc>
 <lastmod>2019-05-21T11:15:00-05:08</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://rafnixg.github.io/tag/python.html</loc>
+<loc>http://rafnixg.xyz/tag/python.html</loc>
 <lastmod>2019-05-21T11:15:00-05:08</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://rafnixg.github.io/tag/herramientas.html</loc>
+<loc>http://rafnixg.xyz/tag/herramientas.html</loc>
 <lastmod>2019-05-21T11:15:00-05:08</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://rafnixg.github.io/tag/first.html</loc>
+<loc>http://rafnixg.xyz/tag/first.html</loc>
 <lastmod>2019-05-20T20:15:00-05:08</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://rafnixg.github.io/tag/misc.html</loc>
+<loc>http://rafnixg.xyz/tag/misc.html</loc>
 <lastmod>2019-05-20T20:15:00-05:08</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://rafnixg.github.io/author/rafnix-guzman.html</loc>
+<loc>http://rafnixg.xyz/author/rafnix-guzman.html</loc>
 <lastmod>2019-05-21T11:15:00-05:08</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
