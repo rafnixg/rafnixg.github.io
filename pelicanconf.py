@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from datetime import datetime
 
 AUTHOR = 'Rafnix Guzmán'
-SITEURL = 'https://rafnixg.github.io'
+SITEURL = 'http://rafnixg.xyz'
 SITENAME = 'Rafnixg - Bitácora de un programador autodidacta(a los golpes)'
 SITETITLE = 'Rafnixg'
 SITESUBTITLE = 'Bitácora de un programador autodidacta(a los golpes)'
@@ -63,7 +63,7 @@ DEFAULT_PAGINATION = 10
 COPYRIGHT_YEAR = datetime.now().year
 
 DISQUS_SITENAME = "rafnixg-blog"
-GOOGLE_ANALYTICS = "UA-140411474-1"
+GOOGLE_ANALYTICS = "UA-148169604-1"
 # ADD_THIS_ID = 'ra-55adbb025d4f7e55'
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
