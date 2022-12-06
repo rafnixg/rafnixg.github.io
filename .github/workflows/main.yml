@@ -19,7 +19,7 @@ jobs:
       - uses: kelvintaywl/action-jsonresume-export@v1
         name: Export resume as HTML
         with:
-          theme: stackoverflow
+          theme: elegant
           resume_filepath: resume.json
           # modifies the index.html in-place
           output_filepath: resume/index.html
