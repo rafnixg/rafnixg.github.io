@@ -2,11 +2,10 @@
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
     "name": "Rafnix Gabriel Guzmán Garcia",
-    "label": "Backend Python & JavaScript | Odoo Developer | Tech Mentor | learning SRE & DevOps",
+    "label": "Backend Python | Odoo Developer | learning SRE & DevOps",
     "image": "",
     "email": "rafnixg@gmail.com",
-    "phone": "936389987",
-    "url": "",
+    "url": "https://rafnixg.dev",
     "summary": "Soy un desarrollador de software con más de 9 años de experiencia en el diseño, desarrollo e implementación de sistemas web. Me gusta trabajar en proyectos desafiantes y utilizar mis habilidades para resolver problemas complejos y ofrecer soluciones de alta calidad. Mi experiencia incluye proyectos en sectores como finanzas, eventos, telecomunicaciones, retail y ecommerce.\n\nComo desarrollador backend, me he enfocado en construir sistemas escalables y robustos utilizando lenguajes como Python y herramientas como Linux y Git. También tengo experiencia trabajando con bases de datos como PostgreSQL y utilizando Docker para el despliegue de aplicaciones.\n\nSoy un autodidacta y me gusta estar siempre actualizado con las últimas tendencias y tecnologías en el campo del desarrollo de software. Me dedico a aprender y mejorar mis habilidades a través de cursos en línea, libros y documentación técnica. Además, me gusta compartir mis conocimientos y promover el uso de tecnologías libres o de código abierto.\n\nEstoy capacitado para desempeñar tareas de backend y administración de sistemas, y busco oportunidades en empresas que valoren mis habilidades y experiencia.",
     "location": {
       "countryCode": "ES",
@@ -17,6 +16,11 @@
         "network": "LinkedIn",
         "username": "rafnixg",
         "url": "https://www.linkedin.com/in/rafnixg/"
+      },
+      {
+        "network": "GitHub",
+        "username": "rafnixg",
+        "url": "https://github.com/rafnixg"
       },
       {
         "network": "Twitter",
@@ -31,7 +35,7 @@
       "position": "Python Developer",
       "startDate": "2022-05-31",
       "endDate": "2022-11-30",
-      "highlights": [],
+      "highlights": ["FastAPI", "Amazon S3", "SES", "Linux", "Amazon Web Services (AWS)", "Python", "PostgreSQL", "Docker"],
       "summary": "Como programador backend, mi responsabilidad era diseñar y desarrollar APIs. Para ello, definí los endpoints necesarios, diseñé los modelos de datos adecuados y desarrollé las lógicas de negocio que permitieran satisfacer las necesidades del sistema.\n\nTambién implementé mecanismos de autenticación y autorización para proteger las APIs y garantizar que solo los usuarios autorizados pudieran acceder a los datos y funcionalidades de la plataforma.\n\nTrabajé en conjunto con el equipo de frontend para garantizar que las APIs estuvieran diseñadas de manera que fueran fáciles de consumir por las aplicaciones cliente.\n\nParticipé en el desarrollo del módulo de backoffice para la plataforma, lo que incluyó la implementación de funcionalidades administrativas como gestión de usuarios, transacciones y reportes.\n\nFinalmente, colaboré en el despliegue y la monitorización de las APIs y del módulo de backoffice para garantizar su correcto funcionamiento y disponibilidad.\n\n#Python #PostgreSQL #AWS #S3 #SES",
       "url": "https://www.linkedin.com/company/peru-apps/",
       "location": "Lima, Perú"
@@ -41,7 +45,7 @@
       "position": "Analista Programador Python",
       "startDate": "2022-01-31",
       "endDate": "2022-04-30",
-      "highlights": [],
+      "highlights": [ "Jenkins", "Databases", "Kubernetes", "Linux", "SQL", "Automatización robótica de procesos", "DevOps", "Python"],
       "summary": "Como programador backend, mi responsabilidad era llevar a cabo la migración de automatismos legacy a Python utilizando herramientas como SFTP, MSSQL Server, Pandas, Bitbucket y Docker.\n\nAdemás, contribuí a la definición de los lineamientos de DevOps del equipo, ayudando a establecer estándares y buenas prácticas en la implementación y despliegue de aplicaciones distribuidas.\n\nTambién colaboré en la librería RPA-UTILS del equipo interno, aportando mis conocimientos y habilidades para mejorar y ampliar esta herramienta.\n\n#Python #Docker #Jenkins #DevOps",
       "url": "https://www.linkedin.com/company/indra/"
     },
@@ -288,234 +292,54 @@
   "publications": [],
   "skills": [
     {
-      "name": "FastAPI",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Amazon S3",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "SES",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Jenkins",
-      "level": "",
-      "keywords": []
+      "name": "Backend",
+      "level": "Senior",
+      "keywords": [
+        "Python",
+        "Django",
+        "Flask",
+        "FastAPI",
+        "Odoo",
+        "Pandas",
+        "Celery",
+        "XML",
+        "Apache AirFlow",
+        "Microservices",
+        "RabbitMQ"
+      ]
     },
     {
       "name": "Databases",
-      "level": "",
-      "keywords": []
+      "level": "Senior",
+      "keywords": [
+        "PostgreSQL",
+        "MySQL",
+        "MariaDB",
+        "Redis"
+      ]
     },
     {
-      "name": "Kubernetes",
-      "level": "",
-      "keywords": []
+      "name": "Cloud",
+      "level": "Mid",
+      "keywords": [
+        "AWS",
+        "Digital Ocean",
+        "Linux",
+        "Bash",
+        "RegExp",
+        "Docker",
+        "DevOps"
+      ]
     },
     {
-      "name": "Terraform",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Cascading Style Sheets (CSS)",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Linux",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "SQL",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Flask",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Microservicios",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "gRPC",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Amazon Web Services (AWS)",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Liderazgo",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Arquitectura de soluciones",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Mentoría",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Desarrollo web back end",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Automatización robótica de procesos",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "DevOps",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Desarrollo personal",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Desarrollo web",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Manejo de la presión",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Docker",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Software ERP",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "MySQL",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Arduino",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Git",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "HTML5",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "PHP",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Autogestión",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "PostgreSQL",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Gestión de proyectos",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Laravel",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Desarrollo de software",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "JavaScript",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Diseño web adaptable",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "XML",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Liderazgo de equipos",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Odoo",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Administración de sistemas Linux",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Python",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Gestión del tiempo",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "openerp",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Django",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Implementación de software",
-      "level": "",
-      "keywords": []
+      "name": "Frontend",
+      "level": "Mid",
+      "keywords": [
+        "Javascript",
+        "HTML",
+        "CSS",
+        "Jinja2"
+      ]
     }
   ],
   "languages": [
