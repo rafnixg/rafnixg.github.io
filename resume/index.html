@@ -1,1064 +1,1709 @@
 <!doctype html>
 <html>
-
-<head>
+  <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <title>Rafnix Gabriel Guzmán Garcia</title>
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <style>/* Utils */
-/*----- Colors -----*/
-/*----- Fonts -----*/
-/*----- Dimensions and sizes -----*/
-/* Base */
-@font-face {
-  font-family: 'Josefin Sans';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Josefin Sans Light'), local('JosefinSans-Light'), url(https://fonts.gstatic.com/s/josefinsans/v14/Qw3FZQNVED7rKGKxtqIqX5Ecpl5te10k.ttf) format('truetype');
-}
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+  <style>
+  /********************************************
+* 	reset from
+* 	http://meyerweb.com/eric/tools/css/reset/
+*******************************************/
 
-@font-face {
-  font-family: 'Josefin Sans';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Josefin Sans Bold'), local('JosefinSans-Bold'), url(https://fonts.gstatic.com/s/josefinsans/v14/Qw3FZQNVED7rKGKxtqIqX5Ectllte10k.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: 'Lato';
-  font-style: italic;
-  font-weight: 300;
-  src: local('Lato Light Italic'), local('Lato-LightItalic'), url(https://fonts.gstatic.com/s/lato/v16/S6u_w4BMUTPHjxsI9w2_Gwfo.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: 'Lato';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v16/S6u8w4BMUTPHjxsAXC-v.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: 'Lato';
-  font-style: italic;
-  font-weight: 700;
-  src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v16/S6u_w4BMUTPHjxsI5wq_Gwfo.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Lato Light'), local('Lato-Light'), url(https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh7USSwiPHA.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v16/S6uyw4BMUTPHjx4wWw.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh6UVSwiPHA.ttf) format('truetype');
-}
-
-html {
-  background: white;
-}
-
-body {
-  font-family: "Lato", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  background: white;
-  margin: 50px 0 100px;
-  letter-spacing: .3px;
-  color: #39424B;
-}
-
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
-  text-transform: none;
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
 }
 
-h1 {
-  font-family: "Josefin Sans", Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  font-size: 40px;
-  letter-spacing: 1px;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 
-h2 {
-  font-family: "Josefin Sans", Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  font-size: 16px;
-  letter-spacing: .5px;
+body {
+  line-height: 1;
 }
 
-h3 {
-  font-family: "Lato", Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  font-size: 14px;
-  letter-spacing: .4px;
+ol,
+ul {
+  list-style: none;
 }
 
-h3.bold {
-  font-weight: 700;
+blockquote,
+q {
+  quotes: none;
 }
 
-h4 {
-  font-family: "Lato", Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  font-size: 12px;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: none;
 }
 
-h4.bold {
-  font-weight: 700;
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-h5 {
-  font-family: "Lato", Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  font-size: 11px;
-}
+/****************
+*	COMMONS
+****************/
 
-h5.italic {
-  font-style: italic;
-}
-
-h6 {
-  font-family: "Lato", Helvetica, Arial, sans-serif;
+body,
+html {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 13px;
+  color: #40484f;
   font-weight: 400;
-  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 1.46153846;
+  text-align: left;
+}
+
+p {
+  display: block;
 }
 
 a {
-  color: inherit;
-  text-decoration: inherit;
+  color: #0095ff;
+  text-decoration: none;
 }
 
 a:hover {
-  color: #2895F1;
+  color: #0c65a5;
+  text-decoration: underline;
 }
 
-a .fa-external-link {
-  font-size: 10px;
-  vertical-align: text-top;
-}
-
-p,
 li {
-  font-size: 11px;
+  list-style-type: square;
+  list-style-position: outside;
+  margin-left: 1.3em;
 }
 
-blockquote {
-  font-size: 11px;
-  font-family: "Lato", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-style: italic;
-  margin: 10px 25px;
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.67rem;
+}
+
+h3 {
+  font-size: 1.27rem;
 }
 
 em {
-  color: #999;
+  color: #757575;
 }
 
-ul {
-  margin: 10px 0 0;
-  -webkit-padding-start: 25px;
+blockquote {
+  margin-bottom: 1em;
 }
 
-ul li {
-  padding-left: 10px;
+strong {
+  font-weight: 700;
 }
 
-ul.minimal {
-  list-style: none;
+/* main container */
+
+#resume {
+  padding: 1.5rem;
+}
+
+/* every section wrapper */
+
+.section {
+  margin-bottom: 1rem;
+}
+
+section .location {
+  margin-right: 0.5em;
+  color: #606d76;
+  font-weight: 700;
+}
+
+#contact {
+  margin-top: 0.5rem;
+}
+
+#profiles .item {
   padding: 0;
 }
 
-ul.minimal li {
-  margin-bottom: 3px;
-  padding-left: 0;
+#header > #profiles,
+#header > #contact,
+#skills,
+#languages,
+#interests {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
 }
 
-ul.two-column {
-  -webkit-column-count: 2;
-  -webkit-column-gap: 28px;
-  column-count: 2;
-  column-gap: 28px;
+#header > div {
+  line-height: 1.5;
 }
 
-ul.two-column li {
-  padding-left: 0;
+#header > div > div {
+  margin-right: 1.2em;
 }
 
-@page {
-  size: A4;
+#header h1.name {
+  font-size: 2.8rem;
+  font-weight: 100;
+  line-height: 100%;
 }
 
-.container {
-  padding-top: 20px;
+#header h2.label {
+  color: #202931;
+  font-size: 1.47rem;
+  font-weight: 300;
 }
 
-.keyline {
-  width: 45px;
-  margin: 8px 0 10px;
-  border-top: 1px solid #56817A;
-}
-
-.pull-left {
-  float: left;
-}
-
-.pull-right {
+#header .image {
+  width: 11em;
   float: right;
+  border-radius: 4px;
 }
 
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
+.main-summary {
+  background: #f1f8ff;
+  padding: 1.2em 1em;
+  margin-top: 1rem;
 }
 
-.profile-pic {
-  margin-top: -5px;
-  margin-right: 18px;
+.main-summary p {
+  margin: 0;
 }
 
-.profile-pic img {
-  height: 52px;
-  width: 52px;
-  border-radius: 50%;
-  border: 2px solid #56817A;
-}
-
-.summary {
-  margin: 5px 0 5px;
-}
-
-.sublink {
-  font-size: 70%;
-  font-weight: 200;
-  color: dimgray;
-}
-
-.capitalize {
-  text-transform: capitalize;
-}
-
-/* Layouts */
-.page {
-  background: white;
-  width: 612px;
-  min-height: 792px;
-  display: block;
-  margin: 0 auto;
-  border-top: 10px solid #56817A;
-  padding: 36px 22px 30px 34px;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
-}
-
-.page:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.left-column {
-  float: left;
-  width: 160px;
-  margin-right: 20px;
-  word-wrap: break-word;
-}
-
-.right-column {
-  width: auto;
-  overflow: hidden;
-}
-
-.item {
-  margin-bottom: 15px;
-}
-
-.item:last-child {
-  margin-bottom: 0;
-}
-
-@media print {
-  body {
-    margin: 0;
-  }
-
-  .page {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 36px 0 30px;
-    box-shadow: none;
-  }
-
-  .page .resume-header,
-  .page .resume-content {
-    padding: 0 22px 0 34px;
-  }
-
-  .container {
-    page-break-inside: avoid;
-  }
-
-  .work-container .item {
-    page-break-inside: avoid;
-  }
-
-  .fa-external-link {
-    display: none;
-  }
-}
-
-/* Components */
-.info-tag-container {
-  margin-bottom: 5px;
-}
-
-.info-tag-container .fa {
-  font-size: 14px;
-  width: 12px;
-  margin-right: 5px;
-  text-align: center;
-  vertical-align: middle;
-}
-
-.info-tag-container .fa.fa-map-marker {
-  font-size: 16px;
-}
-
-.info-tag-container .fa.fa-mobile {
-  font-size: 18px;
-}
-
-.info-tag-container .fa.fa-envelope-o {
-  font-size: 12px;
-}
-
-.info-tag-container .fa.fa-desktop {
-  font-size: 11px;
-}
-
-.info-tag-container .fa.fa-external-link {
-  width: auto;
-  font-size: inherit;
-  vertical-align: text-top;
-}
-
-.info-tag-container .info-text {
-  font-size: 12px;
-  text-transform: none;
+.section-title {
   display: inline-block;
-  vertical-align: middle;
-  width: 139px;
+  background: #fff;
+  padding: 0 1em 0.3em 0;
+  color: #ff6d1f;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: none;
+  font-size: 0.9rem;
 }
 
-.references-container .fa {
-  font-size: 14px;
+.section > header {
+  position: relative;
 }
 
-.education-container .location {
-  padding-bottom: 6px;
+.fa {
+  margin-right: 0.25em;
+}
+
+.section > header::after {
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  height: 1px;
+  background: #ccc;
+  content: "";
+  width: 100%;
+  z-index: -100;
+  display: block;
+}
+
+.section.main-summary > section {
+  margin: 0;
+}
+
+.section > section > header {
+  font-size: 1.38rem;
+  position: relative;
+  margin-top: 0.7em;
+}
+
+.section > section > header:first-of-type {
+  margin: 0;
+}
+
+.section > section > header .space-left {
+  position: absolute;
+  left: -1.56rem;
+  top: 5px;
+  color: #aaa;
+  line-height: 1;
+  opacity: 0;
+}
+
+.position,
+.company,
+.organization,
+.institution,
+.date,
+.area,
+.studyType,
+.title,
+.awarder {
+  display: inline;
+}
+
+.position,
+.studyType,
+.area,
+.title,
+.language,
+.name {
+  font-weight: 600;
+}
+
+.company::before,
+.institution::before,
+.organization::before,
+.awarder::before {
+  content: "at ";
+}
+
+.company,
+.institution,
+.organization,
+.awarder {
+  color: #606d76;
   font-weight: 400;
 }
 
-.education-container .specialization {
-  text-transform: none;
-  font-style: italic;
+.section header .date {
+  display: block;
+  font-size: 1rem;
+  padding: 0.1em 0;
+  color: #606d76;
+  font-weight: 400;
 }
 
-.flex-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+.keywords,
+.courses {
+  margin: 0.5em 0;
 }
 
-.main-skill {
-  font-size: 80%;
+.keywords li,
+.courses li {
+  display: inline-block;
+  margin: 2px 2px 2px 0;
+  padding: 4px 5px 5px;
+  font-size: 0.9rem;
+  line-height: 1;
+  color: #3e6d8e;
+  background-color: #dfeaf1;
+  border: 0 solid #dfeaf1;
+  white-space: nowrap;
 }
 
-.skill {
-  margin: .15em;
-  padding: .15em;
-  background: ghostwhite;
-  border-radius: 5px;
+.keywords li:hover,
+.courses li:hover {
+  background: #dfeaf0;
 }
-</style>
-</head>
 
-<body>
-  <main id="resume" class="page">
-    <header class="resume-header clearfix">
-        <div class="profile-header pull-left">
-            <h1>Rafnix Gabriel Guzmán Garcia</h1>
-            <h2>Backend Python &amp; JavaScript | Odoo Developer | Tech Mentor | learning SRE &amp; DevOps</h2>
-        </div>
-        <div class="profile-pic pull-right">
-        </div>
-    </header>
-    <div class="resume-content">
-      <aside class="left-column">
-        <div class="container about-container">
-            <div class="title">
-                <h3>About</h3>
-                <div class="keyline"></div>
+.highlights {
+  margin: 1em 0 0 0;
+}
+
+.highlights > li > p {
+  margin-bottom: 0.5em;
+}
+
+.item {
+  overflow: hidden;
+}
+
+.gpa {
+  clear: both;
+  padding-bottom: 0.5em;
+}
+
+.fa.social {
+  font-size: 1.1em;
+}
+
+/* Social Media Brand Colors */
+
+.google-plus {
+  color: #dd4b39;
+}
+
+.tumblr {
+  color: #32506d;
+}
+
+.foursquare {
+  color: #0072b1;
+}
+
+.facebook {
+  color: #3b5998;
+}
+
+.linkedin {
+  color: #007bb6;
+}
+
+.pinterest {
+  color: #cb2027;
+}
+
+.dribbble {
+  color: #ea4c89;
+}
+
+.instagram {
+  color: #517fa4;
+}
+
+.twitter {
+  color: #00aced;
+}
+
+.soundcloud {
+  color: #ff3a00;
+}
+
+.wordpress {
+  color: #21759b;
+}
+
+.youtube {
+  color: #bb0000;
+}
+
+.github {
+  color: #171515;
+}
+
+.stack-overflow {
+  color: #828386;
+  position: relative;
+}
+
+.flickr {
+  color: #ff0084;
+}
+
+.reddit {
+  color: #ff4500;
+}
+
+.hacker-news {
+  color: #ff6600;
+}
+
+.stack-overflow::after {
+  position: absolute;
+  left: 0;
+  content: "\f16c";
+  color: #f68a1f;
+  overflow: hidden;
+  height: 100%;
+}
+
+.telegram {
+  color: #2291c3;
+}
+
+#languages .item,
+#skills .item,
+#interests .item {
+  width: 15em;
+  padding: 0 0.5em 0.5em 0;
+  border-bottom: none;
+}
+
+#skills .item {
+  width: 16em;
+}
+
+#skills .item .keywords {
+  width: 15em;
+}
+
+/* Skill chart */
+
+.level {
+  margin-bottom: 0.5em;
+}
+
+.level em {
+  padding-left: 0.2em;
+}
+
+.level .bar {
+  border: 1px solid #ddd;
+  display: block;
+  width: 10em;
+  height: 5px;
+  position: relative;
+}
+
+.level .bar::after {
+  position: absolute;
+  content: " ";
+  top: 0;
+  left: 0;
+  background: black;
+  height: 5px;
+}
+
+.level.beginner .bar::after {
+  background: #eb5f51;
+  width: 2.5em;
+}
+
+.level.intermediate .bar::after {
+  background: #ffdf1f;
+  width: 5em;
+}
+
+.level.advanced .bar::after,
+.level.fluent .bar::after {
+  background: #5cb85c;
+  width: 7.5em;
+}
+
+.level.master .bar::after,
+.level.native.speaker .bar::after {
+  background: #59c596;
+  width: 10em;
+}
+
+#references .item {
+  padding-left: 0.5em;
+  border-left: 5px solid #ff6d1f;
+}
+
+.section > section > section {
+  margin-bottom: 0.5rem;
+}
+
+/******************
+*	HELPER CLASSES
+******************/
+
+.clear::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.display {
+  display: block;
+  opacity: 1 !important;
+}
+
+/****************
+*		TABLET
+****************/
+
+@media screen and (min-width: 602px) {
+  #resume {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .section header .date {
+    float: right;
+    font-weight: 600;
+    color: #000;
+  }
+}
+
+/****************
+*		LAPTOP
+****************/
+
+@media screen and (min-width: 1025px) {
+  li {
+    margin-left: 1.5em;
+  }
+  #resume {
+    width: 820px;
+    margin: 2rem auto;
+  }
+  .section > section > header .space-left {
+    opacity: 1;
+    cursor: pointer;
+  }
+  .section > section:not(.main-summary) {
+    margin-left: 1.67rem;
+  }
+  .company::before,
+  .institution::before,
+  .organization::before,
+  .awarder::before {
+    content: "| ";
+  }
+  .header-left {
+    float: left;
+    width: 70%;
+    word-break: normal;
+  }
+  .section header .date {
+    padding: 0.2em;
+  }
+  .display {
+    display: none;
+  }
+  .display:not(.none) {
+    display: block;
+  }
+}
+
+@media print {
+  a:not(.hide-href-print)::after{
+    content: " (" attr(href) ") ";
+  }
+  #resume {
+    margin: 0.1em;
+    padding: 0.1em;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    line-height: 1.25;
+  }
+  @page {
+    margin: 1cm 1.4cm;
+  }
+  .item-count {
+    display: none;
+  }
+  .company::before,
+  .institution::before,
+  .organization::before,
+  .awarder::before {
+    content: "at ";
+  }
+  .main-summary {
+    padding: 0;
+    background: transparent;
+  }
+  .section {
+    margin: 0.8rem 0;
+    padding: 0;
+  }
+  .section header {
+    padding-bottom: 0.15rem;
+  }
+  .section .location {
+    padding-bottom: 0.15rem;
+  }
+  .section > section > section {
+    margin: 0 0 1em 0;
+  }
+  .section > section > section:last-of-type {
+    margin: 0;
+  }
+  .stack-overflow::after {
+    content: "";
+  }
+  .fa.social {
+    color: #828386;
+  }
+  ul {
+    margin-top: 0.4em;
+  }
+  ul,
+  li {
+    padding: 0;
+  }
+  ul.keywords li,
+  ul.courses li {
+    margin: 0;
+    padding: 0;
+    font-size: 0.8rem;
+    background: transparent;
+  }
+  ul.keywords li::after,
+  ul.courses li::after {
+    padding: 0 0 0 0.1rem;
+    content: " |";
+  }
+  ul.keywords::before,
+  ul.courses::before {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  #skills .item {
+    width: calc(100% / 3);
+    padding: 0;
+  }
+  .highlights {
+    margin: 0.5em 0 0 0;
+  }
+  ul.keywords::before {
+    content: "Skills acquired: ";
+  }
+  #skills .keywords::before {
+    content: none;
+  }
+  .section p {
+    margin: 0;
+    padding: 0;
+  }
+  ul.courses::before {
+    content: "Major courses: ";
+  }
+  ul.keywords li:last-of-type::after,
+  ul.courses li:last-of-type::after {
+    content: "";
+  }
+  .level em {
+    font-style: normal;
+    padding: 0.1em 0;
+  }
+  .level .bar {
+    display: none;
+  }
+  #profiles .item {
+    padding: 0;
+  }
+  .item.display {
+    display: block;
+    opacity: 1 !important;
+  }
+  .fa-map-marker-alt:before {
+    padding-left: 0.1em;
+  }
+}
+
+  </style>
+  
+  </head>
+  <body>
+  
+  <div id="resume">
+    	<header id="header" class="clear">
+    		<div>
+    			<h1 class="name">Rafnix Gabriel Guzmán Garcia</h1>
+    			<h2 class="label">Backend Python | Odoo Developer | learning SRE &amp; DevOps</h2>
+    		</div>
+    
+    		<span class="location">
+    			<span class="address">Lima, Perú,</span>
+    			<span class="countryCode">ES</span>
+    		</span>
+    
+    
+    		<div id="contact">
+    			<div class="email">
+    				<span class="far fa-envelope"></span>
+    				<a class="hide-href-print" href="mailto:rafnixg@gmail.com">rafnixg@gmail.com</a>
+    			</div>
+    		</div>
+    
+    		<div id="profiles">
+    			<div class="item">
+    				<div class="username">
+    					<span class="fab fa-linkedin linkedin social"></span>
+    					<span class="url">
+    						<a target="_blank" href="https://www.linkedin.com/in/rafnixg/">rafnixg</a>
+    					</span>
+    				</div>
+    			</div>
+    			<div class="item">
+    				<div class="username">
+    					<span class="fab fa-github github social"></span>
+    					<span class="url">
+    						<a target="_blank" href="https://github.com/rafnixg">rafnixg</a>
+    					</span>
+    				</div>
+    			</div>
+    			<div class="item">
+    				<div class="username">
+    					<span class="fab fa-twitter twitter social"></span>
+    					<span class="url">
+    						<a target="_blank" href="https://twitter.com/RafnixG">RafnixG</a>
+    					</span>
+    				</div>
+    			</div>
+    		</div>
+    	</header>
+    
+    	<section class="section">
+    		<section class="main-summary">
+    			<div><p>Soy un desarrollador de software con más de 9 años de experiencia en el diseño, desarrollo e implementación de sistemas web. Me gusta trabajar en proyectos desafiantes y utilizar mis habilidades para resolver problemas complejos y ofrecer soluciones de alta calidad. Mi experiencia incluye proyectos en sectores como finanzas, eventos, telecomunicaciones, retail y ecommerce.</p><p>Como desarrollador backend, me he enfocado en construir sistemas escalables y robustos utilizando lenguajes como Python y herramientas como Linux y Git. También tengo experiencia trabajando con bases de datos como PostgreSQL y utilizando Docker para el despliegue de aplicaciones.</p><p>Soy un autodidacta y me gusta estar siempre actualizado con las últimas tendencias y tecnologías en el campo del desarrollo de software. Me dedico a aprender y mejorar mis habilidades a través de cursos en línea, libros y documentación técnica. Además, me gusta compartir mis conocimientos y promover el uso de tecnologías libres o de código abierto.</p><p>Estoy capacitado para desempeñar tareas de backend y administración de sistemas, y busco oportunidades en empresas que valoren mis habilidades y experiencia.</p></div>
+    		</section>
+    	</section>
+    
+    <section class="section">
+    	<header>
+    		<h2 class='section-title'>Skills</h2>
+    	</header>
+    	<section id="skills">
+    		<div class="item">
+    			<h3 class="name">
+    				Backend
+    			</h3>
+    			 
+    			<div class="level senior">
+    				<em>Senior</em>
+    				<div class="bar"></div>
+    			</div>
+    			<ul class="keywords">
+    				<li>Python</li>
+    				<li>Django</li>
+    				<li>Flask</li>
+    				<li>FastAPI</li>
+    				<li>Odoo</li>
+    				<li>Pandas</li>
+    				<li>Celery</li>
+    				<li>XML</li>
+    				<li>Apache AirFlow</li>
+    				<li>Microservices</li>
+    				<li>RabbitMQ</li>
+    			</ul>
+    		</div>
+    		<div class="item">
+    			<h3 class="name">
+    				Databases
+    			</h3>
+    			 
+    			<div class="level senior">
+    				<em>Senior</em>
+    				<div class="bar"></div>
+    			</div>
+    			<ul class="keywords">
+    				<li>PostgreSQL</li>
+    				<li>MySQL</li>
+    				<li>MariaDB</li>
+    				<li>Redis</li>
+    			</ul>
+    		</div>
+    		<div class="item">
+    			<h3 class="name">
+    				Cloud
+    			</h3>
+    			 
+    			<div class="level mid">
+    				<em>Mid</em>
+    				<div class="bar"></div>
+    			</div>
+    			<ul class="keywords">
+    				<li>AWS</li>
+    				<li>Digital Ocean</li>
+    				<li>Linux</li>
+    				<li>Bash</li>
+    				<li>RegExp</li>
+    				<li>Docker</li>
+    				<li>DevOps</li>
+    			</ul>
+    		</div>
+    		<div class="item">
+    			<h3 class="name">
+    				Frontend
+    			</h3>
+    			 
+    			<div class="level mid">
+    				<em>Mid</em>
+    				<div class="bar"></div>
+    			</div>
+    			<ul class="keywords">
+    				<li>Javascript</li>
+    				<li>HTML</li>
+    				<li>CSS</li>
+    				<li>Jinja2</li>
+    			</ul>
+    		</div>
+    	</section>
+    </section>
+    <section class="section">
+      <header>
+        <h2 class='section-title'>Work Experience <span class="item-count">(11)</span></h2>
+      </header>
+    
+      <section id="work">
+        <section class="work-item">
+    
+          <label for="work-item-0"></label>
+    
+          <header class="clear">
+            <div class="date">
+              <span class="startDate">May 2022</span>
+              <span class="endDate">- Nov 2022</span>
             </div>
-                <div class="info-tag-container">
-                    <i class="fa fa-map-marker"></i>
-                
-                        <h6 class="info-text">Lima, Perú    ES</h6>
-                </div>
-        
-        
-                <div class="info-tag-container">
-                    <i class="fa fa-envelope-o"></i>
-                
-                        <h6 class="info-text">
-                            <a href="mailto:rafnixg@gmail.com" target="_blank">
-                                rafnixg@gmail.com
-                            </a>
-                        </h6>
-                </div>
-        
-                <div class="info-tag-container">
-                    <i class="fa fa-mobile"></i>
-                
-                        <h6 class="info-text">936389987</h6>
-                </div>
-        
-        
-                                <div class="info-tag-container">
-                                    <i class="fa fa-linkedin-square"></i>
-                                
-                                        <h6 class="info-text">
-                                            <a href="https://www.linkedin.com/in/rafnixg/" target="_blank">
-                                                rafnixg
-                                            </a>
-                                        </h6>
-                                </div>
-                                 <div class="info-tag-container">
-                                     <i class="fa fa-twitter"></i>
-                                 
-                                         <h6 class="info-text">
-                                             <a href="https://twitter.com/RafnixG" target="_blank">
-                                                 RafnixG
-                                             </a>
-                                         </h6>
-                                 </div>
+            <div class="position">Python Developer</div>
+            <div class="company">Peru Apps</div>
+          </header>
+    
+          <span class="fas fa-map-marker-alt"></span>
+          <span class="location">Lima, Perú,</span>
+           <div class="item" id="work-item">
+            <div class="summary"><p>Como programador backend, mi responsabilidad era diseñar y desarrollar APIs. Para ello, definí los endpoints necesarios, diseñé los modelos de datos adecuados y desarrollé las lógicas de negocio que permitieran satisfacer las necesidades del sistema.</p><p>También implementé mecanismos de autenticación y autorización para proteger las APIs y garantizar que solo los usuarios autorizados pudieran acceder a los datos y funcionalidades de la plataforma.</p><p>Trabajé en conjunto con el equipo de frontend para garantizar que las APIs estuvieran diseñadas de manera que fueran fáciles de consumir por las aplicaciones cliente.</p><p>Participé en el desarrollo del módulo de backoffice para la plataforma, lo que incluyó la implementación de funcionalidades administrativas como gestión de usuarios, transacciones y reportes.</p><p>Finalmente, colaboré en el despliegue y la monitorización de las APIs y del módulo de backoffice para garantizar su correcto funcionamiento y disponibilidad.</p><p>#Python #PostgreSQL #AWS #S3 #SES</p></div>
+            <ul class="highlights">
+              <li><p>FastAPI</p></li>
+              <li><p>Amazon S3</p></li>
+              <li><p>SES</p></li>
+              <li><p>Linux</p></li>
+              <li><p>Amazon Web Services (AWS)</p></li>
+              <li><p>Python</p></li>
+              <li><p>PostgreSQL</p></li>
+              <li><p>Docker</p></li>
+            </ul>
+          </div>
         </section>
-            <div class="skills-container">
-                    <section class="container">
-                            <div class="title">
-                                <h3>FastAPI</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>Amazon S3</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>SES</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>Jenkins</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>Databases</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>Kubernetes</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>Terraform</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>Cascading Style Sheets (CSS)</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>Linux</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>SQL</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>Flask</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>Microservicios</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>gRPC</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>Amazon Web Services (AWS)</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>Liderazgo</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>Arquitectura de soluciones</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>Mentoría</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>Desarrollo web back end</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>Automatización robótica de procesos</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>DevOps</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>Desarrollo personal</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>Desarrollo web</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>Manejo de la presión</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>Docker</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>Software ERP</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>MySQL</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>Arduino</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>Git</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>HTML5</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>PHP</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>Autogestión</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>PostgreSQL</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>Gestión de proyectos</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>Laravel</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>Desarrollo de software</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>JavaScript</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>Diseño web adaptable</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>XML</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>Liderazgo de equipos</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>Odoo</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>Administración de sistemas Linux</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>Python</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>Gestión del tiempo</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>openerp</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>Django</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
-                    <section class="container">
-                            <div class="title">
-                                <h3>Implementación de software</h3>
-                                <div class="keyline"></div>
-                            </div>            </section>
+        <section class="work-item">
+    
+          <label for="work-item-1"></label>
+    
+          <header class="clear">
+            <div class="date">
+              <span class="startDate">Jan 2022</span>
+              <span class="endDate">- Apr 2022</span>
             </div>
-            <div class="container languages-container">
-                <div class="title">
-                    <h3>Languages</h3>
-                    <div class="keyline"></div>
-                </div>
-                <ul class="minimal">
-                        <li>
-                            <h6>es <em>(Native Speaker)</em></h6>
-                        </li>
-                        <li>
-                            <h6>Español <em>(Native Speaker)</em></h6>
-                        </li>
-                        <li>
-                            <h6>Inglés <em>(Professional Working)</em></h6>
-                        </li>
-                </ul>
+            <div class="position">Analista Programador Python</div>
+            <div class="company">Indra</div>
+          </header>
+    
+           <div class="item" id="work-item">
+            <div class="summary"><p>Como programador backend, mi responsabilidad era llevar a cabo la migración de automatismos legacy a Python utilizando herramientas como SFTP, MSSQL Server, Pandas, Bitbucket y Docker.</p><p>Además, contribuí a la definición de los lineamientos de DevOps del equipo, ayudando a establecer estándares y buenas prácticas en la implementación y despliegue de aplicaciones distribuidas.</p><p>También colaboré en la librería RPA-UTILS del equipo interno, aportando mis conocimientos y habilidades para mejorar y ampliar esta herramienta.</p><p>#Python #Docker #Jenkins #DevOps</p></div>
+            <ul class="highlights">
+              <li><p>Jenkins</p></li>
+              <li><p>Databases</p></li>
+              <li><p>Kubernetes</p></li>
+              <li><p>Linux</p></li>
+              <li><p>SQL</p></li>
+              <li><p>Automatización robótica de procesos</p></li>
+              <li><p>DevOps</p></li>
+              <li><p>Python</p></li>
+            </ul>
+          </div>
+        </section>
+        <section class="work-item">
+    
+           <div class="item" id="work-item">
+            <div class="summary"><p>Durante los últimos 9 años como freelance, he trabajado con diferentes organizaciones, brindándoles apoyo en su transición al mundo digital. Mi objetivo es ayudarlos a mejorar no solo su presencia online, sino también sus procesos internos y su relación con el Software.</p><p>En este proceso, he desempeñado diferentes roles, como asesoramiento en la elección de herramientas y tecnologías, desarrollo de aplicaciones web y capacitación de equipos internos. Esta experiencia me ha permitido adquirir un conocimiento profundo de las necesidades reales de las organizaciones y cómo ayudarlas de manera efectiva usando tecnología.</p><p>Además, he trabajado en proyectos de diferentes sectores, como finanzas, eventos, telecomunicaciones, retail y ecommerce, lo que me ha dado una visión amplia y diversificada del mercado y me ha permitido adaptarme a diferentes contextos y requerimientos. Estoy comprometido con el uso de tecnologías de código abierto y libres, y promuevo su adopción en las empresas donde trabajo.</p></div>
+          </div>
+        </section>
+        <section class="work-item">
+    
+          <label for="work-item-3"></label>
+    
+          <header class="clear">
+            <div class="date">
+              <span class="startDate">Jun 2020</span>
+              <span class="endDate">- Dec 2021</span>
             </div>
-      </aside>
-      <div class="right-column">
-                <div class="container summary-container">
-                    <div class="title">
-                        <h3>Summary</h3>
-                        <div class="keyline"></div>
-                    </div>            <p class="summary">
-                        Soy un desarrollador de software con más de 9 años de experiencia en el diseño, desarrollo e implementación de sistemas web. Me gusta trabajar en proyectos desafiantes y utilizar mis habilidades para resolver problemas complejos y ofrecer soluciones de alta calidad. Mi experiencia incluye proyectos en sectores como finanzas, eventos, telecomunicaciones, retail y ecommerce.
-        
-        Como desarrollador backend, me he enfocado en construir sistemas escalables y robustos utilizando lenguajes como Python y herramientas como Linux y Git. También tengo experiencia trabajando con bases de datos como PostgreSQL y utilizando Docker para el despliegue de aplicaciones.
-        
-        Soy un autodidacta y me gusta estar siempre actualizado con las últimas tendencias y tecnologías en el campo del desarrollo de software. Me dedico a aprender y mejorar mis habilidades a través de cursos en línea, libros y documentación técnica. Además, me gusta compartir mis conocimientos y promover el uso de tecnologías libres o de código abierto.
-        
-        Estoy capacitado para desempeñar tareas de backend y administración de sistemas, y busco oportunidades en empresas que valoren mis habilidades y experiencia.
-                    </p>
-                </div>
-        <div class="container work-container">
-            <div class="title">
-                <h3>Experience</h3>
-                <div class="keyline"></div>
+            <div class="position">Senior Python/Odoo Developer</div>
+            <div class="company">SEAD SAC</div>
+          </header>
+    
+          <span class="fas fa-map-marker-alt"></span>
+          <span class="location">Lima, Perú,</span>
+           <div class="item" id="work-item">
+            <div class="summary"><p>+ Implementación, migración y desarrollo de mas de 7 proyectos usando tecnologías web apoyadas en Odoo con clientes de diferentes rubros y tamaños.</p><p>+ Migración y procesado de información para integraciones entre sistemas.</p><p>+ Mentoring y capacitaciones técnicas a compañeros de equipo Junior o Trainee.</p><p>+ Implementación de un pipeline de CI/CD y mini-PaaS para agilizar el despliegue de aplicaciones [WIP]</p><p>+ Demostraciones funcionales sobre Odoo a posibles clientes y Capacitaciones funcionales a los usuarios.</p></div>
+          </div>
+        </section>
+        <section class="work-item">
+    
+          <label for="work-item-4"></label>
+    
+          <header class="clear">
+            <div class="date">
+              <span class="startDate">Dec 2018</span>
+              <span class="endDate">- Jun 2020</span>
             </div>
-                <section class="item">
-                    <div class="section-header clearfix">
-                        <h5 class="italic pull-right">
-                                <span class="startDate">05/2022</span>
-                                <span class="endDate"> - 11/2022</span>
-                        </h5>
-                    </div>
-        
-                    <h4>Python Developer</h4>
-        
-        
-                    <p class="summary">Como programador backend, mi responsabilidad era diseñar y desarrollar APIs. Para ello, definí los endpoints necesarios, diseñé los modelos de datos adecuados y desarrollé las lógicas de negocio que permitieran satisfacer las necesidades del sistema.
-        
-        También implementé mecanismos de autenticación y autorización para proteger las APIs y garantizar que solo los usuarios autorizados pudieran acceder a los datos y funcionalidades de la plataforma.
-        
-        Trabajé en conjunto con el equipo de frontend para garantizar que las APIs estuvieran diseñadas de manera que fueran fáciles de consumir por las aplicaciones cliente.
-        
-        Participé en el desarrollo del módulo de backoffice para la plataforma, lo que incluyó la implementación de funcionalidades administrativas como gestión de usuarios, transacciones y reportes.
-        
-        Finalmente, colaboré en el despliegue y la monitorización de las APIs y del módulo de backoffice para garantizar su correcto funcionamiento y disponibilidad.
-        
-        #Python #PostgreSQL #AWS #S3 #SES</p>
-        
-                </section>
-                <section class="item">
-                    <div class="section-header clearfix">
-                        <h5 class="italic pull-right">
-                                <span class="startDate">01/2022</span>
-                                <span class="endDate"> - 04/2022</span>
-                        </h5>
-                    </div>
-        
-                    <h4>Analista Programador Python</h4>
-        
-        
-                    <p class="summary">Como programador backend, mi responsabilidad era llevar a cabo la migración de automatismos legacy a Python utilizando herramientas como SFTP, MSSQL Server, Pandas, Bitbucket y Docker.
-        
-        Además, contribuí a la definición de los lineamientos de DevOps del equipo, ayudando a establecer estándares y buenas prácticas en la implementación y despliegue de aplicaciones distribuidas.
-        
-        También colaboré en la librería RPA-UTILS del equipo interno, aportando mis conocimientos y habilidades para mejorar y ampliar esta herramienta.
-        
-        #Python #Docker #Jenkins #DevOps</p>
-        
-                </section>
-                <section class="item">
-                    <div class="section-header clearfix">
-                        <h5 class="italic pull-right">
-                                <span class="startDate">02/2012</span>
-                                <span class="endDate"> - 04/2022</span>
-                        </h5>
-                    </div>
-        
-                    <h4>Freelance Software Engineer</h4>
-        
-        
-                    <p class="summary">Durante los últimos 9 años como freelance, he trabajado con diferentes organizaciones, brindándoles apoyo en su transición al mundo digital. Mi objetivo es ayudarlos a mejorar no solo su presencia online, sino también sus procesos internos y su relación con el Software.
-        
-        En este proceso, he desempeñado diferentes roles, como asesoramiento en la elección de herramientas y tecnologías, desarrollo de aplicaciones web y capacitación de equipos internos. Esta experiencia me ha permitido adquirir un conocimiento profundo de las necesidades reales de las organizaciones y cómo ayudarlas de manera efectiva usando tecnología.
-        
-        Además, he trabajado en proyectos de diferentes sectores, como finanzas, eventos, telecomunicaciones, retail y ecommerce, lo que me ha dado una visión amplia y diversificada del mercado y me ha permitido adaptarme a diferentes contextos y requerimientos. Estoy comprometido con el uso de tecnologías de código abierto y libres, y promuevo su adopción en las empresas donde trabajo.</p>
-        
-                </section>
-                <section class="item">
-                    <div class="section-header clearfix">
-                        <h5 class="italic pull-right">
-                                <span class="startDate">06/2020</span>
-                                <span class="endDate"> - 12/2021</span>
-                        </h5>
-                    </div>
-        
-                    <h4>Senior Python/Odoo Developer</h4>
-        
-        
-                    <p class="summary">+ Implementación, migración y desarrollo de mas de 7 proyectos usando tecnologías web apoyadas en Odoo con clientes de diferentes rubros y tamaños.
-        + Migración y procesado de información para integraciones entre sistemas.
-        + Mentoring y capacitaciones técnicas a compañeros de equipo Junior o Trainee.
-        + Implementación de un pipeline de CI/CD y mini-PaaS para agilizar el despliegue de aplicaciones [WIP]
-        + Demostraciones funcionales sobre Odoo a posibles clientes y Capacitaciones funcionales a los usuarios.</p>
-        
-                </section>
-                <section class="item">
-                    <div class="section-header clearfix">
-                        <h5 class="italic pull-right">
-                                <span class="startDate">12/2018</span>
-                                <span class="endDate"> - 06/2020</span>
-                        </h5>
-                    </div>
-        
-                    <h4>Python/Odoo Developer</h4>
-        
-        
-                    <p class="summary">+ Desarrollo de módulos Odoo
-        + Mantenimiento a DB usando postgreSQL
-        + Implementación de Odoo con Docker
-        + Mantenimiento de repositorios GitHub y GitLab
-        + Desarrollo de Facturación Electrónica
-        + Implementación de los módulos: CRM, Eventos, Email Marketing
-        + Integración con sistemas externos usando: SOA, REST, XMLRPC
-        + AWS: EC2, Route53, S3
-        + Desarrollo de ETL
-        + Desarrollo Microservicios</p>
-        
-                </section>
-                <section class="item">
-                    <div class="section-header clearfix">
-                        <h5 class="italic pull-right">
-                                <span class="startDate">05/2018</span>
-                                <span class="endDate"> - 11/2018</span>
-                        </h5>
-                    </div>
-        
-                    <h4>Odoo Developer</h4>
-        
-        
-                    <p class="summary">+ Desarrollo de módulos para Odoo
-        + Soporte para facturación electrónica
-        + Integraciones con sistemas Cloud
-        + Implementaciones de Odoo</p>
-        
-                </section>
-                <section class="item">
-                    <div class="section-header clearfix">
-                        <h5 class="italic pull-right">
-                                <span class="startDate">03/2016</span>
-                                <span class="endDate"> - 08/2018</span>
-                        </h5>
-                    </div>
-        
-                    <h4>Odoo Developer</h4>
-        
-        
-                    <p class="summary">+ Desarrollo de módulos
-        + Implementacion de POS y CRM
-        + Mantenimiento de Base de datos</p>
-        
-                </section>
-                <section class="item">
-                    <div class="section-header clearfix">
-                        <h5 class="italic pull-right">
-                                <span class="startDate">10/2017</span>
-                                <span class="endDate"> - 03/2018</span>
-                        </h5>
-                    </div>
-        
-                    <h4>Desarrollador Frontend</h4>
-        
-        
-                    <p class="summary">Desarrollador Frontend
-        + Maquetar de PSD a HTML
-        + Animar con CSS
-        + Javascript
-        + Integracion con CMS&#x27;s
-        + eCommerce</p>
-        
-                </section>
-                <section class="item">
-                    <div class="section-header clearfix">
-                        <h5 class="italic pull-right">
-                                <span class="startDate">03/2017</span>
-                                <span class="endDate"> - 08/2017</span>
-                        </h5>
-                    </div>
-        
-                    <h4>Desarrollador Front-end</h4>
-        
-        
-                    <p class="summary">Frontend:
-          + Maquetado Web HTML, CSS, JS
-          + Desarrollo con VueJS
-        
-        Backend:
-          + Desarrollo usando Laravel 5.4</p>
-        
-                </section>
-                <section class="item">
-                    <div class="section-header clearfix">
-                        <h5 class="italic pull-right">
-                                <span class="startDate">01/2013</span>
-                                <span class="endDate"> - 01/2017</span>
-                        </h5>
-                    </div>
-        
-                    <h4>Desarrollador de aplicaciones web</h4>
-        
-        
-                    <p class="summary">Frontend
-          + Bootstrap
-          + AngularJS
-          + HTML5
-        
-        Backend
-          + PHP
-          + MySQL
-          + Laravel 5</p>
-        
-                </section>
-                <section class="item">
-                    <div class="section-header clearfix">
-                        <h5 class="italic pull-right">
-                                <span class="startDate">01/2015</span>
-                                <span class="endDate"> - 09/2016</span>
-                        </h5>
-                    </div>
-        
-                    <h4>Desarrollador de aplicaciones web</h4>
-        
-        
-                    <p class="summary">+ Desarrollo Full-Stack
-        + Wordpress
-        + Desarrollo de Theme Wordpress
-        + Laravel 5
-        + HTML5 &amp; CSS3</p>
-        
-                </section>
-        </div>
-        <div class="container education-container">
-            <div class="title">
-            <h3>Education</h3>
-            <div class="keyline"></div>
-        </div> 
-            <section class="item">
-                <div class="section-header clearfix">
-            <h3 class="bold pull-left">
-                    Platzi
-            </h3>
-            <h5 class="italic pull-right">
-                    <span class="startDate">12/2019</span>
-                    <span class="endDate"> - 12/2022</span>
-            </h5>
-        </div>
-         
-                <h4>Desarrollo Backend con Python y Django Programación informática</h4>
-        
-              </section>
-        
-            <section class="item">
-                <div class="section-header clearfix">
-            <h3 class="bold pull-left">
-                    Universidad de Carabobo
-            </h3>
-            <h5 class="italic pull-right">
-                    <span class="startDate">02/2008</span>
-                    <span class="endDate"> - Present</span>
-            </h5>
-        </div>
-         
-                <h4>Grado en Ingeniería Ingeniería de telecomunicaciones</h4>
-        
-              </section>
-        
-            <section class="item">
-                <div class="section-header clearfix">
-            <h3 class="bold pull-left">
-                    Instituto universitario de tecnologia del estado portuguesa
-            </h3>
-            <h5 class="italic pull-right">
-                    <span class="startDate">12/2012</span>
-                    <span class="endDate"> - 12/2015</span>
-            </h5>
-        </div>
-         
-                <h4>TSU en Informatica Informática</h4>
-        
-              </section>
-        </div>
-        <div class="container references-container">
-            <div class="title">
-                <h3>References</h3>
-                <div class="keyline"></div>
+            <div class="position">Python/Odoo Developer</div>
+            <div class="company">SEAD SAC</div>
+          </header>
+    
+          <span class="fas fa-map-marker-alt"></span>
+          <span class="location">Provincia de Lima, Peru,</span>
+           <div class="item" id="work-item">
+            <div class="summary"><p>+ Desarrollo de módulos Odoo</p><p>+ Mantenimiento a DB usando postgreSQL</p><p>+ Implementación de Odoo con Docker</p><p>+ Mantenimiento de repositorios GitHub y GitLab</p><p>+ Desarrollo de Facturación Electrónica</p><p>+ Implementación de los módulos: CRM, Eventos, Email Marketing</p><p>+ Integración con sistemas externos usando: SOA, REST, XMLRPC</p><p>+ AWS: EC2, Route53, S3</p><p>+ Desarrollo de ETL</p><p>+ Desarrollo Microservicios</p></div>
+          </div>
+        </section>
+        <section class="work-item">
+    
+          <label for="work-item-5"></label>
+    
+          <header class="clear">
+            <div class="date">
+              <span class="startDate">May 2018</span>
+              <span class="endDate">- Nov 2018</span>
             </div>
-                <section class="item clearfix">
-                    <i class="fa fa-quote-left pull-left" aria-hidden="true"></i>
-                    <blockquote>
-                        Eres un curioso tecnológico por naturaleza. Tus incansables ganas por aprender, descubrir y aplicar tecnología, te hacen un profesional con una amplitud de acción sorprendente. Grandes cualidades para la organización, análisis y resolución de problemas, trabajo en equipo y un espíritu de superación admirable.
-        
-        Como se diría en el argot deportivo: &quot;A Rafnix, dámelo siempre!&quot;
-        
-        Gran profesional y mejor persona
-                    </blockquote>
-        
-                    <h5 class="pull-right"> — Luis Canales Vargas</h5>
-                </section>
-                <section class="item clearfix">
-                    <i class="fa fa-quote-left pull-left" aria-hidden="true"></i>
-                    <blockquote>
-                        Excelente supervisor, siempre atento y paciente apoyando a desarrollar y aprender.
-                    </blockquote>
-        
-                    <h5 class="pull-right"> — José Enrique Acacio</h5>
-                </section>
-                <section class="item clearfix">
-                    <i class="fa fa-quote-left pull-left" aria-hidden="true"></i>
-                    <blockquote>
-                        👍
-                    </blockquote>
-        
-                    <h5 class="pull-right"> — Kristian Rondon</h5>
-                </section>
-                <section class="item clearfix">
-                    <i class="fa fa-quote-left pull-left" aria-hidden="true"></i>
-                    <blockquote>
-                        Buen amigo y excelente mentor. He aprendido mucho trabajando con Rafnix, tiene un gran conocimiento en diferentes tecnologías web, sabe programar en PHP, Javascript, Python y conoce bastante sobre Odoo ERP. Es un entusiasta de la tecnología que contagia e inspira a su grupo de trabajo. Tiene la habilidad de analizar los problemas más desafiantes y encontrarle la mejor solución haciendo uso de todos sus conocimientos, además tiene la capacidad de expresar su ideas de forma clara y precisa.
-                    </blockquote>
-        
-                    <h5 class="pull-right"> — Javier Quintana Taipe</h5>
-                </section>
-                <section class="item clearfix">
-                    <i class="fa fa-quote-left pull-left" aria-hidden="true"></i>
-                    <blockquote>
-                        Excelente amigo y compañero de trabajo, alguien en quien puedes confiar siempre y con quien compartir grandes anécdotas. 
-        Como desarrollador, una persona que tienen un gran conocimiento tanto del desarrollo web, como de ERPs con python y Odoo y sobre todo tiene una gran skill de análisis lo cual permite hacer plantear la mejor solución ante cualquier problema.
-        Ademas de tener grandes conocimientos en muchas otras áreas de la tecnología.
-                    </blockquote>
-        
-                    <h5 class="pull-right"> — Steve Matos</h5>
-                </section>
-                <section class="item clearfix">
-                    <i class="fa fa-quote-left pull-left" aria-hidden="true"></i>
-                    <blockquote>
-                        Excelente profesional, con altas capacidades de aprendizaje y trabajo en equipo, con mucha experiencia en el campo de la programación y desarrollo de proyectos de IT.
-                    </blockquote>
-        
-                    <h5 class="pull-right"> — Juan Alberto José Sánchez Yelamo</h5>
-                </section>
+            <div class="position">Odoo Developer</div>
+            <div class="company">Quipu systems</div>
+          </header>
+    
+          <span class="fas fa-map-marker-alt"></span>
+          <span class="location">Provincia de Lima, Peru,</span>
+           <div class="item" id="work-item">
+            <div class="summary"><p>+ Desarrollo de módulos para Odoo</p><p>+ Soporte para facturación electrónica</p><p>+ Integraciones con sistemas Cloud</p><p>+ Implementaciones de Odoo</p></div>
+          </div>
+        </section>
+        <section class="work-item">
+    
+          <label for="work-item-6"></label>
+    
+          <header class="clear">
+            <div class="date">
+              <span class="startDate">Mar 2016</span>
+              <span class="endDate">- Aug 2018</span>
+            </div>
+            <div class="position">Odoo Developer</div>
+            <div class="company">Freelancer</div>
+          </header>
+    
+           <div class="item" id="work-item">
+            <div class="summary"><p>+ Desarrollo de módulos</p><p>+ Implementacion de POS y CRM</p><p>+ Mantenimiento de Base de datos</p></div>
+          </div>
+        </section>
+        <section class="work-item">
+    
+          <label for="work-item-7"></label>
+    
+          <header class="clear">
+            <div class="date">
+              <span class="startDate">Oct 2017</span>
+              <span class="endDate">- Mar 2018</span>
+            </div>
+            <div class="position">Desarrollador Frontend</div>
+            <div class="company">pudinet</div>
+          </header>
+    
+          <span class="fas fa-map-marker-alt"></span>
+          <span class="location">Carabobo, Venezuela,</span>
+           <div class="item" id="work-item">
+            <div class="summary"><p>Desarrollador Frontend</p><p>+ Maquetar de PSD a HTML</p><p>+ Animar con CSS</p><p>+ Javascript</p><p>+ Integracion con CMS's</p><p>+ eCommerce</p></div>
+          </div>
+        </section>
+        <section class="work-item">
+    
+          <label for="work-item-8"></label>
+    
+          <header class="clear">
+            <div class="date">
+              <span class="startDate">Mar 2017</span>
+              <span class="endDate">- Aug 2017</span>
+            </div>
+            <div class="position">Desarrollador Front-end</div>
+            <div class="company">Intergrafixs</div>
+          </header>
+    
+          <span class="fas fa-map-marker-alt"></span>
+          <span class="location">Chile,</span>
+           <div class="item" id="work-item">
+            <div class="summary"><p>Frontend:</p><p>  + Maquetado Web HTML, CSS, JS</p><p>  + Desarrollo con VueJS</p><p>Backend:</p><p>  + Desarrollo usando Laravel 5.4</p></div>
+          </div>
+        </section>
+        <section class="work-item">
+    
+          <label for="work-item-9"></label>
+    
+          <header class="clear">
+            <div class="date">
+              <span class="startDate">Jan 2013</span>
+              <span class="endDate">- Jan 2017</span>
+            </div>
+            <div class="position">Desarrollador de aplicaciones web</div>
+            <div class="company">WebsTinaquillo</div>
+          </header>
+    
+          <span class="fas fa-map-marker-alt"></span>
+          <span class="location">Tinaquillo,</span>
+           <div class="item" id="work-item">
+            <div class="summary"><p>Frontend</p><p>  + Bootstrap</p><p>  + AngularJS</p><p>  + HTML5</p><p>Backend</p><p>  + PHP</p><p>  + MySQL</p><p>  + Laravel 5</p></div>
+          </div>
+        </section>
+        <section class="work-item">
+    
+          <label for="work-item-10"></label>
+    
+          <header class="clear">
+            <div class="date">
+              <span class="startDate">Jan 2015</span>
+              <span class="endDate">- Sep 2016</span>
+            </div>
+            <div class="position">Desarrollador de aplicaciones web</div>
+            <div class="company">Triskal Media S.A</div>
+          </header>
+    
+          <span class="fas fa-map-marker-alt"></span>
+          <span class="location">Caracas,</span>
+           <div class="item" id="work-item">
+            <div class="summary"><p>+ Desarrollo Full-Stack</p><p>+ Wordpress</p><p>+ Desarrollo de Theme Wordpress</p><p>+ Laravel 5</p><p>+ HTML5 & CSS3</p></div>
+          </div>
+        </section>
+      </section>
+    </section>
+    <section class="section">
+      <header>
+        <h2 class='section-title'>Education <span class="item-count">(3)</span></h2>
+      </header>
+    
+      <section id="education">
+        <section class="education-item">
+          <header class="clear">
+            <div class="header-left">
+              <div class="studyType">
+                Desarrollo Backend con Python y Django
+              </div>
+              <div class="area">
+                Programación informática
+              </div>
+              <div class="institution">
+                Platzi
+              </div>
+            </div>
+            <div class="date">
+              <span class="startDate">
+              2019
+              </span>
+              <span class="endDate">
+              - 2022
+              </span>
+            </div>
+          </header>
+    
+    
+    
+          <div class="item">
+          </div>
+        </section>
+        <section class="education-item">
+          <header class="clear">
+            <div class="header-left">
+              <div class="studyType">
+                Grado en Ingeniería
+              </div>
+              <div class="area">
+                Ingeniería de telecomunicaciones
+              </div>
+              <div class="institution">
+                Universidad de Carabobo
+              </div>
+            </div>
+            <div class="date">
+              <span class="startDate">
+              2008
+              </span>
+              <span class="endDate">
+              - Current
+              </span>
+            </div>
+          </header>
+    
+    
+    
+          <div class="item">
+          </div>
+        </section>
+        <section class="education-item">
+          <header class="clear">
+            <div class="header-left">
+              <div class="studyType">
+                TSU en Informatica
+              </div>
+              <div class="area">
+                Informática
+              </div>
+              <div class="institution">
+                Instituto universitario de tecnologia del estado portuguesa
+              </div>
+            </div>
+            <div class="date">
+              <span class="startDate">
+              2012
+              </span>
+              <span class="endDate">
+              - 2015
+              </span>
+            </div>
+          </header>
+    
+    
+    
+          <div class="item">
+          </div>
+        </section>
+      </section>
+    </section>
+    <section class="section">
+      <header>
+        <h2 class='section-title'>Certificates</h2>
+      </header>
+      <section id="certificates">
+        <section class="certificate-item">
+          <header class="clear">
+            <div class="header-left">
+              <div class="name">
+                Curso Profesional de Python
+              </div>
+              <div class="issuer">
+                Platzi
+              </div>
+            </div>
+          </header>
+    
+          <div class="item">
+            <span class="url">
+              <span class="fas fa-external-link-alt"></span>
+              <a target="_blank" href="https://platzi.com/p/rafnixg/curso/2397-python-profesional/diploma/detalle/">https://platzi.com/p/rafnixg/curso/2397-python-profesional/diploma/detalle/</a>
+            </span>
+          </div>
+        </section>
+        <section class="certificate-item">
+          <header class="clear">
+            <div class="header-left">
+              <div class="name">
+                Curso de FastAPI: Fundamentos, Path Operations y Validaciones
+              </div>
+              <div class="issuer">
+                Platzi
+              </div>
+            </div>
+          </header>
+    
+          <div class="item">
+            <span class="url">
+              <span class="fas fa-external-link-alt"></span>
+              <a target="_blank" href="https://platzi.com/p/rafnixg/course/2513-fastapi/diploma/detalle/">https://platzi.com/p/rafnixg/course/2513-fastapi/diploma/detalle/</a>
+            </span>
+          </div>
+        </section>
+        <section class="certificate-item">
+          <header class="clear">
+            <div class="header-left">
+              <div class="name">
+                Curso de FastAPI: Modularización, Datos Avanzados y Errores
+              </div>
+              <div class="issuer">
+                Platzi
+              </div>
+            </div>
+          </header>
+    
+          <div class="item">
+            <span class="url">
+              <span class="fas fa-external-link-alt"></span>
+              <a target="_blank" href="https://platzi.com/p/rafnixg/course/2514-fastapi-modularizacion-datos/diploma/detalle/">https://platzi.com/p/rafnixg/course/2514-fastapi-modularizacion-datos/diploma/detalle/</a>
+            </span>
+          </div>
+        </section>
+        <section class="certificate-item">
+          <header class="clear">
+            <div class="header-left">
+              <div class="name">
+                Curso de Introducción al Desarrollo Backend
+              </div>
+              <div class="issuer">
+                Platzi
+              </div>
+            </div>
+          </header>
+    
+          <div class="item">
+            <span class="url">
+              <span class="fas fa-external-link-alt"></span>
+              <a target="_blank" href="https://platzi.com/p/rafnixg/course/2508-introduccion-backend/diploma/detalle/">https://platzi.com/p/rafnixg/course/2508-introduccion-backend/diploma/detalle/</a>
+            </span>
+          </div>
+        </section>
+        <section class="certificate-item">
+          <header class="clear">
+            <div class="header-left">
+              <div class="name">
+                Curso de Python Intermedio: Comprehensions, Lambdas y Manejo de Errores
+              </div>
+              <div class="issuer">
+                Platzi
+              </div>
+            </div>
+          </header>
+    
+          <div class="item">
+            <span class="url">
+              <span class="fas fa-external-link-alt"></span>
+              <a target="_blank" href="https://platzi.com/p/rafnixg/course/2255-python-intermedio/diploma/detalle/">https://platzi.com/p/rafnixg/course/2255-python-intermedio/diploma/detalle/</a>
+            </span>
+          </div>
+        </section>
+        <section class="certificate-item">
+          <header class="clear">
+            <div class="header-left">
+              <div class="name">
+                Desarrollo Backend con Python y Django
+              </div>
+              <div class="issuer">
+                Platzi
+              </div>
+            </div>
+          </header>
+    
+          <div class="item">
+            <span class="url">
+              <span class="fas fa-external-link-alt"></span>
+              <a target="_blank" href="https://platzi.com/p/rafnixg/learning-path/3-backend-python/diploma/detalle/">https://platzi.com/p/rafnixg/learning-path/3-backend-python/diploma/detalle/</a>
+            </span>
+          </div>
+        </section>
+        <section class="certificate-item">
+          <header class="clear">
+            <div class="header-left">
+              <div class="name">
+                Curso de Estructuras de Datos Lineales con Python
+              </div>
+              <div class="issuer">
+                Platzi
+              </div>
+            </div>
+          </header>
+    
+          <div class="item">
+            <span class="url">
+              <span class="fas fa-external-link-alt"></span>
+              <a target="_blank" href="https://platzi.com/p/rafnixg/course/2299-estructuras-datos-python/diploma/detalle/">https://platzi.com/p/rafnixg/course/2299-estructuras-datos-python/diploma/detalle/</a>
+            </span>
+          </div>
+        </section>
+        <section class="certificate-item">
+          <header class="clear">
+            <div class="header-left">
+              <div class="name">
+                Curso de Fundamentos de AWS Cloud
+              </div>
+              <div class="issuer">
+                Platzi
+              </div>
+            </div>
+          </header>
+    
+          <div class="item">
+            <span class="url">
+              <span class="fas fa-external-link-alt"></span>
+              <a target="_blank" href="https://platzi.com/p/rafnixg/course/1323-aws-cloud/diploma/detalle/">https://platzi.com/p/rafnixg/course/1323-aws-cloud/diploma/detalle/</a>
+            </span>
+          </div>
+        </section>
+        <section class="certificate-item">
+          <header class="clear">
+            <div class="header-left">
+              <div class="name">
+                Curso de Introducción a la Terminal y Línea de Comandos
+              </div>
+              <div class="issuer">
+                Platzi
+              </div>
+            </div>
+          </header>
+    
+          <div class="item">
+            <span class="url">
+              <span class="fas fa-external-link-alt"></span>
+              <a target="_blank" href="https://platzi.com/p/rafnixg/course/2292-terminal/diploma/detalle/">https://platzi.com/p/rafnixg/course/2292-terminal/diploma/detalle/</a>
+            </span>
+          </div>
+        </section>
+        <section class="certificate-item">
+          <header class="clear">
+            <div class="header-left">
+              <div class="name">
+                Curso Básico de Web Components con JavaScript
+              </div>
+              <div class="issuer">
+                Platzi
+              </div>
+            </div>
+          </header>
+    
+          <div class="item">
+            <span class="url">
+              <span class="fas fa-external-link-alt"></span>
+              <a target="_blank" href="https://platzi.com/p/rafnixg/curso/2199-web-components-javascript/diploma/detalle/">https://platzi.com/p/rafnixg/curso/2199-web-components-javascript/diploma/detalle/</a>
+            </span>
+          </div>
+        </section>
+        <section class="certificate-item">
+          <header class="clear">
+            <div class="header-left">
+              <div class="name">
+                Curso Práctico de JavaScript
+              </div>
+              <div class="issuer">
+                Platzi
+              </div>
+            </div>
+          </header>
+    
+          <div class="item">
+            <span class="url">
+              <span class="fas fa-external-link-alt"></span>
+              <a target="_blank" href="https://platzi.com/p/rafnixg/course/2327-javascript-practico/diploma/detalle/">https://platzi.com/p/rafnixg/course/2327-javascript-practico/diploma/detalle/</a>
+            </span>
+          </div>
+        </section>
+        <section class="certificate-item">
+          <header class="clear">
+            <div class="header-left">
+              <div class="name">
+                Curso de Single Page Application con JavaScript Vanilla
+              </div>
+              <div class="issuer">
+                Platzi
+              </div>
+            </div>
+          </header>
+    
+          <div class="item">
+            <span class="url">
+              <span class="fas fa-external-link-alt"></span>
+              <a target="_blank" href="https://platzi.com/p/rafnixg/course/1787-spa-javascript/diploma/detalle/">https://platzi.com/p/rafnixg/course/1787-spa-javascript/diploma/detalle/</a>
+            </span>
+          </div>
+        </section>
+        <section class="certificate-item">
+          <header class="clear">
+            <div class="header-left">
+              <div class="name">
+                EF SET English Certificate 54/100 (B2 Upper Intermediate)
+              </div>
+              <div class="issuer">
+                EF Standard English Test (EF SET) 
+              </div>
+            </div>
+          </header>
+    
+          <div class="item">
+            <span class="url">
+              <span class="fas fa-external-link-alt"></span>
+              <a target="_blank" href="https://www.efset.org/cert/rmFwsg">https://www.efset.org/cert/rmFwsg</a>
+            </span>
+          </div>
+        </section>
+        <section class="certificate-item">
+          <header class="clear">
+            <div class="header-left">
+              <div class="name">
+                Curso Profesional de DevOps
+              </div>
+              <div class="issuer">
+                Platzi
+              </div>
+            </div>
+          </header>
+    
+          <div class="item">
+            <span class="url">
+              <span class="fas fa-external-link-alt"></span>
+              <a target="_blank" href="https://platzi.com/p/rafnixg/course/1431-devops/diploma/detalle/">https://platzi.com/p/rafnixg/course/1431-devops/diploma/detalle/</a>
+            </span>
+          </div>
+        </section>
+        <section class="certificate-item">
+          <header class="clear">
+            <div class="header-left">
+              <div class="name">
+                Infraestructura Como Código con Terraform
+              </div>
+              <div class="issuer">
+                Platzi
+              </div>
+            </div>
+          </header>
+    
+          <div class="item">
+            <span class="url">
+              <span class="fas fa-external-link-alt"></span>
+              <a target="_blank" href="https://platzi.com/p/rafnixg/curso/1712-course/diploma/detalle/">https://platzi.com/p/rafnixg/curso/1712-course/diploma/detalle/</a>
+            </span>
+          </div>
+        </section>
+        <section class="certificate-item">
+          <header class="clear">
+            <div class="header-left">
+              <div class="name">
+                Manipulación del DOM
+              </div>
+              <div class="issuer">
+                Platzi
+              </div>
+            </div>
+          </header>
+    
+          <div class="item">
+            <span class="url">
+              <span class="fas fa-external-link-alt"></span>
+              <a target="_blank" href="https://platzi.com/p/rafnixg/course/2193-dom/diploma/detalle/">https://platzi.com/p/rafnixg/course/2193-dom/diploma/detalle/</a>
+            </span>
+          </div>
+        </section>
+        <section class="certificate-item">
+          <header class="clear">
+            <div class="header-left">
+              <div class="name">
+                Python for Data Science
+              </div>
+              <div class="issuer">
+                IBM
+              </div>
+            </div>
+          </header>
+    
+          <div class="item">
+            <span class="url">
+              <span class="fas fa-external-link-alt"></span>
+              <a target="_blank" href="https://www.youracclaim.com/badges/fe8e13c5-1a21-45a5-80a3-eb13315c4023?source&#x3D;linked_in_profile">https://www.youracclaim.com/badges/fe8e13c5-1a21-45a5-80a3-eb13315c4023?source&#x3D;linked_in_profile</a>
+            </span>
+          </div>
+        </section>
+        <section class="certificate-item">
+          <header class="clear">
+            <div class="header-left">
+              <div class="name">
+                Travis CI
+              </div>
+              <div class="issuer">
+                Platzi
+              </div>
+            </div>
+          </header>
+    
+          <div class="item">
+            <span class="url">
+              <span class="fas fa-external-link-alt"></span>
+              <a target="_blank" href="https://platzi.com/p/rafnixg/course/1843-travis/diploma/detalle/">https://platzi.com/p/rafnixg/course/1843-travis/diploma/detalle/</a>
+            </span>
+          </div>
+        </section>
+        <section class="certificate-item">
+          <header class="clear">
+            <div class="header-left">
+              <div class="name">
+                Reto Road to Code
+              </div>
+              <div class="issuer">
+                Platzi
+              </div>
+            </div>
+          </header>
+    
+          <div class="item">
+            <span class="url">
+              <span class="fas fa-external-link-alt"></span>
+              <a target="_blank" href="https://platzi.com/@rafnixg/curso/2173-road-to-code/diploma/detalle/">https://platzi.com/@rafnixg/curso/2173-road-to-code/diploma/detalle/</a>
+            </span>
+          </div>
+        </section>
+        <section class="certificate-item">
+          <header class="clear">
+            <div class="header-left">
+              <div class="name">
+                Curso Básico de Python
+              </div>
+              <div class="issuer">
+                Platzi
+              </div>
+            </div>
+          </header>
+    
+          <div class="item">
+            <span class="url">
+              <span class="fas fa-external-link-alt"></span>
+              <a target="_blank" href="https://platzi.com/@rafnixg/curso/1937-pythonbasico/diploma/detalle/">https://platzi.com/@rafnixg/curso/1937-pythonbasico/diploma/detalle/</a>
+            </span>
+          </div>
+        </section>
+      </section>
+    </section>
+    <section class="section">
+      <header>
+        <h2 class='section-title'>Languages</h2>
+      </header>
+      <section id="languages">
+        <div class="display">
+          <h3 class="language">
+            es
+          </h3>
+          <div class="item">
+            <div class="level fluency native speaker">
+              <em>Native Speaker</em>
+              <div class="bar"></div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </main>
-</body>
+        <div class="display">
+          <h3 class="language">
+            Español
+          </h3>
+          <div class="item">
+            <div class="level fluency native speaker">
+              <em>Native Speaker</em>
+              <div class="bar"></div>
+            </div>
+          </div>
+        </div>
+        <div class="display">
+          <h3 class="language">
+            Inglés
+          </h3>
+          <div class="item">
+            <div class="level fluency professional working">
+              <em>Professional Working</em>
+              <div class="bar"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <section class="section">
+      <header>
+        <h2 class='section-title'>References</h2>
+      </header>
+      <section id="references">
+        <div class="item">
+          <blockquote class="reference">
+            &#8220;&#32;Eres un curioso tecnológico por naturaleza. Tus incansables ganas por aprender, descubrir y aplicar tecnología, te hacen un profesional con una amplitud de acción sorprendente. Grandes cualidades para la organización, análisis y resolución de problemas, trabajo en equipo y un espíritu de superación admirable.
+    
+    Como se diría en el argot deportivo: &quot;A Rafnix, dámelo siempre!&quot;
+    
+    Gran profesional y mejor persona&#32;&#8221;
+          </blockquote>
+          <div class="name">
+            Luis Canales Vargas
+          </div>
+        </div>
+        <div class="item">
+          <blockquote class="reference">
+            &#8220;&#32;Excelente supervisor, siempre atento y paciente apoyando a desarrollar y aprender.&#32;&#8221;
+          </blockquote>
+          <div class="name">
+            José Enrique Acacio
+          </div>
+        </div>
+        <div class="item">
+          <blockquote class="reference">
+            &#8220;&#32;👍&#32;&#8221;
+          </blockquote>
+          <div class="name">
+            Kristian Rondon
+          </div>
+        </div>
+        <div class="item">
+          <blockquote class="reference">
+            &#8220;&#32;Buen amigo y excelente mentor. He aprendido mucho trabajando con Rafnix, tiene un gran conocimiento en diferentes tecnologías web, sabe programar en PHP, Javascript, Python y conoce bastante sobre Odoo ERP. Es un entusiasta de la tecnología que contagia e inspira a su grupo de trabajo. Tiene la habilidad de analizar los problemas más desafiantes y encontrarle la mejor solución haciendo uso de todos sus conocimientos, además tiene la capacidad de expresar su ideas de forma clara y precisa.&#32;&#8221;
+          </blockquote>
+          <div class="name">
+            Javier Quintana Taipe
+          </div>
+        </div>
+        <div class="item">
+          <blockquote class="reference">
+            &#8220;&#32;Excelente amigo y compañero de trabajo, alguien en quien puedes confiar siempre y con quien compartir grandes anécdotas. 
+    Como desarrollador, una persona que tienen un gran conocimiento tanto del desarrollo web, como de ERPs con python y Odoo y sobre todo tiene una gran skill de análisis lo cual permite hacer plantear la mejor solución ante cualquier problema.
+    Ademas de tener grandes conocimientos en muchas otras áreas de la tecnología.&#32;&#8221;
+          </blockquote>
+          <div class="name">
+            Steve Matos
+          </div>
+        </div>
+        <div class="item">
+          <blockquote class="reference">
+            &#8220;&#32;Excelente profesional, con altas capacidades de aprendizaje y trabajo en equipo, con mucha experiencia en el campo de la programación y desarrollo de proyectos de IT.&#32;&#8221;
+          </blockquote>
+          <div class="name">
+            Juan Alberto José Sánchez Yelamo
+          </div>
+        </div>
+      </section>
+    </section>
 
+  </body>
 </html>
