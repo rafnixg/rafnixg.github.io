@@ -1249,3 +1249,8 @@ input:checked {
   --thumb-position: 100%;
   background-color: var(--track-active);
 }
+
+.post-cta{
+  display: flex;
+  justify-content: center;
+}
