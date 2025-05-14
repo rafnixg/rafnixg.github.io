@@ -1,4 +1,5 @@
 # Rafnixg.dev
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/rafnixg/rafnixg.github.io)
 
 ## Personal website
 
