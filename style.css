@@ -47,6 +47,141 @@
   --radius: 85px;
 }
 
+/* --------------------------------- */
+/* ----- Canonical components ----- */
+/* Consolidated defaults for hero, social icons, badges, and project links */
+/* --------------------------------- */
+
+.hero {
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+  position: relative;
+  padding: var(--gutter-x-large) var(--gutter-medium);
+}
+
+.hero .hero-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.05;
+  margin-block-end: var(--gutter-small);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #ff5e99 0%, #3affa6 60%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: transparent;
+  transition: transform 180ms var(--easing), background-color 180ms var(--easing);
+}
+
+.social-link svg,
+.social-link img {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+
+.social-link:hover,
+.social-link:focus {
+  transform: translateY(-3px);
+  background-color: rgba(0,0,0,0.04);
+}
+
+.project-tech span {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background-color: rgba(58, 255, 186, 0.09);
+  color: var(--important);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-inline-end: 0.5rem;
+}
+
+.project-content .project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: transparent;
+  text-decoration: none;
+  color: var(--important);
+}
+/* Map hero HTML structure to expected header styles */
+.hero .container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gutter-small);
+  max-inline-size: var(--site-max-width);
+  margin-inline: 0;
+}
+
+.hero .hero-description {
+  font-size: var(--text-large);
+  font-weight: 300;
+  max-inline-size: 720px;
+  margin-block-end: var(--gutter-small);
+  color: var(--sub);
+}
+
+.specialties {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-block-end: var(--gutter-small);
+}
+
+.specialty {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background-color: rgba(255,255,255,0.03);
+  color: var(--important);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.hero-buttons-contact-projects {
+  display: inline-flex;
+  gap: var(--gutter-small);
+  align-items: center;
+  margin-block-start: var(--gutter-small);
+}
+
+.hero-buttons-social-links {
+  display: inline-flex;
+  gap: var(--gutter-nano);
+  align-items: center;
+  margin-block-start: calc(var(--gutter-small) / 2);
+}
+
+.hero .social-link {
+  z-index: 4;
+}
+/* Global overrides to avoid user-agent/layout conflicts caused by duplicated rules elsewhere */
+body {
+  margin: 0 !important;
+}
+
+.container {
+  margin-inline: auto !important;
+}
+
+.btn {
+  position: relative;
+  z-index: 2;
+}
 body.dark {
   --bg-color-primary: #0c0a0a;
   --bg-color-secondary: #161211;
