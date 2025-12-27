@@ -47,6 +47,29 @@
   --radius: 85px;
 }
 
+/* Palette from v0-rafnixg-dev (oklch-based tokens) */
+:root {
+  --background: oklch(0.08 0 0);
+  --foreground: oklch(0.95 0 0);
+  --card: oklch(0.12 0 0);
+  --card-foreground: oklch(0.95 0 0);
+  --popover: oklch(0.12 0 0);
+  --popover-foreground: oklch(0.95 0 0);
+  --primary: oklch(0.55 0.22 266);
+  --primary-foreground: oklch(0.12 0 0);
+  --secondary: oklch(0.45 0.18 200);
+  --secondary-foreground: oklch(0.95 0 0);
+  --muted: oklch(0.25 0 0);
+  --muted-foreground: oklch(0.65 0 0);
+  --accent: oklch(0.55 0.22 266);
+  --accent-foreground: oklch(0.12 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.2 0 0);
+  --input: oklch(0.15 0 0);
+  --ring: oklch(0.55 0.22 266);
+}
+
 /* --------------------------------- */
 /* ----- Canonical components ----- */
 /* Consolidated defaults for hero, social icons, badges, and project links */
@@ -183,25 +206,33 @@ body {
   z-index: 2;
 }
 body.dark {
-  --bg-color-primary: #0c0a0a;
-  --bg-color-secondary: #161211;
-  --important: #fff;
-  --sub: #c3c3c3;
-  --body: #989898;
-  --border: #c0c0c015;
-  --border-dark: #c0c0c02f;
+  /* map reference palette tokens to existing variable names */
+  --background: var(--background);
+  --foreground: var(--foreground);
+  --card: var(--card);
+  --bg-color-primary: var(--background);
+  --bg-color-secondary: var(--card);
+  --important: var(--foreground);
+  --sub: var(--muted-foreground);
+  --body: var(--muted-foreground);
+  --border: var(--border);
+  --border-dark: oklch(0.2 0 0 / 0.18);
   --gradient-border: linear-gradient(to left bottom, #777, #0e0d0d);
   --shadow: 0 1rem 1rem #00000040;
 }
 
 body.light {
-  --bg-color-primary: #fbfbfb;
-  --bg-color-secondary: #ffffff;
-  --important: #000;
-  --sub: #111;
-  --body: #585b63;
-  --border: #62626234;
-  --border-dark: #5e5e5e1f;
+  /* map light tokens to existing variables (use lighter reference tokens) */
+  --background: oklch(0.98 0 0);
+  --foreground: oklch(0.12 0 0);
+  --card: oklch(0.99 0 0);
+  --bg-color-primary: var(--background);
+  --bg-color-secondary: var(--card);
+  --important: var(--foreground);
+  --sub: oklch(0.56 0 0);
+  --body: oklch(0.56 0 0);
+  --border: oklch(0.922 0 0 / 0.2);
+  --border-dark: oklch(0.922 0 0 / 0.12);
   --gradient-border: linear-gradient(to left bottom, #000000c6, #0e0d0d00);
   --shadow: 0 1rem 1rem rgba(0, 0, 0, 0.25);
 }
