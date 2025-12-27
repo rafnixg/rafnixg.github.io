@@ -45,10 +45,8 @@
 
   --scroll-padding: 4.375rem;
   --radius: 85px;
-}
 
-/* Palette from v0-rafnixg-dev (oklch-based tokens) */
-:root {
+  /* Palette from v0-rafnixg-dev (oklch-based tokens) */
   --background: oklch(0.08 0 0);
   --foreground: oklch(0.95 0 0);
   --card: oklch(0.12 0 0);
@@ -69,6 +67,8 @@
   --input: oklch(0.15 0 0);
   --ring: oklch(0.55 0.22 266);
 }
+
+/* (palette moved to the top-level :root) */
 
 /* --------------------------------- */
 /* ----- Canonical components ----- */
