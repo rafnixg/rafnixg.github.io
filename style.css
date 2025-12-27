@@ -280,22 +280,7 @@ body.dark {
   --gradient-border: linear-gradient(to left bottom, #777, #0e0d0d);
   --shadow: 0 1rem 1rem #00000040;
 }
-
-body.light {
-  /* map light tokens to existing variables (use lighter reference tokens) */
-  --background: oklch(0.98 0 0);
-  --foreground: oklch(0.12 0 0);
-  --card: oklch(0.99 0 0);
-  --bg-color-primary: var(--background);
-  --bg-color-secondary: var(--card);
-  --important: var(--foreground);
-  --sub: oklch(0.56 0 0);
-  --body: oklch(0.56 0 0);
-  --border: oklch(0.922 0 0 / 0.2);
-  --border-dark: oklch(0.922 0 0 / 0.12);
-  --gradient-border: linear-gradient(to left bottom, #000000c6, #0e0d0d00);
-  --shadow: 0 1rem 1rem rgba(0, 0, 0, 0.25);
-}
+/* single dark theme: light theme removed */
 
 *,
 *::after,
@@ -516,10 +501,7 @@ body.dark .btn-cta:focus {
   box-shadow: #ffffff40 0 0 0 var(--gutter-nano);
 }
 
-body.light .btn-cta:hover,
-body.light .btn-cta:focus {
-  box-shadow: #07070733 0 0 0 var(--gutter-nano);
-}
+/* removed light-mode specific btn hover (single dark theme) */
 
 .btn-secondary {
   border: 1px solid var(--border-dark);
@@ -561,13 +543,7 @@ body.dark .link::after {
   background-color: white;
 }
 
-body.light .link::before {
-  background-color: lightgray;
-}
-
-body.light .link::after {
-  background-color: black;
-}
+/* removed light-mode link underline colors (using dark defaults) */
 
 .link::after {
   background-color: white;
@@ -711,10 +687,7 @@ body.dark .header {
     url("assets/images/header-background.jpg");
 }
 
-body.light .header {
-  background-image: linear-gradient(#ffffffa2, #ffffffe6),
-    url("assets/images/header-background.jpg");
-}
+/* light header removed; using dark header background only */
 
 .header-textbox {
   position: absolute;
@@ -826,9 +799,7 @@ body.dark .logo {
   filter: invert(97%) grayscale(100%) opacity(0.6);
 }
 
-body.light .logo {
-  filter: grayscale(100%) opacity(0.6);
-}
+/* removed light-mode logo filter; dark filter kept above */
 
 /* --------------------------------- */
 /* ----- Work -----*/
@@ -880,7 +851,8 @@ body.light .logo {
   transition: 0.6s all;
 }
 
-body.light .work-img {
+/* Apply shadow to work images (dark theme) */
+.work-img {
   box-shadow: var(--shadow);
 }
 
@@ -1292,9 +1264,7 @@ body.dark .work-links img {
   inline-size: 150px;
 }
 
-body.light .signatures {
-  filter: invert(1);
-}
+
 
 .contact-form {
   background-color: var(--bg-color-secondary);
