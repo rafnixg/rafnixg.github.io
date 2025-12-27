@@ -77,10 +77,12 @@
 
 .hero {
   min-height: 100vh;
-  display: grid;
-  align-items: center;
   position: relative;
-  padding: var(--gutter-x-large) var(--gutter-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--gutter-x-large) * 0.6) var(--gutter-medium);
+  overflow: hidden;
 }
 
 .hero .hero-title {
@@ -89,11 +91,69 @@
   margin-block-end: var(--gutter-small);
 }
 
+/* Decorative blobs similar to reference (top-left and bottom-right) */
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  filter: blur(64px);
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero::before {
+  top: -12%;
+  left: -8%;
+  background: radial-gradient(circle at 30% 30%, #ff5e99 0%, transparent 40%);
+}
+
+.hero::after {
+  bottom: -12%;
+  right: -6%;
+  background: radial-gradient(circle at 70% 70%, #3affa6 0%, transparent 40%);
+}
+
+/* Make container content sit above blobs */
+.hero .container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  align-items: center;
+}
+
 .gradient-text {
   background: linear-gradient(90deg, #ff5e99 0%, #3affa6 60%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+/* Hero buttons styling to match reference look */
+.hero .btn {
+  border-radius: 12px;
+  padding: 14px 28px;
+  font-size: 1.05rem;
+}
+
+.hero .btn-cta {
+  background: linear-gradient(90deg, #ff5e99 0%, #3affa6 60%);
+  color: var(--bg-color-primary);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+.hero .btn-secondary {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.08);
+  color: var(--important);
+}
+
+.hero-buttons-contact-projects,
+.hero-buttons-social-links {
+  justify-content: center;
 }
 
 .social-link {
