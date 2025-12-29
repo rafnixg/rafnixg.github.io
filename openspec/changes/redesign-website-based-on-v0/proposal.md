@@ -11,6 +11,9 @@ The current portfolio website has a functional design but could benefit from a m
 - Add articles section showcasing recent blog posts
 - Update navigation and contact information
 - Ensure dark theme compatibility and mobile responsiveness
+ - Consolidate CSS custom properties into a single top-level `:root` and adopt the v0 OKLCH palette
+ - Enforce a single dark theme (remove light-theme variants) and ensure theme class is applied on `body`
+ - Perform visual QA (desktop/mobile) and accessibility checks (contrast, keyboard focus, reduced motion)
 
 ## Impact
 - Affected specs: website capability (layout and content structure)
