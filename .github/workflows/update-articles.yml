@@ -1,0 +1,26 @@
+name: Update Articles JSON
+
+on:
+  schedule:
+    - cron: '0 0 1 * *' # run monthly on day 1
+  workflow_dispatch: {}
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Install dependencies
+        run: npm ci
+      - name: Run fetch script
+        run: node build/fetch-articles.js
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/articles.json || true
+          git diff --quiet && echo "No changes" || (git commit -m "chore: update articles.json" && git push)

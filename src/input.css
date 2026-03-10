@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0b1220;
+  --muted: #93a3b8;
+}
+
+/* small helpers used during migration */
+.container { max-width: 1000px; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; }

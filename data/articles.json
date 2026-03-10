@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-03-10T23:01:22.292Z",
+  "posts": [
+    {
+      "title": "Sample article — migration PoC",
+      "brief": "This is a placeholder article generated during the migration.",
+      "slug": "sample-article-migration-poc",
+      "coverImage": "https://via.placeholder.com/800x420.png?text=Sample",
+      "dateAdded": "2026-03-10T23:01:22.292Z",
+      "url": "https://blog.rafnixg.dev"
+    }
+  ]
+}
