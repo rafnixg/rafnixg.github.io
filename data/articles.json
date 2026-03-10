@@ -1,13 +1,65 @@
 {
-  "generatedAt": "2026-03-10T23:01:22.292Z",
+  "generatedAt": "2026-03-10T23:22:49.881Z",
   "posts": [
     {
-      "title": "Sample article — migration PoC",
-      "brief": "This is a placeholder article generated during the migration.",
-      "slug": "sample-article-migration-poc",
-      "coverImage": "https://via.placeholder.com/800x420.png?text=Sample",
-      "dateAdded": "2026-03-10T23:01:22.292Z",
-      "url": "https://blog.rafnixg.dev"
+      "id": "67f92098d97030b88c4a82fe",
+      "title": "⚙️ Como automatizar tu librería en PyPI con GitHub Actions",
+      "brief": "Continuando con un post anterior donde publicamos nuestra librería a PyPI, vamos a ir un paso más allá en el proceso de construcción y despliegue (o, mejor dicho, build y release). En este tutorial, crearemos nuestro propio workflow en GitHub Actions...",
+      "slug": "como-automatizar-tu-libreria-en-pypi-con-github-actions",
+      "dateAdded": "2025-04-11T14:00:56.662Z",
+      "views": 49,
+      "readTime": "7 min",
+      "url": "https://blog.rafnixg.dev/como-automatizar-tu-libreria-en-pypi-con-github-actions"
+    },
+    {
+      "id": "67f0447baf2a2d5f24d4b68a",
+      "title": "🏗️ Cómo publicar tu propia librería de Python: Guía paso a paso",
+      "brief": "El objetivo de este tutorial es guiarte paso a paso en el proceso de creación y publicación de tu propia librería en Python. Aunque Python ofrece una biblioteca estándar muy completa, aprovechar las contribuciones de la comunidad en PyPI te permite e...",
+      "slug": "como-publicar-tu-propia-libreria-de-python-guia-paso-a-paso",
+      "dateAdded": "2025-04-04T20:43:39.851Z",
+      "views": 128,
+      "readTime": "13 min",
+      "url": "https://blog.rafnixg.dev/como-publicar-tu-propia-libreria-de-python-guia-paso-a-paso"
+    },
+    {
+      "id": "64347e976e0f729495343953",
+      "title": "Shell de Odoo: Domina Operaciones Avanzadas, Integración de Librerías y Automatización de Tareas",
+      "brief": "En un post anterior, exploramos los conceptos básicos de la shell de la CLI de Odoo y cómo configurar IPython como REPL para mejorar nuestra experiencia de desarrollo. Ahora, profundizaremos en el uso de la shell de Odoo, abordando temas más avanzado...",
+      "slug": "shell-de-odoo-domina-operaciones-avanzadas-integracion-de-librerias-y-automatizacion-de-tareas",
+      "dateAdded": "2023-04-10T21:24:39.393Z",
+      "views": 1061,
+      "readTime": "11 min",
+      "url": "https://blog.rafnixg.dev/shell-de-odoo-domina-operaciones-avanzadas-integracion-de-librerias-y-automatizacion-de-tareas"
+    },
+    {
+      "id": "642579e7b578a4aff3e3944f",
+      "title": "Explorando Odoo a fondo: Cómo trabajar con la shell de la CLI y configurar IPython como REPL",
+      "brief": "¡Hola a todos! Hoy vamos a explorar un tema esencial para todos los programadores de Odoo que deseen profundizar en el desarrollo y uso del ORM de Odoo: la shell de la CLI de Odoo. La CLI (Command Line Interface) de Odoo es la forma en que se ejecuta...",
+      "slug": "explorando-odoo-a-fondo-como-trabajar-con-la-shell-de-la-cli-y-configurar-ipython-como-repl",
+      "dateAdded": "2023-03-30T12:00:39.243Z",
+      "views": 725,
+      "readTime": "6 min",
+      "url": "https://blog.rafnixg.dev/explorando-odoo-a-fondo-como-trabajar-con-la-shell-de-la-cli-y-configurar-ipython-como-repl"
+    },
+    {
+      "id": "641b516eb989cd728116fff6",
+      "title": "Crea tu propio chatbot con la API de OpenAI y Gradio en Python",
+      "brief": "Hoy vamos a aprender a crear una aplicación en Python utilizando la API de OpenAI y Gradio. Esta publicación será útil para las personas que quieren aprender a utilizar la API de OpenAI y crear una aplicación con una interfaz de usuario interactiva d...",
+      "slug": "crea-tu-propio-chatbot-con-la-api-de-openai-y-gradio-en-python",
+      "dateAdded": "2023-03-22T19:05:18.101Z",
+      "views": 1195,
+      "readTime": "5 min",
+      "url": "https://blog.rafnixg.dev/crea-tu-propio-chatbot-con-la-api-de-openai-y-gradio-en-python"
+    },
+    {
+      "id": "6418ef67dc692e3ebeb6ce55",
+      "title": "Los servicios que uso en mi HomeLab server: virtualización, contenedores y más.",
+      "brief": "¡Hola nuevamente! hoy quiero profundizar en cada uno de los servicios y aplicaciones que tengo en mi homelab server y compartirlas contigo.\nIntroducción\nEn mi camino como desarrollador y entusiasta de la tecnología, he construido un homelab server en...",
+      "slug": "los-servicios-que-uso-en-mi-homelab-server-virtualizacion-contenedores-y-mas",
+      "dateAdded": "2023-03-20T23:42:31.436Z",
+      "views": 2972,
+      "readTime": "6 min",
+      "url": "https://blog.rafnixg.dev/los-servicios-que-uso-en-mi-homelab-server-virtualizacion-contenedores-y-mas"
     }
   ]
 }

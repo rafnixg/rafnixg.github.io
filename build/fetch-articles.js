@@ -1,40 +1,65 @@
 const fs = require('fs').promises;
 
 async function fetchHashnodePosts() {
-  const endpoint = 'https://api.hashnode.com';
+  const endpoint = 'https://gql.hashnode.com';
   const query = `
-  query GetUserArticles($username: String!) {
-    user(username: $username) {
-      publication {
-        posts(page: 0) {
-          title
-          brief
-          slug
-          coverImage
-          dateAdded
+    query {
+      user(username: "rafnixg") {
+        publications(first: 1) {
+          edges {
+            node {
+              posts(first: 6) {
+                edges {
+                      node {
+                        id
+                        title
+                        brief
+                        slug
+                        publishedAt
+                        views
+                        readTimeInMinutes
+                      }
+                }
+              }
+            }
+          }
         }
       }
     }
-  }
   `;
 
   try {
     const res = await fetch(endpoint, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ query, variables: { username: 'rafnixg' } }),
+      body: JSON.stringify({ query }),
     });
-    if (!res.ok) throw new Error('Network response not ok');
+
+    if (!res.ok) {
+      const text = await res.text().catch(() => '<no body>');
+      console.error('Hashnode returned non-OK status:', res.status, text);
+      throw new Error('Network response not ok');
+    }
+
     const json = await res.json();
-    const posts = json.data?.user?.publication?.posts || [];
-    return posts.map((p) => ({
-      title: p.title,
-      brief: p.brief,
-      slug: p.slug,
-      coverImage: p.coverImage,
-      dateAdded: p.dateAdded,
-      url: `https://blog.rafnixg.dev/${p.slug}`,
-    }));
+    if (json.errors) {
+      console.error('Hashnode GraphQL returned errors:', JSON.stringify(json.errors, null, 2));
+    }
+
+    const edges = json.data?.user?.publications?.edges || [];
+    const posts =
+      edges[0]?.node?.posts?.edges?.map((edge) => ({
+        id: edge.node.id,
+        title: edge.node.title,
+        brief: edge.node.brief,
+        slug: edge.node.slug,
+        dateAdded: edge.node.publishedAt,
+        views: edge.node.views || null,
+        readTime: edge.node.readTimeInMinutes ? `${edge.node.readTimeInMinutes} min` : null,
+        url: `https://blog.rafnixg.dev/${edge.node.slug}`,
+      })) || [];
+
+    return posts;
   } catch (err) {
     console.warn('Failed to fetch Hashnode posts, writing sample data:', err.message);
     return [
