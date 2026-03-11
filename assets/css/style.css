@@ -16,6 +16,10 @@ img {
   max-width: 100%;
 }
 
+.article-link {
+  display: block;
+}
+
 .article-card {
   border: 1px solid rgb(var(--border) / 0.7);
   border-radius: 1rem;
