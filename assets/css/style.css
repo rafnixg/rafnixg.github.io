@@ -1,7 +1,7 @@
 @font-face {
   font-family: "Mona Sans";
-  src: url("assets/fonts/Mona-Sans.woff2") format("woff2 supports variations"),
-    url("assets/fonts/Mona-Sans.woff2") format("woff2-variations");
+  src: url("../fonts/Mona-Sans.woff2") format("woff2 supports variations"),
+    url("../fonts/Mona-Sans.woff2") format("woff2-variations");
   font-display: swap;
   font-weight: 200 900;
   font-stretch: 75% 125%;
@@ -74,4 +74,11 @@ site-footer,
 section-header,
 social-links {
   display: block;
+}
+
+/* Permitir ocultación via atributo hidden en web components
+   (el display:block de autor sobreescribe el [hidden] del user-agent) */
+project-card[hidden],
+article-card[hidden] {
+  display: none;
 }
