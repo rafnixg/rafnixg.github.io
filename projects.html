@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="Proyectos de Rafnix Guzman — Python, Odoo, FastAPI, AI Engineering y mas." />
+  <meta property="og:url" content="https://rafnixg.dev/projects.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Proyectos — Rafnix Guzman" />
+  <meta property="og:description" content="Coleccion completa de proyectos personales, open source y experimentos de aprendizaje." />
+  <meta property="og:image" content="https://rafnixg.dev/assets/images/banner_web.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Proyectos — Rafnix Guzman" />
+  <meta name="twitter:description" content="Coleccion completa de proyectos personales, open source y experimentos de aprendizaje." />
+  <meta name="twitter:image" content="https://rafnixg.dev/assets/images/banner_web.png" />
+  <link rel="icon" href="/assets/icons/icon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/assets/icons/icon-light-32x32.png" type="image/png" sizes="32x32" media="(prefers-color-scheme: light)" />
+  <link rel="icon" href="/assets/icons/icon-dark-32x32.png" type="image/png" sizes="32x32" media="(prefers-color-scheme: dark)" />
+  <link rel="apple-touch-icon" href="/assets/icons/apple-icon.png" />
+  <link rel="preload" href="/assets/fonts/Mona-Sans.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="assets/css/tailwind.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="components/site-nav.js" defer></script>
+  <script src="components/site-footer.js" defer></script>
+  <script src="components/section-header.js" defer></script>
+  <script src="components/project-card.js" defer></script>
+  <script src="components/projects-grid.js" defer></script>
+  <title>Proyectos — Rafnix Guzman</title>
+</head>
+<body class="dark">
+  <main class="overflow-hidden">
+
+    <site-nav back page="Proyectos"></site-nav>
+
+    <!-- Hero + Filtros -->
+    <section class="px-4 pt-16 pb-8 md:px-6">
+      <div class="container mx-auto max-w-6xl space-y-8">
+        <div class="space-y-4">
+          <h1 class="text-4xl font-bold md:text-5xl">Mis Proyectos</h1>
+          <p class="max-w-2xl text-lg text-muted-foreground">
+            Coleccion completa de proyectos personales, contribuciones de codigo abierto y experimentos de aprendizaje.
+          </p>
+        </div>
+
+        <!-- Filtros -->
+        <div class="flex flex-wrap gap-2" role="group" aria-label="Filtrar proyectos">
+          <button data-filter="all"      class="filter-btn rounded-lg px-4 py-2 text-sm font-medium transition-colors">Todos</button>
+          <button data-filter="personal" class="filter-btn rounded-lg px-4 py-2 text-sm font-medium transition-colors">Personales</button>
+          <button data-filter="oss"      class="filter-btn rounded-lg px-4 py-2 text-sm font-medium transition-colors">Open Source</button>
+          <button data-filter="learning" class="filter-btn rounded-lg px-4 py-2 text-sm font-medium transition-colors">Aprendizaje</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grid de proyectos -->
+    <section class="px-4 pb-24 md:px-6">
+      <div class="container mx-auto max-w-6xl">
+        <projects-grid
+          id="projects-grid"
+          class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+        ></projects-grid>
+      </div>
+    </section>
+
+    <site-footer back></site-footer>
+
+  </main>
+
+  <script>
+    const ENTITY_MAP = {
+      personal: ['Personal Project', 'Personal Lab'],
+      oss:      ['Open Source Contribution'],
+      learning: ['Learning Project'],
+    };
+
+    const filterBtns  = document.querySelectorAll('.filter-btn');
+    let   activeFilter = 'all';
+
+    function applyFilter(filter) {
+      activeFilter = filter;
+
+      filterBtns.forEach(btn => {
+        const active = btn.dataset.filter === filter;
+        btn.classList.toggle('bg-primary',              active);
+        btn.classList.toggle('text-primary-foreground', active);
+        btn.classList.toggle('bg-card',                !active);
+        btn.classList.toggle('text-foreground',        !active);
+      });
+
+      document.querySelectorAll('project-card').forEach(card => {
+        if (filter === 'all') {
+          card.hidden = false;
+        } else {
+          const entity = card.dataset.entity || '';
+          card.hidden = !(ENTITY_MAP[filter] || []).includes(entity);
+        }
+      });
+    }
+
+    filterBtns.forEach(btn =>
+      btn.addEventListener('click', () => applyFilter(btn.dataset.filter))
+    );
+
+    // Cuando projects-grid termine de cargar, aplicar el filtro activo
+    document.addEventListener('projects-ready', () => applyFilter(activeFilter));
+
+    // Estado inicial de los botones
+    applyFilter('all');
+  </script>
+</body>
+</html>

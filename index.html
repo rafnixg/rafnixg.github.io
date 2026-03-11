@@ -21,12 +21,21 @@
   <link rel="preload" href="/assets/fonts/Mona-Sans.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="assets/css/tailwind.css" />
   <link rel="stylesheet" href="style.css?v=2026.1" />
-  <script src="script.js" defer></script>
+  <script src="components/site-nav.js" defer></script>
+  <script src="components/site-footer.js" defer></script>
+  <script src="components/section-header.js" defer></script>
+  <script src="components/social-links.js" defer></script>
+  <script src="components/project-card.js" defer></script>
+  <script src="components/article-card.js" defer></script>
   <script src="components/articles.js" defer></script>
   <title>Rafnix Guzman - Python & Odoo Backend Developer</title>
 </head>
 <body class="dark">
   <main class="overflow-hidden">
+
+    <site-nav></site-nav>
+
+    <!-- Hero -->
     <section class="relative flex min-h-screen items-center justify-center overflow-hidden px-4 pb-20 pt-20 md:px-6">
       <div class="absolute inset-0 -z-10">
         <div class="absolute left-1/4 top-0 h-96 w-96 rounded-full bg-primary/20 blur-3xl opacity-40"></div>
@@ -49,9 +58,8 @@
           <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a href="#contact" class="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-base font-semibold text-primary-foreground shadow-glow hover:bg-primary/90">
               Contactame
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4">
-                <path d="M5 12h14"></path>
-                <path d="m12 5 7 7-7 7"></path>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4" aria-hidden="true">
+                <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
               </svg>
             </a>
             <a href="#projects" class="inline-flex items-center rounded-lg border border-border bg-card/40 px-6 py-3 text-base font-semibold text-foreground hover:border-primary/50 hover:bg-card">
@@ -59,18 +67,7 @@
             </a>
           </div>
 
-          <div class="flex justify-center gap-4 pt-8">
-            <a href="https://github.com/rafnixg" class="rounded-full bg-card p-3 hover:bg-primary/10" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5">
-                <path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.74.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a10.93 10.93 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.41-2.68 5.38-5.24 5.67.41.35.78 1.04.78 2.1 0 1.52-.01 2.74-.01 3.11 0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"></path>
-              </svg>
-            </a>
-            <a href="https://linkedin.com/in/rafnixg" class="rounded-full bg-card p-3 hover:bg-primary/10" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5">
-                <path d="M4.98 3.5A2.48 2.48 0 1 0 5 8.46 2.48 2.48 0 0 0 4.98 3.5ZM3 9h4v12H3Zm7 0h3.83v1.71h.05c.53-1 1.82-2.06 3.75-2.06 4 0 4.74 2.63 4.74 6.04V21h-4v-5.55c0-1.32-.02-3.02-1.84-3.02-1.84 0-2.12 1.44-2.12 2.93V21h-4Z"></path>
-              </svg>
-            </a>
-          </div>
+          <social-links class="pt-8"></social-links>
 
           <div class="pt-12">
             <p class="mb-4 text-sm text-muted-foreground">Especializado en:</p>
@@ -87,116 +84,66 @@
       </div>
     </section>
 
+    <!-- Projects -->
     <section id="projects" class="bg-card/30 px-4 py-20 md:px-6">
       <div class="container mx-auto max-w-6xl">
-        <div class="mb-16 space-y-4 text-center">
-          <h2 class="text-4xl font-bold md:text-5xl">Mis Proyectos</h2>
-          <p class="mx-auto max-w-2xl text-lg text-muted-foreground">
-            Proyectos destacados de codigo abierto. Explora los repositorios y contribuciones.
-          </p>
-        </div>
+        <section-header
+          heading="Mis Proyectos"
+          sub="Proyectos destacados de codigo abierto. Explora los repositorios y contribuciones."
+        ></section-header>
 
         <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <article class="overflow-hidden rounded-2xl border border-border bg-card/80 shadow-lg shadow-black/10 transition-shadow hover:shadow-glow">
-            <div class="relative bg-muted">
-              <img src="https://opengraph.githubassets.com/1a/rafnixg/bcv-api" alt="BCV Exchange Rate API" class="h-auto w-full object-contain transition-transform duration-300 hover:scale-105" />
-            </div>
-            <div class="space-y-4 p-6">
-              <h3 class="text-xl font-bold">BCV Exchange Rate API</h3>
-              <p class="text-sm text-muted-foreground">API REST para obtener tasas de cambio del Banco Central de Venezuela en tiempo real. Ideal para aplicaciones que necesitan datos de divisas actualizados.</p>
-              <div class="flex flex-wrap gap-2">
-                <span class="rounded-full bg-primary/10 px-2.5 py-1 text-xs text-primary">FastAPI</span>
-                <span class="rounded-full bg-primary/10 px-2.5 py-1 text-xs text-primary">Python</span>
-                <span class="rounded-full bg-primary/10 px-2.5 py-1 text-xs text-primary">REST API</span>
-                <span class="rounded-full bg-primary/10 px-2.5 py-1 text-xs text-primary">Exchange Rates</span>
-              </div>
-              <div class="mt-4 flex gap-2">
-                <a href="https://github.com/rafnixg/bcv-api" target="_blank" rel="noopener noreferrer" class="inline-flex flex-1 items-center justify-center gap-2 rounded-lg bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.74.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a10.93 10.93 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.41-2.68 5.38-5.24 5.67.41.35.78 1.04.78 2.1 0 1.52-.01 2.74-.01 3.11 0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"></path></svg>
-                  GitHub
-                </a>
-              </div>
-            </div>
-          </article>
+          <project-card
+            name="BCV Exchange Rate API"
+            description="API REST para obtener tasas de cambio del Banco Central de Venezuela en tiempo real. Ideal para aplicaciones que necesitan datos de divisas actualizados."
+            url="https://github.com/rafnixg/bcv-api"
+            keywords='["FastAPI","Python","REST API","Exchange Rates"]'
+            show-image
+          ></project-card>
 
-          <article class="overflow-hidden rounded-2xl border border-border bg-card/80 shadow-lg shadow-black/10 transition-shadow hover:shadow-glow">
-            <div class="relative bg-muted">
-              <img src="https://opengraph.githubassets.com/1a/rafnixg/sismosve" alt="SismosVE - Venezuela Earthquake Monitor" class="h-auto w-full object-contain transition-transform duration-300 hover:scale-105" />
-            </div>
-            <div class="space-y-4 p-6">
-              <h3 class="text-xl font-bold">SismosVE - Venezuela Earthquake Monitor</h3>
-              <p class="text-sm text-muted-foreground">Aplicacion web moderna para visualizar y monitorear sismos en Venezuela usando datos oficiales de FUNVISIS con arquitectura modular optimizada.</p>
-              <div class="flex flex-wrap gap-2">
-                <span class="rounded-full bg-primary/10 px-2.5 py-1 text-xs text-primary">FastAPI</span>
-                <span class="rounded-full bg-primary/10 px-2.5 py-1 text-xs text-primary">Python</span>
-                <span class="rounded-full bg-primary/10 px-2.5 py-1 text-xs text-primary">Leaflet.js</span>
-                <span class="rounded-full bg-primary/10 px-2.5 py-1 text-xs text-primary">Real-time Monitoring</span>
-                <span class="rounded-full bg-primary/10 px-2.5 py-1 text-xs text-primary">Docker</span>
-              </div>
-              <div class="mt-4 flex gap-2">
-                <a href="https://github.com/rafnixg/sismosve" target="_blank" rel="noopener noreferrer" class="inline-flex flex-1 items-center justify-center gap-2 rounded-lg bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.74.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a10.93 10.93 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.41-2.68 5.38-5.24 5.67.41.35.78 1.04.78 2.1 0 1.52-.01 2.74-.01 3.11 0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"></path></svg>
-                  GitHub
-                </a>
-              </div>
-            </div>
-          </article>
+          <project-card
+            name="SismosVE - Venezuela Earthquake Monitor"
+            description="Aplicacion web moderna para visualizar y monitorear sismos en Venezuela usando datos oficiales de FUNVISIS con arquitectura modular optimizada."
+            url="https://github.com/rafnixg/sismosve"
+            keywords='["FastAPI","Python","Leaflet.js","Real-time Monitoring","Docker"]'
+            show-image
+          ></project-card>
 
-          <article class="overflow-hidden rounded-2xl border border-border bg-card/80 shadow-lg shadow-black/10 transition-shadow hover:shadow-glow">
-            <div class="relative bg-muted">
-              <img src="https://opengraph.githubassets.com/1a/rafnixg/own_wsgi" alt="Own WSGI Server" class="h-auto w-full object-contain transition-transform duration-300 hover:scale-105" />
-            </div>
-            <div class="space-y-4 p-6">
-              <h3 class="text-xl font-bold">Own WSGI Server</h3>
-              <p class="text-sm text-muted-foreground">Tutorial educativo sobre como crear tu propio servidor WSGI desde cero. Implementacion completa con soporte para aplicaciones FastAPI y frameworks WSGI.</p>
-              <div class="flex flex-wrap gap-2">
-                <span class="rounded-full bg-primary/10 px-2.5 py-1 text-xs text-primary">Python</span>
-                <span class="rounded-full bg-primary/10 px-2.5 py-1 text-xs text-primary">WSGI</span>
-                <span class="rounded-full bg-primary/10 px-2.5 py-1 text-xs text-primary">Server Architecture</span>
-                <span class="rounded-full bg-primary/10 px-2.5 py-1 text-xs text-primary">Educational</span>
-              </div>
-              <div class="mt-4 flex gap-2">
-                <a href="https://github.com/rafnixg/own_wsgi" target="_blank" rel="noopener noreferrer" class="inline-flex flex-1 items-center justify-center gap-2 rounded-lg bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.74.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a10.93 10.93 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.41-2.68 5.38-5.24 5.67.41.35.78 1.04.78 2.1 0 1.52-.01 2.74-.01 3.11 0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"></path></svg>
-                  GitHub
-                </a>
-              </div>
-            </div>
-          </article>
+          <project-card
+            name="Own WSGI Server"
+            description="Tutorial educativo sobre como crear tu propio servidor WSGI desde cero. Implementacion completa con soporte para aplicaciones FastAPI y frameworks WSGI."
+            url="https://github.com/rafnixg/own_wsgi"
+            keywords='["Python","WSGI","Server Architecture","Educational"]'
+            show-image
+          ></project-card>
 
-          <article class="overflow-hidden rounded-2xl border border-border bg-card/80 shadow-lg shadow-black/10 transition-shadow hover:shadow-glow">
-            <div class="relative bg-muted">
-              <img src="https://opengraph.githubassets.com/1a/rafnixg/links" alt="Links Bio - Personal Link Hub" class="h-auto w-full object-contain transition-transform duration-300 hover:scale-105" />
-            </div>
-            <div class="space-y-4 p-6">
-              <h3 class="text-xl font-bold">Links Bio - Personal Link Hub</h3>
-              <p class="text-sm text-muted-foreground">Hub de enlaces personales construido con Reflex. Centraliza todos tus links, proyectos y articulos en un unico lugar estilizado.</p>
-              <div class="flex flex-wrap gap-2">
-                <span class="rounded-full bg-primary/10 px-2.5 py-1 text-xs text-primary">Reflex</span>
-                <span class="rounded-full bg-primary/10 px-2.5 py-1 text-xs text-primary">Python</span>
-                <span class="rounded-full bg-primary/10 px-2.5 py-1 text-xs text-primary">HTML</span>
-                <span class="rounded-full bg-primary/10 px-2.5 py-1 text-xs text-primary">Personal Project</span>
-              </div>
-              <div class="mt-4 flex gap-2">
-                <a href="https://github.com/rafnixg/links" target="_blank" rel="noopener noreferrer" class="inline-flex flex-1 items-center justify-center gap-2 rounded-lg bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.74.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a10.93 10.93 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.41-2.68 5.38-5.24 5.67.41.35.78 1.04.78 2.1 0 1.52-.01 2.74-.01 3.11 0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"></path></svg>
-                  GitHub
-                </a>
-              </div>
-            </div>
-          </article>
+          <project-card
+            name="Links Bio - Personal Link Hub"
+            description="Hub de enlaces personales construido con Reflex. Centraliza todos tus links, proyectos y articulos en un unico lugar estilizado."
+            url="https://github.com/rafnixg/links"
+            keywords='["Reflex","Python","HTML","Personal Project"]'
+            show-image
+          ></project-card>
+        </div>
+
+        <div class="mt-12 text-center">
+          <a href="projects.html" class="inline-flex items-center gap-2 rounded-lg border border-border bg-card/40 px-6 py-3 text-base font-semibold text-foreground hover:border-primary/50 hover:bg-card">
+            Ver mas proyectos
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4" aria-hidden="true">
+              <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+            </svg>
+          </a>
         </div>
       </div>
     </section>
 
+    <!-- Articles -->
     <section id="articles" class="px-4 py-20 md:px-6">
       <div class="container mx-auto max-w-6xl">
-        <div class="mb-16 space-y-4 text-center">
-          <h2 class="text-4xl font-bold md:text-5xl">Articulos Recientes</h2>
-          <p class="mx-auto max-w-2xl text-lg text-muted-foreground">
-            Explora mis ultimos articulos sobre desarrollo backend, Python, Odoo y tecnologias emergentes.
-          </p>
-        </div>
+        <section-header
+          heading="Articulos Recientes"
+          sub="Explora mis ultimos articulos sobre desarrollo backend, Python, Odoo y tecnologias emergentes."
+        ></section-header>
 
         <div class="article-boxes flex flex-col gap-6">
           <p class="text-center text-muted-foreground">Cargando articulos...</p>
@@ -210,40 +157,25 @@
       </div>
     </section>
 
+    <!-- Contact -->
     <section id="contact" class="bg-card/50 px-4 py-20 md:px-6">
       <div class="container mx-auto max-w-4xl">
         <div class="space-y-8 text-center">
-          <div class="space-y-4">
-            <h2 class="text-4xl font-bold md:text-5xl">Tienes un proyecto en mente?</h2>
-            <p class="text-lg text-muted-foreground">
-              Estoy disponible para consultoria, desarrollo e implementacion de soluciones empresariales.
-            </p>
-          </div>
+          <section-header
+            heading="Tienes un proyecto en mente?"
+            sub="Estoy disponible para consultoria, desarrollo e implementacion de soluciones empresariales."
+          ></section-header>
 
           <div class="space-y-6 border-t border-border pt-8">
             <p class="text-sm text-muted-foreground">Conectate conmigo en:</p>
-            <div class="flex flex-wrap justify-center gap-4">
-              <a href="https://github.com/rafnixg" target="_blank" rel="noopener noreferrer" class="rounded-lg bg-card px-4 py-2 text-sm font-medium hover:bg-primary/10">GitHub</a>
-              <a href="https://linkedin.com/in/rafnixg" target="_blank" rel="noopener noreferrer" class="rounded-lg bg-card px-4 py-2 text-sm font-medium hover:bg-primary/10">LinkedIn</a>
-              <a href="https://links.rafnixg.dev" target="_blank" rel="noopener noreferrer" class="rounded-lg bg-card px-4 py-2 text-sm font-medium hover:bg-primary/10">Links</a>
-            </div>
+            <social-links variant="pills"></social-links>
           </div>
         </div>
       </div>
     </section>
 
-    <footer class="border-t border-border bg-card/30 px-4 py-8 md:px-6">
-      <div class="container mx-auto max-w-6xl">
-        <div class="flex flex-col items-center justify-between gap-4 text-sm text-muted-foreground md:flex-row">
-          <p>&copy; <span class="js-year"></span> Rafnix Guzman. Todos los derechos reservados.</p>
-          <div class="flex gap-6">
-            <a href="#" class="hover:text-foreground">Privacidad</a>
-            <a href="#" class="hover:text-foreground">Terminos</a>
-            <a href="/sitemap.xml" class="hover:text-foreground">Sitemap</a>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <site-footer></site-footer>
+
   </main>
 </body>
 </html>

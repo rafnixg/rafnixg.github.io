@@ -64,3 +64,14 @@ img {
     padding: 1.25rem;
   }
 }
+
+/* Web components — base rendering antes de que JS los actualice */
+project-card,
+projects-grid,
+article-card,
+site-nav,
+site-footer,
+section-header,
+social-links {
+  display: block;
+}

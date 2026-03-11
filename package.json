@@ -5,7 +5,8 @@
   "scripts": {
     "build:css": "tailwindcss -i ./src/input.css -o ./assets/css/tailwind.css --minify",
     "build:articles": "node build/fetch-articles.js",
-    "build": "npm run build:articles && npm run build:css"
+    "build:resume": "node build/fetch-resume.js",
+    "build": "npm run build:articles && npm run build:resume && npm run build:css"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.0",

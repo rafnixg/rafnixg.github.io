@@ -1,0 +1,1157 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Rafnix Gabriel Guzmán Garcia",
+    "label": "Python Backend | AI Engineer | Odoo Developer",
+    "image": "",
+    "email": "rafnixg@gmail.com",
+    "url": "https://links.rafnixg.dev",
+    "summary": "Backend Python con +15 años construyendo sistemas en producción: REST APIs con FastAPI y Django, integraciones complejas (REST, XMLRPC, SOA), automatización, microservicios y migración de sistemas legacy. Especialista en implementaciones Odoo ERP, facturación electrónica y procesos ETL sobre PostgreSQL.\n\nGestiono infraestructura propia (Proxmox, Docker, Kubernetes, CI/CD) donde desarrollo, pruebo y despliego soluciones end-to-end. Experiencia en múltiples sectores: finanzas, retail, manufactura, telecomunicaciones y servicios.\n\nComplemento mi perfil backend con experiencia práctica en AI Engineering: diseño de RAG pipelines, Agentic AI, Prompt Engineering y soluciones con LLM, aplicando IA como herramienta para resolver problemas reales de negocio.",
+    "location": {
+      "countryCode": "PE",
+      "address": "Lima, Perú"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "rafnixg",
+        "url": "https://www.linkedin.com/in/rafnixg/"
+      },
+      {
+        "network": "GitHub",
+        "username": "rafnixg",
+        "url": "https://github.com/rafnixg"
+      },
+      {
+        "network": "Twitter",
+        "username": "RafnixG",
+        "url": "https://twitter.com/RafnixG"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Kimenz Equipamentos & Engenharia Clínica",
+      "position": "Odoo Developer",
+      "startDate": "2023-12-01",
+      "highlights": [
+        "Odoo",
+        "PostgreSQL",
+        "Proxmox",
+        "LXC",
+        "Python",
+        "PostgreSQL"
+      ],
+      "summary": "Desarrollo y mantenimiento de módulos personalizados de Odoo ERP para gestión de servicio de campo, mejorando la coordinación y trazabilidad de tareas técnicas en terreno. Resolución de errores críticos en producción que impactaban la operación diaria del equipo de ingeniería clínica. Diseño y despliegue de infraestructura productiva basada en Proxmox con contenedores LXC, asegurando disponibilidad del sistema ERP y reducción de costos operativos.",
+      "url": "https://www.linkedin.com/company/kimenz/",
+      "location": "São Paulo, Brasil"
+    },
+    {
+      "name": "Peru Apps",
+      "position": "Python Developer",
+      "startDate": "2022-05-31",
+      "endDate": "2022-11-30",
+      "highlights": [
+        "FastAPI",
+        "Amazon S3",
+        "SES",
+        "Linux",
+        "Amazon Web Services (AWS)",
+        "Python",
+        "PostgreSQL",
+        "Docker"
+      ],
+      "summary": "Diseñé y desarrollé REST APIs con FastAPI para una plataforma de servicios digitales, implementando autenticación JWT con autorización granular por roles. Construí el backoffice administrativo con gestión integral de usuarios, permisos y generación de reportes. Integré servicios AWS (S3 para almacenamiento, SES para notificaciones) y establecí el pipeline de despliegue con Docker, incluyendo monitorización y logging en producción.",
+      "url": "https://www.linkedin.com/company/peru-apps/",
+      "location": "Lima, Perú"
+    },
+    {
+      "name": "Indra",
+      "position": "Analista Programador Python",
+      "startDate": "2022-01-31",
+      "endDate": "2022-04-30",
+      "highlights": [
+        "Jenkins",
+        "Databases",
+        "Kubernetes",
+        "Linux",
+        "SQL",
+        "Automatización robótica de procesos",
+        "DevOps",
+        "Python"
+      ],
+      "summary": "Lideré la migración de procesos de automatización legacy hacia Python, reemplazando scripts obsoletos por soluciones robustas con SFTP, MSSQL y procesamiento de datos con Pandas. Definí los lineamientos DevOps del equipo, implementando pipelines CI/CD con Jenkins y orquestación de contenedores en Kubernetes. Desarrollé la librería interna RPA-UTILS, estandarizando la automatización robótica de procesos y reduciendo tiempo de desarrollo en nuevos automatismos.",
+      "url": "https://www.linkedin.com/company/indra/"
+    },
+    {
+      "name": "SEAD SAC",
+      "position": "Python/Odoo Developer → Senior Python/Odoo Developer",
+      "startDate": "2018-12-31",
+      "endDate": "2021-12-31",
+      "highlights": [],
+      "summary": "Crecí de Developer a Senior liderando +7 implementaciones Odoo ERP en retail, manufactura y servicios. Desarrollé módulos personalizados con Python/ORM e implementé el sistema de Facturación Electrónica SUNAT (XML, firma digital, OSE). Construí integraciones complejas con APIs REST, XMLRPC y SOA contra sistemas de terceros. Diseñé la infraestructura de despliegue en AWS (EC2, Route53, S3) con Docker y establecí el pipeline CI/CD con GitLab CI, incluyendo un mini-PaaS para gestión de entornos. Optimicé PostgreSQL, desarrollé procesos ETL de migración de datos y capacité tanto a usuarios finales como a desarrolladores Junior.",
+      "url": "https://www.linkedin.com/company/sead-sac/",
+      "location": "Lima, Perú"
+    },
+    {
+      "name": "Quipu systems",
+      "position": "Odoo Developer",
+      "startDate": "2018-05-31",
+      "endDate": "2018-11-30",
+      "highlights": [],
+      "summary": "Desarrollé módulos Odoo personalizados: modelos de datos, vistas de interfaz y lógica de negocio adaptada a procesos del cliente. Mantuve y optimicé el sistema de Facturación Electrónica. Construí integraciones Cloud con APIs REST y webhooks para conectar el ERP con servicios externos. Participé en implementaciones completas de ERP: análisis de procesos, configuración funcional, migración de datos y capacitación a usuarios.",
+      "location": "Lima, Perú"
+    },
+    {
+      "name": "Varias Empresas",
+      "position": "Freelance Full-Stack Developer & Consultant",
+      "startDate": "2012-02-28",
+      "endDate": "2022-04-30",
+      "highlights": [],
+      "summary": "Desarrollo web Full-Stack (PHP/Laravel, Python/Odoo, VueJS, WordPress), consultoría tecnológica y módulos ERP para clientes en finanzas, retail, telecomunicaciones y ecommerce en Venezuela, Chile y remoto. Asesoré en selección de tecnologías y arquitectura de proyectos, desarrollé aplicaciones web a medida, módulos Odoo, soluciones POS/CRM e integraciones de negocio, y capacité equipos técnicos en buenas prácticas de desarrollo y adopción de nuevas tecnologías.",
+      "url": "https://resume.rafnixg.dev"
+    },
+    {
+      "name": "pudinet",
+      "position": "Desarrollador Frontend",
+      "startDate": "2017-10-31",
+      "endDate": "2018-03-31",
+      "highlights": [],
+      "summary": "Maquetación de sitios web responsivos a partir de diseños PSD, convirtiendo mockups a HTML5/CSS3 pixel-perfect. Implementé animaciones CSS avanzadas y funcionalidades interactivas con JavaScript/jQuery. Integré los desarrollos en plataformas CMS: WordPress, Joomla y WooCommerce.",
+      "url": "https://pudinet.com",
+      "location": "Carabobo, Venezuela"
+    },
+    {
+      "name": "Intergrafixs",
+      "position": "Desarrollador Front-end",
+      "startDate": "2017-03-31",
+      "endDate": "2017-08-31",
+      "highlights": [],
+      "summary": "Desarrollo Full-Stack de aplicaciones web: SPAs interactivas con VueJS en el frontend y APIs RESTful con Laravel 5.4 en el backend. Maquetación responsiva HTML5/CSS3 y modelado de datos con Eloquent ORM siguiendo patrón MVC.",
+      "location": "Chile"
+    },
+    {
+      "name": "WebsTinaquillo",
+      "position": "Desarrollador de aplicaciones web",
+      "startDate": "2013-01-31",
+      "endDate": "2017-01-31",
+      "highlights": [],
+      "summary": "Desarrollo Full-Stack de aplicaciones web con interfaces responsivas usando Bootstrap y AngularJS. Construcción de backends robustos con PHP/Laravel 5 y MySQL, implementando APIs y lógica de negocio.",
+      "location": "Tinaquillo"
+    },
+    {
+      "name": "Triskal Media S.A",
+      "position": "Desarrollador de aplicaciones web",
+      "startDate": "2015-01-31",
+      "endDate": "2016-09-30",
+      "highlights": [],
+      "summary": "Desarrollo de sitios WordPress con themes personalizados, plugins a medida y optimización de rendimiento. Construcción de aplicaciones web con backend Laravel 5 siguiendo arquitectura MVC. Maquetación responsiva con HTML5/CSS3 adaptada a múltiples dispositivos.",
+      "location": "Caracas"
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "Platzi",
+      "area": "Programación informática",
+      "studyType": "Desarrollo Backend con Python y Django",
+      "startDate": "2019-12-31",
+      "endDate": "2022-12-31",
+      "score": "Completado 2022",
+      "courses": []
+    },
+    {
+      "institution": "Universidad de Carabobo",
+      "area": "Ingeniería de telecomunicaciones",
+      "studyType": "Grado en Ingeniería",
+      "startDate": "2008-02-28",
+      "score": "No culminado (7mo semestre)",
+      "courses": []
+    },
+    {
+      "institution": "Instituto universitario de tecnologia del estado portuguesa",
+      "area": "Informática",
+      "studyType": "TSU en Informática",
+      "startDate": "2012-12-31",
+      "endDate": "2015-12-31",
+      "score": "",
+      "courses": []
+    }
+  ],
+  "awards": [
+    {
+      "title": "Desarrollo de agentes de inteligencia artificial en Azure",
+      "date": "2025-10-15",
+      "awarder": "Microsoft Learn",
+      "summary": "Trofeo de ruta de aprendizaje completada. Todos los módulos aprobados."
+    },
+    {
+      "title": "Desarrollo de aplicaciones de IA generativas en Azure",
+      "date": "2025-10-09",
+      "awarder": "Microsoft Learn",
+      "summary": "Trofeo de ruta de aprendizaje completada. Todos los módulos aprobados."
+    },
+    {
+      "title": "Desarrollo de soluciones de inteligencia artificial generativa con Azure OpenAI Service",
+      "date": "2025-01-24",
+      "awarder": "Microsoft Learn",
+      "summary": "Trofeo de ruta de aprendizaje completada."
+    },
+    {
+      "title": "Desarrollo de soluciones con Documento de inteligencia de Azure AI",
+      "date": "2025-01-24",
+      "awarder": "Microsoft Learn",
+      "summary": "Trofeo de ruta de aprendizaje completada."
+    },
+    {
+      "title": "Implementación de la minería de conocimiento con Búsqueda de Azure AI",
+      "date": "2025-01-24",
+      "awarder": "Microsoft Learn",
+      "summary": "Trofeo de ruta de aprendizaje completada."
+    },
+    {
+      "title": "Desarrollo de soluciones de procesamiento del lenguaje natural con Servicios de Azure AI",
+      "date": "2025-01-24",
+      "awarder": "Microsoft Learn",
+      "summary": "Trofeo de ruta de aprendizaje completada."
+    },
+    {
+      "title": "Creación de soluciones de visión artificial con Visión de Azure AI",
+      "date": "2025-01-24",
+      "awarder": "Microsoft Learn",
+      "summary": "Trofeo de ruta de aprendizaje completada."
+    },
+    {
+      "title": "Creación de modelos de visión con Custom Vision de Azure AI",
+      "date": "2025-01-24",
+      "awarder": "Microsoft Learn",
+      "summary": "Trofeo de ruta de aprendizaje completada."
+    },
+    {
+      "title": "Introducción a Servicios de Azure AI",
+      "date": "2025-01-24",
+      "awarder": "Microsoft Learn",
+      "summary": "Trofeo de ruta de aprendizaje completada."
+    },
+    {
+      "title": "Introducción al control de versiones con Git",
+      "date": "2023-11-23",
+      "awarder": "Microsoft Learn",
+      "summary": "Trofeo de ruta de aprendizaje completada."
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Introduction to LLMs in Python",
+      "issuer": "DataCamp",
+      "date": "2025-02-19",
+      "url": "https://www.datacamp.com/completed/statement-of-accomplishment/course/80a6449734fa03469528ded3092446c55ddf490d"
+    },
+    {
+      "name": "Designing Agentic Systems with LangChain",
+      "issuer": "DataCamp",
+      "date": "2025-02-18",
+      "url": "https://www.datacamp.com/completed/statement-of-accomplishment/course/0a00cc345e8e50ae5375c10a40ccbebc2ea5e128"
+    },
+    {
+      "name": "Retrieval Augmented Generation (RAG) with LangChain",
+      "issuer": "DataCamp",
+      "date": "2025-02-17",
+      "url": "https://www.datacamp.com/completed/statement-of-accomplishment/course/c3df13cfe0ecb20229def3e27e53b31e5d050e3b"
+    },
+    {
+      "name": "Developing LLM Applications with LangChain",
+      "issuer": "DataCamp",
+      "date": "2025-02-17",
+      "url": "https://www.datacamp.com/completed/statement-of-accomplishment/course/ded5de00c8f5c1a675d7d805d4c2ca12f0626de4"
+    },
+    {
+      "name": "Designing and Implementing a Microsoft Azure AI Solution",
+      "issuer": "Microsoft Learn",
+      "date": "2025-01-24",
+      "url": "https://learn.microsoft.com/api/achievements/share/es-mx/rafnixg/WZLSFTHN?sharingId=7B61E5FADF0C6D76"
+    },
+    {
+      "name": "Bootcamp Azure AI Engineer Associate",
+      "issuer": "Código Facilito",
+      "date": "2024-11-19",
+      "url": "https://codigofacilito.com/certificates/14842c73-20bc-4925-b9c6-c00f8c8b954f"
+    },
+    {
+      "name": "Curso de fundamentos de arquitectura de software",
+      "issuer": "Código Facilito",
+      "date": "2024-05-12",
+      "url": "https://codigofacilito.com/certificates/c2f85e60-c922-4dca-a261-ea6cd2f4b1cd"
+    },
+    {
+      "name": "Curso de Machine Learning con ScikitLearn",
+      "issuer": "Código Facilito",
+      "date": "2023-05-30",
+      "url": "https://codigofacilito.com/certificates/6c6b7e55-09d8-4478-b4fa-f2e45ab8b66e"
+    },
+    {
+      "name": "Curso para consumir APIs con Python",
+      "issuer": "Código Facilito",
+      "date": "2023-04-27",
+      "url": "https://codigofacilito.com/certificates/e6542b0a-6aa2-44d0-8be6-2c8f854bd176"
+    },
+    {
+      "name": "Curso Profesional de Python",
+      "issuer": "Platzi",
+      "date": "2022-05-31",
+      "url": "https://platzi.com/p/rafnixg/curso/2397-python-profesional/diploma/detalle/"
+    },
+    {
+      "name": "Curso de FastAPI: Fundamentos, Path Operations y Validaciones",
+      "issuer": "Platzi",
+      "date": "2022-03-31",
+      "url": "https://platzi.com/p/rafnixg/course/2513-fastapi/diploma/detalle/"
+    },
+    {
+      "name": "Curso de FastAPI: Modularización, Datos Avanzados y Errores",
+      "issuer": "Platzi",
+      "date": "2022-03-31",
+      "url": "https://platzi.com/p/rafnixg/course/2514-fastapi-modularizacion-datos/diploma/detalle/"
+    },
+    {
+      "name": "Curso de Introducción al Desarrollo Backend",
+      "issuer": "Platzi",
+      "date": "2022-03-31",
+      "url": "https://platzi.com/p/rafnixg/course/2508-introduccion-backend/diploma/detalle/"
+    },
+    {
+      "name": "Curso de Python Intermedio: Comprehensions, Lambdas y Manejo de Errores",
+      "issuer": "Platzi",
+      "date": "2022-03-31",
+      "url": "https://platzi.com/p/rafnixg/course/2255-python-intermedio/diploma/detalle/"
+    },
+    {
+      "name": "Desarrollo Backend con Python y Django",
+      "issuer": "Platzi",
+      "date": "2022-03-31",
+      "url": "https://platzi.com/p/rafnixg/learning-path/3-backend-python/diploma/detalle/"
+    },
+    {
+      "name": "Curso de Estructuras de Datos Lineales con Python",
+      "issuer": "Platzi",
+      "date": "2021-11-30",
+      "url": "https://platzi.com/p/rafnixg/course/2299-estructuras-datos-python/diploma/detalle/"
+    },
+    {
+      "name": "Curso de Fundamentos de AWS Cloud",
+      "issuer": "Platzi",
+      "date": "2021-08-31",
+      "url": "https://platzi.com/p/rafnixg/course/1323-aws-cloud/diploma/detalle/"
+    },
+    {
+      "name": "Curso de Introducción a la Terminal y Línea de Comandos",
+      "issuer": "Platzi",
+      "date": "2021-07-31",
+      "url": "https://platzi.com/p/rafnixg/course/2292-terminal/diploma/detalle/"
+    },
+    {
+      "name": "Curso Básico de Web Components con JavaScript",
+      "issuer": "Platzi",
+      "date": "2021-06-30",
+      "url": "https://platzi.com/p/rafnixg/curso/2199-web-components-javascript/diploma/detalle/"
+    },
+    {
+      "name": "Curso Práctico de JavaScript",
+      "issuer": "Platzi",
+      "date": "2021-06-30",
+      "url": "https://platzi.com/p/rafnixg/course/2327-javascript-practico/diploma/detalle/"
+    },
+    {
+      "name": "Curso de Single Page Application con JavaScript Vanilla",
+      "issuer": "Platzi",
+      "date": "2021-06-30",
+      "url": "https://platzi.com/p/rafnixg/course/1787-spa-javascript/diploma/detalle/"
+    },
+    {
+      "name": "EF SET English Certificate 54/100 (B2 Upper Intermediate)",
+      "issuer": "EF Standard English Test (EF SET)",
+      "date": "2021-04-30",
+      "url": "https://www.efset.org/cert/rmFwsg"
+    },
+    {
+      "name": "Curso Profesional de DevOps",
+      "issuer": "Platzi",
+      "date": "2021-03-31",
+      "url": "https://platzi.com/p/rafnixg/course/1431-devops/diploma/detalle/"
+    },
+    {
+      "name": "Infraestructura Como Código con Terraform",
+      "issuer": "Platzi",
+      "date": "2021-03-31",
+      "url": "https://platzi.com/p/rafnixg/curso/1712-course/diploma/detalle/"
+    },
+    {
+      "name": "Manipulación del DOM",
+      "issuer": "Platzi",
+      "date": "2021-03-31",
+      "url": "https://platzi.com/p/rafnixg/course/2193-dom/diploma/detalle/"
+    },
+    {
+      "name": "Python for Data Science",
+      "issuer": "IBM",
+      "date": "2021-03-31",
+      "url": "https://www.youracclaim.com/badges/fe8e13c5-1a21-45a5-80a3-eb13315c4023?source=linked_in_profile"
+    },
+    {
+      "name": "Travis CI",
+      "issuer": "Platzi",
+      "date": "2021-03-31",
+      "url": "https://platzi.com/p/rafnixg/course/1843-travis/diploma/detalle/"
+    },
+    {
+      "name": "Reto Road to Code",
+      "issuer": "Platzi",
+      "date": "2020-11-30",
+      "url": "https://platzi.com/@rafnixg/curso/2173-road-to-code/diploma/detalle/"
+    },
+    {
+      "name": "Curso Básico de Python",
+      "issuer": "Platzi",
+      "date": "2020-10-31",
+      "url": "https://platzi.com/@rafnixg/curso/1937-pythonbasico/diploma/detalle/"
+    }
+  ],
+  "publications": [],
+  "skills": [
+    {
+      "name": "Backend Development",
+      "level": "Expert",
+      "keywords": [
+        "Python",
+        "FastAPI",
+        "Django",
+        "Flask",
+        "Odoo ERP",
+        "REST APIs",
+        "GraphQL",
+        "Microservices",
+        "XML/XMLRPC"
+      ]
+    },
+    {
+      "name": "Data Processing & Automation",
+      "level": "Advanced",
+      "keywords": [
+        "Pandas",
+        "Celery",
+        "Apache Airflow",
+        "ETL Pipelines",
+        "Automation",
+        "RPA",
+        "Web Scraping",
+        "BeautifulSoup"
+      ]
+    },
+    {
+      "name": "Database Management",
+      "level": "Expert",
+      "keywords": [
+        "PostgreSQL",
+        "MySQL",
+        "MariaDB",
+        "Redis",
+        "SQLite",
+        "Database Optimization",
+        "Query Performance"
+      ]
+    },
+    {
+      "name": "Cloud & Infrastructure",
+      "level": "Advanced",
+      "keywords": [
+        "AWS (EC2, S3, SES, Route53)",
+        "Docker",
+        "Docker Compose",
+        "Kubernetes",
+        "Linux Administration",
+        "Bash Scripting",
+        "CI/CD",
+        "GitHub Actions",
+        "GitLab CI",
+        "Jenkins"
+      ]
+    },
+    {
+      "name": "DevOps & Monitoring",
+      "level": "Advanced",
+      "keywords": [
+        "Terraform",
+        "Infrastructure as Code",
+        "Proxmox",
+        "LXC Containers",
+        "NewRelic APM",
+        "Cloudflare",
+        "Travis CI"
+      ]
+    },
+    {
+      "name": "Frontend Development",
+      "level": "Intermediate",
+      "keywords": [
+        "JavaScript",
+        "HTML5",
+        "CSS3",
+        "Vue.js",
+        "React",
+        "jQuery",
+        "Jinja2",
+        "Leaflet.js",
+        "Responsive Design"
+      ]
+    },
+    {
+      "name": "Message Queues & Event Streaming",
+      "level": "Advanced",
+      "keywords": [
+        "RabbitMQ",
+        "Celery",
+        "Event-Driven Architecture",
+        "Asynchronous Processing"
+      ]
+    },
+    {
+      "name": "Development Tools & Practices",
+      "level": "Expert",
+      "keywords": [
+        "Git",
+        "GitHub",
+        "GitLab",
+        "VS Code",
+        "Regular Expressions",
+        "Code Review",
+        "Agile Methodologies",
+        "TDD",
+        "API Design"
+      ]
+    },
+    {
+      "name": "E-commerce & ERP Systems",
+      "level": "Expert",
+      "keywords": [
+        "Odoo Development",
+        "E-commerce Platforms",
+        "Electronic Invoicing",
+        "Payment Integration",
+        "WooCommerce"
+      ]
+    },
+    {
+      "name": "AI Engineering & Agentic Systems",
+      "keywords": [
+        "LLM",
+        "LLM Application Design",
+        "RAG Pipelines",
+        "Agentic AI",
+        "Prompt Engineering",
+        "Tool Calling",
+        "LangGraph",
+        "LangChain",
+        "n8n Agents",
+        "AnythingLLM",
+        "LM Studio",
+        "Open-Source LLM Evaluation",
+        "AI Observability"
+      ]
+    },
+    {
+      "name": "Homelab Platform Operations",
+      "keywords": [
+        "Proxmox",
+        "LXC",
+        "Docker",
+        "Portainer",
+        "Cloudflare Tunnels",
+        "Uptime Kuma",
+        "Pi-hole",
+        "Service Reliability",
+        "Self-hosted Platforms"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "fluency": "Native Speaker",
+      "language": "Español"
+    },
+    {
+      "fluency": "Professional Working",
+      "language": "Inglés"
+    }
+  ],
+  "interests": [],
+  "references": [
+    {
+      "name": "Luis Canales Vargas",
+      "reference": "Eres un curioso tecnológico por naturaleza. Tus incansables ganas por aprender, descubrir y aplicar tecnología, te hacen un profesional con una amplitud de acción sorprendente. Grandes cualidades para la organización, análisis y resolución de problemas, trabajo en equipo y un espíritu de superación admirable.\n\nComo se diría en el argot deportivo: \"A Rafnix, dámelo siempre!\"\n\nGran profesional y mejor persona"
+    },
+    {
+      "name": "José Enrique Acacio",
+      "reference": "Excelente supervisor, siempre atento y paciente apoyando a desarrollar y aprender."
+    },
+    {
+      "name": "Kristian Rondon",
+      "reference": "👍"
+    },
+    {
+      "name": "Javier Quintana Taipe",
+      "reference": "Buen amigo y excelente mentor. He aprendido mucho trabajando con Rafnix, tiene un gran conocimiento en diferentes tecnologías web, sabe programar en PHP, Javascript, Python y conoce bastante sobre Odoo ERP. Es un entusiasta de la tecnología que contagia e inspira a su grupo de trabajo. Tiene la habilidad de analizar los problemas más desafiantes y encontrarle la mejor solución haciendo uso de todos sus conocimientos, además tiene la capacidad de expresar su ideas de forma clara y precisa."
+    },
+    {
+      "name": "Steve Matos",
+      "reference": "Excelente amigo y compañero de trabajo, alguien en quien puedes confiar siempre y con quien compartir grandes anécdotas. \nComo desarrollador, una persona que tienen un gran conocimiento tanto del desarrollo web, como de ERPs con python y Odoo y sobre todo tiene una gran skill de análisis lo cual permite hacer plantear la mejor solución ante cualquier problema.\nAdemas de tener grandes conocimientos en muchas otras áreas de la tecnología."
+    },
+    {
+      "name": "Juan Alberto José Sánchez Yelamo",
+      "reference": "Excelente profesional, con altas capacidades de aprendizaje y trabajo en equipo, con mucha experiencia en el campo de la programación y desarrollo de proyectos de IT."
+    }
+  ],
+  "projects": [
+    {
+      "name": "AI Homelab Platform (Private) - Agentic AI Operations Lab",
+      "description": "Laboratorio de IA self-hosted sobre infraestructura Proxmox multi-host con ~56 contenedores operativos gestionados via Docker/Portainer. Integra servicios de IA como AnythingLLM, OpenClaw y agentes autónomos en n8n para automatización de flujos con LLMs. Permite evaluación práctica de modelos SLM/LLM open-source mediante LM Studio, comparando calidad, latencia y costo según caso de uso.",
+      "highlights": [
+        "Proxmox + LXC multi-host",
+        "AnythingLLM + OpenClaw + n8n agents",
+        "Evaluación práctica de SLM/LLM open-source con LM Studio",
+        "Operación de ~56 contenedores en inventario (snapshot)"
+      ],
+      "keywords": [
+        "AI Engineering",
+        "LLM",
+        "RAG",
+        "Agents",
+        "Proxmox",
+        "Docker",
+        "Portainer",
+        "n8n",
+        "AnythingLLM",
+        "LM Studio"
+      ],
+      "startDate": "2024-01-01",
+      "url": "https://links.rafnixg.dev",
+      "roles": [
+        "AI Engineer",
+        "Platform Engineer"
+      ],
+      "entity": "Personal Lab",
+      "type": "application"
+    },
+    {
+      "name": "SismosVE - Earthquake Monitoring Venezuela",
+      "description": "Aplicación de monitoreo sísmico en tiempo real para Venezuela con datos oficiales de FUNVISIS. Backend FastAPI (Python 3.13) con arquitectura modular, mapa interactivo Leaflet.js, filtros avanzados y estadísticas actualizadas automáticamente cada 5 minutos. Desplegado con Docker multi-arch, CI/CD con GitHub Actions, optimizado para SEO (Open Graph, Schema.org) y compatible con Cloudflare Tunnel.",
+      "highlights": [
+        "FastAPI + Python 3.13 backend with modular architecture",
+        "Interactive map with Leaflet.js and real-time data",
+        "Docker containerization with multi-architecture support",
+        "GitHub Actions CI/CD pipeline",
+        "SEO optimized with Open Graph and Schema.org",
+        "Cloudflare Tunnel compatible with cache management"
+      ],
+      "keywords": [
+        "Python",
+        "FastAPI",
+        "Docker",
+        "Leaflet.js",
+        "GitHub Actions",
+        "API REST",
+        "Web Scraping",
+        "BeautifulSoup",
+        "SEO"
+      ],
+      "startDate": "2020-01-01",
+      "endDate": "2025-11-28",
+      "url": "https://github.com/rafnixg/sismosve",
+      "roles": [
+        "Full Stack Developer",
+        "DevOps Engineer"
+      ],
+      "entity": "Personal Project",
+      "type": "application"
+    },
+    {
+      "name": "BCV Exchange Rate API",
+      "description": "API REST para consulta de tasas de cambio oficiales del Banco Central de Venezuela. Construida con FastAPI, obtiene datos mediante scraping con BeautifulSoup, persiste históricos en SQLite e incluye documentación automática OpenAPI/Swagger. Integra rate limiting, caching, monitorización APM con NewRelic y despliegue Docker.",
+      "highlights": [
+        "FastAPI REST API with automatic OpenAPI documentation",
+        "Web scraping with BeautifulSoup for BCV official rates",
+        "Historical data with SQLite database",
+        "Docker containerization with multiple Dockerfile variants",
+        "NewRelic APM integration",
+        "Rate limiting and caching mechanisms"
+      ],
+      "keywords": [
+        "Python",
+        "FastAPI",
+        "Web Scraping",
+        "BeautifulSoup",
+        "SQLite",
+        "Docker",
+        "API REST",
+        "Pydantic",
+        "NewRelic"
+      ],
+      "startDate": "2021-06-01",
+      "endDate": "2025-11-28",
+      "url": "https://github.com/rafnixg/bcv-api",
+      "roles": [
+        "Backend Developer",
+        "API Designer"
+      ],
+      "entity": "Personal Project",
+      "type": "application"
+    },
+    {
+      "name": "RafnixG-Lib - Personal Card Python Library",
+      "description": "Librería Python de código abierto publicada en PyPI que funciona como tarjeta personal desde la terminal. Incluye CLI con múltiples comandos: información personal estilizada con Rich, posts de blog via API GraphQL de Hashnode y parser de CV en formato JSON. Publicación automatizada en PyPI mediante GitHub Actions.",
+      "highlights": [
+        "Published Python package on PyPI",
+        "Rich library integration for styled console output",
+        "Hashnode API integration for blog posts",
+        "Resume parser from JSON with comprehensive sections",
+        "Automated PyPI publishing with GitHub Actions",
+        "CLI tool with multiple commands"
+      ],
+      "keywords": [
+        "Python",
+        "PyPI",
+        "CLI",
+        "Rich",
+        "Hashnode API",
+        "GitHub Actions",
+        "Package Development"
+      ],
+      "startDate": "2022-03-01",
+      "endDate": "2025-11-28",
+      "url": "https://github.com/rafnixg/rafnixg-lib",
+      "roles": [
+        "Python Developer",
+        "Package Maintainer"
+      ],
+      "entity": "Personal Project",
+      "type": "library"
+    },
+    {
+      "name": "Own WSGI - Educational WSGI Server Implementation",
+      "description": "Implementación educativa de un servidor WSGI construido desde cero siguiendo la especificación PEP 3333. Incluye sistema de routing personalizado, middleware, abstracción de objetos Request/Response y compatibilidad con FastAPI. Proyecto diseñado como recurso de aprendizaje sobre arquitectura de servidores web y el protocolo HTTP.",
+      "highlights": [
+        "Complete WSGI server implementation following PEP 3333",
+        "Custom routing and middleware system",
+        "Request and Response object abstraction",
+        "FastAPI compatibility",
+        "Docker containerization",
+        "Educational resource for web server internals"
+      ],
+      "keywords": [
+        "Python",
+        "WSGI",
+        "Web Server",
+        "HTTP Protocol",
+        "Socket Programming",
+        "FastAPI",
+        "Docker",
+        "Educational"
+      ],
+      "startDate": "2023-01-01",
+      "endDate": "2023-06-30",
+      "url": "https://github.com/rafnixg/own_wsgi",
+      "roles": [
+        "Python Developer",
+        "Technical Educator"
+      ],
+      "entity": "Personal Project",
+      "type": "application"
+    },
+    {
+      "name": "BnB-BCV - Binance P2P & BCV Exchange Rate API",
+      "description": "API de tasas de cambio que combina datos oficiales del BCV con precios P2P de Binance/USDT para el mercado venezolano. Construida con FastAPI, incluye persistencia SQLite para análisis histórico, interfaz web, health checks y actualizaciones automatizadas programadas. Orientada a proveer datos financieros transparentes y accesibles.",
+      "highlights": [
+        "Dual data source: BCV official rates and Binance P2P market rates",
+        "FastAPI with automatic OpenAPI documentation",
+        "SQLite persistence for historical analysis",
+        "Docker deployment with health checks",
+        "Web interface for easy access",
+        "Scheduled automated updates"
+      ],
+      "keywords": [
+        "Python",
+        "FastAPI",
+        "Binance API",
+        "Web Scraping",
+        "SQLite",
+        "Docker",
+        "Financial Data",
+        "API REST"
+      ],
+      "startDate": "2024-06-01",
+      "url": "https://github.com/gabrielbaute/binance-bcv-dolar",
+      "roles": [
+        "Contributor",
+        "Backend Developer"
+      ],
+      "entity": "Open Source Contribution",
+      "type": "application"
+    },
+    {
+      "name": "SpotifySaver - Spotify Music Downloader with Jellyfin Integration",
+      "description": "Herramienta de descarga de música con metadata de Spotify optimizada para servidores Jellyfin. Obtiene audio de YouTube Music via yt-dlp, genera letras sincronizadas LRC y archivos NFO con estructura automática de carpetas. Ofrece tres interfaces: CLI, API REST y Web UI con progreso en tiempo real. Desplegada con Docker via GitHub Container Registry.",
+      "highlights": [
+        "Spotify API integration for metadata",
+        "YouTube Music download with yt-dlp",
+        "Synchronized lyrics (.lrc) from LRC Lib",
+        "Jellyfin NFO file generation",
+        "Web UI with real-time download progress",
+        "RESTful API for integrations",
+        "Docker with GitHub Container Registry",
+        "Poetry dependency management"
+      ],
+      "keywords": [
+        "Python",
+        "Spotify API",
+        "YouTube Music",
+        "FastAPI",
+        "yt-dlp",
+        "Docker",
+        "Web Interface",
+        "CLI",
+        "Jellyfin",
+        "Poetry"
+      ],
+      "startDate": "2024-08-01",
+      "url": "https://github.com/gabrielbaute/spotify-saver",
+      "roles": [
+        "Contributor",
+        "Full Stack Developer"
+      ],
+      "entity": "Open Source Contribution",
+      "type": "application"
+    },
+    {
+      "name": "Resume Website & Export Pipeline",
+      "description": "Repositorio que centraliza mi CV profesional como sitio estático, combinando JSON Resume con Reactive Resume, exportación automatizada de HTML/PDF, sitemap, metadatos SEO y publicación en GitHub Pages.",
+      "highlights": [
+        "JSON Resume + Reactive Resume como fuentes integradas",
+        "Exportación automatizada de HTML, PDF y screenshots",
+        "Sitemap, SEO y analytics integrados",
+        "Publicación automática en GitHub Pages"
+      ],
+      "keywords": [
+        "Python",
+        "JSON Resume",
+        "Reactive Resume",
+        "GitHub Actions",
+        "Static Site",
+        "SEO"
+      ],
+      "url": "https://github.com/rafnixg/resume",
+      "roles": [
+        "Maintainer",
+        "Backend Developer"
+      ],
+      "entity": "Personal Project",
+      "type": "application"
+    },
+    {
+      "name": "GitHub Profile README Automation",
+      "description": "README de perfil de GitHub construido como una tarjeta técnica viva, con automatización de contenido, métricas y enlaces a sitio personal, blog y portafolio profesional.",
+      "highlights": [
+        "README de perfil programático en Python",
+        "Automatización de contenido y actualizaciones",
+        "Integración con métricas y enlaces personales"
+      ],
+      "keywords": [
+        "Python",
+        "GitHub",
+        "Automation",
+        "README Profile"
+      ],
+      "url": "https://github.com/rafnixg/rafnixg",
+      "roles": [
+        "Maintainer"
+      ],
+      "entity": "Personal Project",
+      "type": "application"
+    },
+    {
+      "name": "Rifas - Odoo 18 Raffle Management Module",
+      "description": "Vertical de Odoo 18 para gestión integral de rifas online, venta de boletos, participantes, pagos, notificaciones y sorteo controlado, con portal web y reportes operativos.",
+      "highlights": [
+        "Módulo Odoo 18 con modelos, vistas y seguridad",
+        "Venta web de boletos y gestión de participantes",
+        "Control de pagos, órdenes y notificaciones",
+        "Sorteo manual validado y reportes detallados"
+      ],
+      "keywords": [
+        "Python",
+        "Odoo",
+        "ERP",
+        "E-commerce",
+        "Payment Integration"
+      ],
+      "url": "https://github.com/rafnixg/rifas",
+      "roles": [
+        "Odoo Developer",
+        "Backend Developer"
+      ],
+      "entity": "Personal Project",
+      "type": "application"
+    },
+    {
+      "name": "AI Coding Agent",
+      "description": "Implementación en Python de un agente de programación con tool calling, capaz de leer y escribir archivos, ejecutar comandos de terminal y resolver tareas de desarrollo como parte del reto de CodeCrafters.",
+      "highlights": [
+        "Arquitectura orientada a objetos para tools y agentes",
+        "Soporte para lectura y escritura de archivos",
+        "Ejecución de comandos en terminal",
+        "Loop conversacional para resolución de tareas"
+      ],
+      "keywords": [
+        "Python",
+        "AI Agents",
+        "Tool Calling",
+        "LLM Applications",
+        "CodeCrafters"
+      ],
+      "url": "https://github.com/rafnixg/codecrafters-claude-code-python",
+      "roles": [
+        "AI Engineer",
+        "Python Developer"
+      ],
+      "entity": "Personal Project",
+      "type": "application"
+    },
+    {
+      "name": "Rafnixg.dev Personal Website",
+      "description": "Código fuente de mi sitio personal construido con HTML, CSS y JavaScript puros para presentar perfil profesional, experiencia, enlaces y proyectos sin depender de frameworks.",
+      "highlights": [
+        "Sitio estático en HTML, CSS y JavaScript",
+        "Contenido profesional y catálogo de proyectos",
+        "Despliegue en GitHub Pages"
+      ],
+      "keywords": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "GitHub Pages",
+        "Static Site"
+      ],
+      "url": "https://github.com/rafnixg/rafnixg.github.io",
+      "roles": [
+        "Frontend Developer",
+        "Maintainer"
+      ],
+      "entity": "Personal Project",
+      "type": "application"
+    },
+    {
+      "name": "Camino de Borrachos - Random Walk Simulation",
+      "description": "Implementación en Python del clásico problema de caminata aleatoria, desarrollada como ejercicio de programación dinámica y estocástica, con simulación y opciones de graficación.",
+      "highlights": [
+        "Modelado de random walk en Python",
+        "Clases para campo, coordenadas y trayectorias",
+        "Visualización y exploración de resultados"
+      ],
+      "keywords": [
+        "Python",
+        "Simulation",
+        "Random Walk",
+        "Data Visualization"
+      ],
+      "url": "https://github.com/rafnixg/camino_de_borracho",
+      "roles": [
+        "Python Developer"
+      ],
+      "entity": "Learning Project",
+      "type": "application"
+    },
+    {
+      "name": "Lox Interpreter in Python",
+      "description": "Implementación en Python del lenguaje Lox inspirada en Crafting Interpreters, enfocada en el lexer y la tokenización como base para construir un intérprete completo.",
+      "highlights": [
+        "Scanner y tokenización de código fuente Lox",
+        "CLI para analizar archivos .lox",
+        "Base para parser e intérprete posteriores"
+      ],
+      "keywords": [
+        "Python",
+        "Interpreter",
+        "Compiler Theory",
+        "Lexer",
+        "CodeCrafters"
+      ],
+      "url": "https://github.com/rafnixg/rafnixg-lox-interpreter-python",
+      "roles": [
+        "Python Developer"
+      ],
+      "entity": "Learning Project",
+      "type": "application"
+    },
+    {
+      "name": "Build Your Own HTTP Server - Python",
+      "description": "Servidor HTTP/1.1 construido desde cero en Python con routing, concurrencia por hilos, subida y descarga de archivos y compresión gzip, como ejercicio práctico de protocolos y networking.",
+      "highlights": [
+        "Servidor HTTP/1.1 multihilo",
+        "Routing con rutas exactas y wildcard",
+        "Subida y descarga de archivos",
+        "Soporte para gzip y logging de requests"
+      ],
+      "keywords": [
+        "Python",
+        "HTTP",
+        "Sockets",
+        "Threading",
+        "CodeCrafters"
+      ],
+      "url": "https://github.com/rafnixg/codecrafters-http-server-python",
+      "roles": [
+        "Backend Developer"
+      ],
+      "entity": "Learning Project",
+      "type": "application"
+    },
+    {
+      "name": "Migrate GitHub to Gitea",
+      "description": "Herramienta automatizada para migrar repositorios de GitHub hacia Gitea, con clientes API en Python, configuración por variables de entorno y scripts auxiliares para migración y limpieza.",
+      "highlights": [
+        "Integración con APIs de GitHub y Gitea",
+        "Migración automatizada de repositorios",
+        "Scripts auxiliares para administración masiva"
+      ],
+      "keywords": [
+        "Python",
+        "GitHub API",
+        "Gitea",
+        "Migration",
+        "Automation"
+      ],
+      "url": "https://github.com/rafnixg/migrate_github_to_gitea",
+      "roles": [
+        "Python Developer",
+        "Automation Engineer"
+      ],
+      "entity": "Personal Project",
+      "type": "application"
+    },
+    {
+      "name": "Build Your Own Shell - Python",
+      "description": "Shell POSIX-like implementada en Python con REPL interactivo, comandos built-in, resolución de ejecutables en PATH y ejecución de procesos externos.",
+      "highlights": [
+        "REPL interactivo con prompt personalizado",
+        "Built-ins como echo, type y exit",
+        "Resolución de binarios en PATH",
+        "Ejecución de comandos externos"
+      ],
+      "keywords": [
+        "Python",
+        "Shell",
+        "CLI",
+        "POSIX",
+        "CodeCrafters"
+      ],
+      "url": "https://github.com/rafnixg/codecrafters-shell-python",
+      "roles": [
+        "Python Developer"
+      ],
+      "entity": "Learning Project",
+      "type": "application"
+    },
+    {
+      "name": "ChatApp OpenAI",
+      "description": "Aplicación web de chat en tiempo real con Flask y OpenAI, interfaz responsive con modo claro/oscuro, endpoint REST y despliegue contenedorizado con Docker.",
+      "highlights": [
+        "Flask backend con integración OpenAI",
+        "Interfaz web responsive",
+        "Endpoint REST para procesar mensajes",
+        "Docker para despliegue"
+      ],
+      "keywords": [
+        "Python",
+        "Flask",
+        "OpenAI API",
+        "Docker",
+        "Chatbot"
+      ],
+      "url": "https://github.com/rafnixg/chatapp_openai",
+      "roles": [
+        "Full Stack Developer"
+      ],
+      "entity": "Personal Project",
+      "type": "application"
+    },
+    {
+      "name": "Chatbot OpenAI + Gradio",
+      "description": "Demo en Python para construir un chatbot con la API de OpenAI y una interfaz web rápida usando Gradio, publicada también como complemento práctico de contenido técnico en blog.",
+      "highlights": [
+        "Integración con OpenAI API",
+        "Interfaz web con Gradio",
+        "Setup simple con Python y virtualenv"
+      ],
+      "keywords": [
+        "Python",
+        "OpenAI API",
+        "Gradio",
+        "Chatbot"
+      ],
+      "url": "https://github.com/rafnixg/chatbot_openai_gradio",
+      "roles": [
+        "Python Developer"
+      ],
+      "entity": "Personal Project",
+      "type": "application"
+    },
+    {
+      "name": "COVID-19 Latinoamerica API",
+      "description": "API desarrollada en Python para consumir, consolidar y exponer datos de COVID-19 en Latinoamérica, con un proceso ETL que agrega CSVs de fuentes públicas y actualiza el servicio periódicamente.",
+      "highlights": [
+        "ETL para consolidación de datasets CSV",
+        "API en Flask con actualización automática",
+        "Datos regionales para análisis de COVID-19"
+      ],
+      "keywords": [
+        "Python",
+        "Flask",
+        "ETL",
+        "CSV",
+        "Public Data"
+      ],
+      "url": "https://github.com/rafnixg/covid-19_latinoamerica_api",
+      "roles": [
+        "Backend Developer",
+        "Data Engineer"
+      ],
+      "entity": "Personal Project",
+      "type": "application"
+    },
+    {
+      "name": "QR & Barcode Reader",
+      "description": "Aplicación web ligera que escanea códigos QR y códigos de barras directamente desde la cámara del navegador, sin backend ni proceso de build.",
+      "highlights": [
+        "Escaneo en tiempo real desde cámara",
+        "Soporte para QR y múltiples formatos de barcode",
+        "Implementación 100% frontend sin backend"
+      ],
+      "keywords": [
+        "HTML",
+        "JavaScript",
+        "Barcode",
+        "QR",
+        "Browser APIs"
+      ],
+      "url": "https://github.com/rafnixg/qr-barcode-reader",
+      "roles": [
+        "Frontend Developer"
+      ],
+      "entity": "Personal Project",
+      "type": "application"
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "canonical": "https://github.com/jsonresume/resume-schema/blob/v1.0.0/schema.json",
+    "theme": "elegant"
+  }
+}
