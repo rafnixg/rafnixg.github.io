@@ -3,9 +3,55 @@
 @tailwind utilities;
 
 :root {
-  --bg: #0b1220;
-  --muted: #93a3b8;
+  --background: 20 24 36;
+  --foreground: 244 247 251;
+  --card: 27 32 46;
+  --card-foreground: 244 247 251;
+  --popover: 27 32 46;
+  --popover-foreground: 244 247 251;
+  --primary: 101 116 255;
+  --primary-foreground: 10 14 24;
+  --secondary: 24 174 201;
+  --secondary-foreground: 244 247 251;
+  --muted: 41 48 68;
+  --muted-foreground: 153 166 189;
+  --accent: 101 116 255;
+  --accent-foreground: 10 14 24;
+  --border: 48 57 78;
+  --input: 32 39 58;
+  --ring: 101 116 255;
+  --radius: 1rem;
 }
 
-/* small helpers used during migration */
-.container { max-width: 1000px; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; }
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-background text-foreground font-sans antialiased;
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(101, 116, 255, 0.18), transparent 30%),
+    radial-gradient(circle at 85% 15%, rgba(24, 174, 201, 0.14), transparent 24%),
+    linear-gradient(180deg, rgba(14, 18, 28, 0.98), rgba(20, 24, 36, 1));
+  min-height: 100vh;
+}
+
+* {
+  @apply border-border;
+}
+
+a {
+  @apply transition-colors;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.gradient-shift {
+  background-size: 200% 200%;
+}
+
+.glass-card {
+  @apply border border-border/70 bg-card/70 backdrop-blur;
+}
