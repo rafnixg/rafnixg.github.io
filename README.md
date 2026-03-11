@@ -21,9 +21,22 @@ La rama de trabajo para esta migracion es `redesing-2026`.
 ### Comandos
 
 ```bash
+# Instalar dependencias
 npm install
+
+# Compilar CSS + obtener articulos
 npm run build
+
+# Solo CSS
+npm run build:css
+
+# Solo articulos
+node build/fetch-articles.js
+
+# Servidor local
 python -m http.server 8000
+# o con Node.js
+npx serve .
 ```
 
 ### Build de articulos
@@ -35,18 +48,49 @@ Tambien existe un workflow en `.github/workflows/update-articles.yml` que permit
 - actualizacion mensual programada
 - ejecucion manual con `workflow_dispatch`
 
+### Despliegue en GitHub Pages
+
+1. Asegurarse de que `assets/css/tailwind.css` y `data/articles.json` esten generados y commiteados:
+   ```bash
+   npm run build
+   git add assets/css/tailwind.css data/articles.json
+   git commit -m "chore: build assets"
+   ```
+2. Hacer merge de `redesing-2026` a `main`:
+   ```bash
+   git checkout main
+   git merge redesing-2026
+   git push origin main
+   ```
+3. GitHub Actions desplegara automaticamente via `pages-build-deployment`.  
+   Verificar el estado en: `https://github.com/rafnixg/rafnixg.github.io/actions`
+
+### Estructura de assets
+
+```
+assets/
+  css/tailwind.css      — CSS compilado (generado por npm run build:css)
+  fonts/Mona-Sans.woff2 — Fuente personalizada
+  icons/
+    icon.svg            — Favicon SVG
+    icon-light-32x32.png
+    icon-dark-32x32.png
+    apple-icon.png
+  images/
+    banner_web.png      — Imagen para og:image / Twitter card
+    logo.png
+    skills/             — Logos de tecnologias
+    social-links/       — Iconos de redes sociales
+```
+
 ### Estado
 
-Ya esta migrado el layout principal del nuevo diseno:
+Layout principal migrado:
 
 - Hero
 - Projects
-- Articles
+- Articles (cargados desde `data/articles.json` via fetch)
 - Contact
 - Footer
-
-Pendiente:
-
-- copiar algunos assets visuales del repo nuevo
 - pulir metadata/icons
 - revisar detalles de responsive y polish final

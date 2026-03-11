@@ -88,4 +88,6 @@ async function renderArticles() {
   }
 }
 
+renderArticles();
+
 document.addEventListener("DOMContentLoaded", renderArticles);
