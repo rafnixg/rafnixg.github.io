@@ -32,10 +32,10 @@ class SiteNav extends HTMLElement {
         ? `<span class="text-sm font-semibold text-foreground">${page}</span>`
         : ''
       : `<nav class="hidden gap-6 sm:flex" aria-label="Navegación principal">
-           <a href="#projects" class="text-sm text-muted-foreground hover:text-foreground">Proyectos</a>
            <a href="#articles" class="text-sm text-muted-foreground hover:text-foreground">Articulos</a>
            <a href="#contact"  class="text-sm text-muted-foreground hover:text-foreground">Contacto</a>
-           <a href="projects.html" class="text-sm font-semibold text-primary hover:text-primary/80">Ver todos →</a>
+           <a href="https://resume.rafnixg.dev" target="_blank" rel="noopener noreferrer" class="text-sm text-muted-foreground hover:text-foreground">CV</a>
+           <a href="projects.html" class="text-sm font-semibold text-primary hover:text-primary/80">Todos los Proyectos →</a>
          </nav>
          <button class="sm:hidden rounded-lg border border-border bg-card p-2 text-muted-foreground hover:text-foreground"
                  id="site-nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="site-nav-mobile">
@@ -51,10 +51,10 @@ class SiteNav extends HTMLElement {
       </div>
       <div id="site-nav-mobile" class="hidden border-t border-border bg-background/95 px-4 pb-4 sm:hidden">
         <nav class="flex flex-col gap-1 pt-2" aria-label="Menú móvil">
-          <a href="#projects" class="rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-card hover:text-foreground">Proyectos</a>
           <a href="#articles" class="rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-card hover:text-foreground">Articulos</a>
           <a href="#contact"  class="rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-card hover:text-foreground">Contacto</a>
-          <a href="projects.html" class="rounded-lg px-3 py-2 text-sm font-semibold text-primary hover:bg-card">Ver todos los proyectos →</a>
+          <a href="https://resume.rafnixg.dev" target="_blank" rel="noopener noreferrer" class="rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-card hover:text-foreground">CV</a>
+          <a href="projects.html" class="rounded-lg px-3 py-2 text-sm font-semibold text-primary hover:bg-card">Todos los Proyectos →</a>
         </nav>
       </div>`;
 
