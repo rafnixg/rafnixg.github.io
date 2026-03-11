@@ -14,7 +14,7 @@ async function renderArticles() {
       return;
     }
 
-    container.innerHTML = posts.map(a => `
+    container.innerHTML = posts.slice(0, 3).map(a => `
       <article-card
         title="${String(a.title ?? '').replace(/"/g, '&quot;')}"
         brief="${String(a.brief ?? '').replace(/"/g, '&quot;')}"

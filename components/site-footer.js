@@ -18,15 +18,16 @@ class SiteFooter extends HTMLElement {
     const right = back
       ? `<a href="/" class="hover:text-foreground">← Volver al inicio</a>`
       : `<div class="flex gap-6">
-           <a href="#" class="hover:text-foreground">Privacidad</a>
-           <a href="#" class="hover:text-foreground">Terminos</a>
            <a href="/sitemap.xml" class="hover:text-foreground">Sitemap</a>
          </div>`;
 
     this.innerHTML = `
       <div class="container mx-auto max-w-6xl">
         <div class="flex flex-col items-center justify-between gap-4 text-sm text-muted-foreground md:flex-row">
-          <p>&copy; <span class="js-year"></span> Rafnix Guzman. Todos los derechos reservados.</p>
+          <p>Hecho con ❤️ por <a href="https://github.com/rafnixg" target="_blank" rel="noopener noreferrer" class="hover:text-foreground font-medium">rafnixg</a>
+            &mdash;
+            <a href="https://github.com/rafnixg/rafnixg.github.io" target="_blank" rel="noopener noreferrer" class="hover:text-foreground">source code</a>
+          </p>
           ${right}
         </div>
       </div>`;
