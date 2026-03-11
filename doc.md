@@ -11,7 +11,7 @@ Guía de desarrollo, build y despliegue del sitio personal.
 | Markup     | HTML estático (`index.html`, `projects.html`)   |
 | Estilos    | Tailwind CSS compilado → `assets/css/tailwind.css` |
 | JS         | Vanilla JS + Web Components                     |
-| Datos      | `data/articles.json` (Hashnode), `resume.rafnixg.dev/resume.json` (proyectos) |
+| Datos      | `data/articles.json` (Hashnode), `data/resume.json` (JSON Resume local) |
 | CI/CD      | GitHub Actions (Pages + actualización de artículos) |
 
 ---
@@ -28,8 +28,11 @@ npm run build
 # Solo CSS
 npm run build:css
 
-# Solo artículos (requiere HASHNODE_TOKEN en entorno)
+# Solo artículos
 node build/fetch-articles.js
+
+# Solo proyectos (resume.json)
+node build/fetch-resume.js
 
 # Servidor local
 python -m http.server 8000
@@ -80,12 +83,11 @@ Carga el array `projects` desde un JSON Resume y renderiza una `<project-card>` 
 
 | Atributo | Tipo   | Descripción                                                      |
 | -------- | ------ | ---------------------------------------------------------------- |
-| `src`    | string | URL del `resume.json` (default: `https://resume.rafnixg.dev/resume.json`) |
+| `src`    | string | URL del `resume.json` (default: `/data/resume.json`) |
 
 **Ejemplo:**
 ```html
 <projects-grid
-  src="https://resume.rafnixg.dev/resume.json"
   class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
 ></projects-grid>
 ```
@@ -148,16 +150,13 @@ assets/
     apple-icon.png        ← Apple Touch Icon
   images/
     banner_web.png        ← og:image / Twitter card
-    logo.png
-    skills/               ← Logos de tecnologías
-    social-links/         ← Iconos de redes sociales
 ```
 
 ---
 
 ## Variables CSS del tema
 
-Definidas en `src/input.css` bajo `:root`:
+Definidas en `assets/css/input.css` bajo `:root`:
 
 | Variable        | Valor (RGB)  | Uso                      |
 | --------------- | ------------ | ------------------------ |
@@ -167,3 +166,83 @@ Definidas en `src/input.css` bajo `:root`:
 | `--card`        | 27 32 46     | Fondo de tarjetas        |
 | `--foreground`  | 244 247 251  | Texto principal          |
 | `--border`      | 48 57 78     | Bordes                   |
+
+---
+
+## Nuevos Web Components
+
+### `<site-nav>`
+`components/site-nav.js`
+
+Barra de navegación sticky compartida.
+
+| Atributo | Tipo    | Descripción |
+| -------- | ------- | ----------- |
+| `page`  | string  | Etiqueta de la página activa (se muestra a la derecha) |
+| `back`  | boolean | Muestra "← Inicio" en lugar del menú de secciones |
+
+### `<site-footer>`
+`components/site-footer.js`
+
+Footer compartido con año automático.
+
+| Atributo | Tipo    | Descripción |
+| -------- | ------- | ----------- |
+| `back`  | boolean | Muestra "← Volver al inicio" en lugar de links de política |
+
+### `<section-header>`
+`components/section-header.js`
+
+Bloque de título + subtítulo para encabezados de sección.
+
+| Atributo  | Tipo   | Descripción |
+| --------- | ------ | ----------- |
+| `heading` | string | Texto del `<h2>` |
+| `sub`     | string | Párrafo de subtítulo |
+| `align`   | string | `"left"` o `"center"` (default: center) |
+
+### `<social-links>`
+`components/social-links.js`
+
+Iconos de redes sociales (GitHub, LinkedIn, Links).
+
+| Atributo  | Tipo   | Descripción |
+| --------- | ------ | ----------- |
+| `variant` | string | `"icons"` (círculos SVG, default) o `"pills"` (botones texto) |
+
+### `<article-card>`
+`components/article-card.js`
+
+Tarjeta de artículo con fecha, vistas y tiempo de lectura.
+
+| Atributo    | Tipo   | Descripción |
+| ----------- | ------ | ----------- |
+| `title`     | string | Título del artículo |
+| `brief`     | string | Resumen corto |
+| `url`       | string | Enlace al artículo |
+| `date`      | string | Fecha ISO (formateada automáticamente) |
+| `views`     | string | Número de vistas |
+| `read-time` | string | Tiempo de lectura en minutos |
+
+---
+
+## Archivos web estándar
+
+| Archivo                    | Descripción |
+| -------------------------- | ----------- |
+| `robots.txt`               | Directivas para crawlers, apunta al sitemap |
+| `llms.txt`                 | Descripción del sitio para agentes AI (llmstxt.org) |
+| `humans.txt`               | Créditos del equipo y tecnologías |
+| `.well-known/security.txt` | Contacto de seguridad |
+| `sitemap.xml`              | Sitemap con ambas páginas, `changefreq` y `priority` |
+
+---
+
+## Estructura de CSS
+
+```
+assets/css/
+  input.css      ← fuente Tailwind + variables CSS del tema (editar aquí)
+  style.css      ← estilos globales, fuentes, web components display fix
+  tailwind.css   ← output compilado por Tailwind CLI (no editar)
+```
