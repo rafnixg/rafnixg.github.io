@@ -1,0 +1,14 @@
+/* TEAM */
+Developer & Designer: Rafnix Guzman
+Site: https://rafnixg.dev
+Location: Venezuela
+
+/* THANKS */
+Tailwind CSS — https://tailwindcss.com
+Mona Sans — https://github.com/github/mona-sans
+
+/* SITE */
+Last update: 2026/03/10
+Standards: HTML5, CSS3, Web Components
+Components: Vanilla JS Custom Elements
+Fonts: Mona Sans (GitHub)

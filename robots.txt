@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Crawl-delay for well-behaved bots
+Crawl-delay: 10
+
+# Block access to build scripts and raw data
+Disallow: /build/
+Disallow: /node_modules/
+Disallow: /openspec/
+
+# Sitemap location
+Sitemap: https://rafnixg.dev/sitemap.xml

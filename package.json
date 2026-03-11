@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build:css": "tailwindcss -i ./src/input.css -o ./assets/css/tailwind.css --minify",
+    "build:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/tailwind.css --minify",
     "build:articles": "node build/fetch-articles.js",
     "build:resume": "node build/fetch-resume.js",
     "build": "npm run build:articles && npm run build:resume && npm run build:css"
