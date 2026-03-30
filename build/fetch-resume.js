@@ -26,7 +26,10 @@ function httpsGet(url) {
         return httpsGet(res.headers.location).then(resolve).catch(reject);
       }
       if (res.statusCode !== 200) {
-        return reject(new Error(`HTTP ${res.statusCode}`));
+        const err = new Error(`HTTP ${res.statusCode}`);
+        err.statusCode = res.statusCode;
+        err.headers = res.headers;
+        return reject(err);
       }
       const chunks = [];
       res.on('data', c => chunks.push(c));
@@ -35,10 +38,31 @@ function httpsGet(url) {
   });
 }
 
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+async function fetchWithRetries(url, attempts = 3, backoff = 1000) {
+  let lastErr;
+  for (let i = 0; i < attempts; i++) {
+    try {
+      return await httpsGet(url);
+    } catch (err) {
+      lastErr = err;
+      console.warn(`fetch attempt ${i+1}/${attempts} failed: ${err.message}`);
+      if (err.headers) console.warn('response headers:', JSON.stringify(err.headers));
+      if (i < attempts - 1) {
+        const delay = backoff * Math.pow(2, i);
+        console.warn(`retrying in ${delay}ms...`);
+        await sleep(delay);
+      }
+    }
+  }
+  throw lastErr;
+}
+
 async function main() {
   let raw;
   try {
-    raw = await httpsGet(RESUME_URL);
+    raw = await fetchWithRetries(RESUME_URL);
   } catch (err) {
     // If the remote is unavailable but we already have a local copy, keep it and exit cleanly.
     try {
