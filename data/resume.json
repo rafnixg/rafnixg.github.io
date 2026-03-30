@@ -612,6 +612,36 @@
   ],
   "projects": [
     {
+      "name": "Femtobot",
+      "description": "Plantilla mínima para agentes conversacionales en Python (inspirado en 'nanobot'). Ejemplo educativo que implementa un bucle de agente, MessageBus asíncrono, gestión de sesiones, sistema de herramientas invocables por el LLM y adaptadores para proveedores LLM (OpenRouter/OpenAI).",
+      "highlights": [
+        "Bucle de agente (AgentLoop) con soporte para tool-calling",
+        "MessageBus asíncrono basado en asyncio.Queue",
+        "Gestión de sesiones en memoria y construcción de contexto",
+        "Adaptadores LLM (OpenRouter/OpenAI) y ejemplos de uso",
+        "Tests unitarios con pytest y documentación publicada"
+      ],
+      "keywords": [
+        "Python",
+        "Agents",
+        "LLM",
+        "asyncio",
+        "Tool-calling",
+        "OpenRouter",
+        "OpenAI",
+        "Testing",
+        "Documentation"
+      ],
+      "url": "https://github.com/rafnixg/femtobot",
+      "roles": [
+        "AI Engineer",
+        "Python Developer"
+      ],
+      "entity": "Personal Project",
+      "type": "application",
+      "startDate": "2026-30-03"
+    },
+    {
       "name": "AI Homelab Platform (Private) - Agentic AI Operations Lab",
       "description": "Laboratorio de IA self-hosted sobre infraestructura Proxmox multi-host con ~56 contenedores operativos gestionados via Docker/Portainer. Integra servicios de IA como AnythingLLM, OpenClaw y agentes autónomos en n8n para automatización de flujos con LLMs. Permite evaluación práctica de modelos SLM/LLM open-source mediante LM Studio, comparando calidad, latencia y costo según caso de uso.",
       "highlights": [
