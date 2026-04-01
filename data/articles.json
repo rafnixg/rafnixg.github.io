@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-30T06:42:12.718Z",
+  "generatedAt": "2026-04-01T00:40:42.809Z",
   "posts": [
     {
       "id": "69c930a0df53f10b17089732",
@@ -7,7 +7,7 @@
       "brief": "Introducción\nnanobot es una plataforma de asistente personal de IA diseñada para ejecutarse en tu propia infraestructura, ya sea una laptop, un servidor pequeño o un contenedor en la nube (VPS). A dif",
       "slug": "nanobot-arquitectura-y-funcionamiento-del-agente-ia-ultra-ligero",
       "dateAdded": "2026-03-29T14:00:00.000Z",
-      "views": 20,
+      "views": 39,
       "readTime": "7 min",
       "url": "https://blog.rafnixg.dev/nanobot-arquitectura-y-funcionamiento-del-agente-ia-ultra-ligero"
     },
@@ -17,7 +17,7 @@
       "brief": "Continuando con un post anterior donde publicamos nuestra librería a PyPI, vamos a ir un paso más allá en el proceso de construcción y despliegue (o, mejor dicho, build y release). En este tutorial, crearemos nuestro propio workflow en GitHub Actions...",
       "slug": "como-automatizar-tu-libreria-en-pypi-con-github-actions",
       "dateAdded": "2025-04-11T14:00:56.662Z",
-      "views": 50,
+      "views": 56,
       "readTime": "7 min",
       "url": "https://blog.rafnixg.dev/como-automatizar-tu-libreria-en-pypi-con-github-actions"
     },
@@ -27,7 +27,7 @@
       "brief": "El objetivo de este tutorial es guiarte paso a paso en el proceso de creación y publicación de tu propia librería en Python. Aunque Python ofrece una biblioteca estándar muy completa, aprovechar las contribuciones de la comunidad en PyPI te permite e...",
       "slug": "como-publicar-tu-propia-libreria-de-python-guia-paso-a-paso",
       "dateAdded": "2025-04-04T20:43:39.851Z",
-      "views": 134,
+      "views": 136,
       "readTime": "13 min",
       "url": "https://blog.rafnixg.dev/como-publicar-tu-propia-libreria-de-python-guia-paso-a-paso"
     },
