@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-01T00:40:42.809Z",
+  "generatedAt": "2026-05-01T00:50:56.748Z",
   "posts": [
     {
       "id": "69c930a0df53f10b17089732",
@@ -7,7 +7,7 @@
       "brief": "Introducción\nnanobot es una plataforma de asistente personal de IA diseñada para ejecutarse en tu propia infraestructura, ya sea una laptop, un servidor pequeño o un contenedor en la nube (VPS). A dif",
       "slug": "nanobot-arquitectura-y-funcionamiento-del-agente-ia-ultra-ligero",
       "dateAdded": "2026-03-29T14:00:00.000Z",
-      "views": 39,
+      "views": 63,
       "readTime": "7 min",
       "url": "https://blog.rafnixg.dev/nanobot-arquitectura-y-funcionamiento-del-agente-ia-ultra-ligero"
     },
@@ -17,7 +17,7 @@
       "brief": "Continuando con un post anterior donde publicamos nuestra librería a PyPI, vamos a ir un paso más allá en el proceso de construcción y despliegue (o, mejor dicho, build y release). En este tutorial, crearemos nuestro propio workflow en GitHub Actions...",
       "slug": "como-automatizar-tu-libreria-en-pypi-con-github-actions",
       "dateAdded": "2025-04-11T14:00:56.662Z",
-      "views": 56,
+      "views": 64,
       "readTime": "7 min",
       "url": "https://blog.rafnixg.dev/como-automatizar-tu-libreria-en-pypi-con-github-actions"
     },
@@ -27,7 +27,7 @@
       "brief": "El objetivo de este tutorial es guiarte paso a paso en el proceso de creación y publicación de tu propia librería en Python. Aunque Python ofrece una biblioteca estándar muy completa, aprovechar las contribuciones de la comunidad en PyPI te permite e...",
       "slug": "como-publicar-tu-propia-libreria-de-python-guia-paso-a-paso",
       "dateAdded": "2025-04-04T20:43:39.851Z",
-      "views": 136,
+      "views": 140,
       "readTime": "13 min",
       "url": "https://blog.rafnixg.dev/como-publicar-tu-propia-libreria-de-python-guia-paso-a-paso"
     },
@@ -37,7 +37,7 @@
       "brief": "En un post anterior, exploramos los conceptos básicos de la shell de la CLI de Odoo y cómo configurar IPython como REPL para mejorar nuestra experiencia de desarrollo. Ahora, profundizaremos en el uso de la shell de Odoo, abordando temas más avanzado...",
       "slug": "shell-de-odoo-domina-operaciones-avanzadas-integracion-de-librerias-y-automatizacion-de-tareas",
       "dateAdded": "2023-04-10T21:24:39.393Z",
-      "views": 1064,
+      "views": 1065,
       "readTime": "11 min",
       "url": "https://blog.rafnixg.dev/shell-de-odoo-domina-operaciones-avanzadas-integracion-de-librerias-y-automatizacion-de-tareas"
     },
@@ -47,7 +47,7 @@
       "brief": "¡Hola a todos! Hoy vamos a explorar un tema esencial para todos los programadores de Odoo que deseen profundizar en el desarrollo y uso del ORM de Odoo: la shell de la CLI de Odoo. La CLI (Command Line Interface) de Odoo es la forma en que se ejecuta...",
       "slug": "explorando-odoo-a-fondo-como-trabajar-con-la-shell-de-la-cli-y-configurar-ipython-como-repl",
       "dateAdded": "2023-03-30T12:00:39.243Z",
-      "views": 728,
+      "views": 732,
       "readTime": "6 min",
       "url": "https://blog.rafnixg.dev/explorando-odoo-a-fondo-como-trabajar-con-la-shell-de-la-cli-y-configurar-ipython-como-repl"
     },
@@ -57,7 +57,7 @@
       "brief": "Hoy vamos a aprender a crear una aplicación en Python utilizando la API de OpenAI y Gradio. Esta publicación será útil para las personas que quieren aprender a utilizar la API de OpenAI y crear una aplicación con una interfaz de usuario interactiva d...",
       "slug": "crea-tu-propio-chatbot-con-la-api-de-openai-y-gradio-en-python",
       "dateAdded": "2023-03-22T19:05:18.101Z",
-      "views": 1197,
+      "views": 1200,
       "readTime": "5 min",
       "url": "https://blog.rafnixg.dev/crea-tu-propio-chatbot-con-la-api-de-openai-y-gradio-en-python"
     }
