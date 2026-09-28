@@ -57,8 +57,11 @@ print(f"Local CMS smoke passed: resume, {len(projects)} projects, {len(articles)
 
 with httpx.Client(base_url=BASE, headers={"Host": "api.rafnixg.dev"}, follow_redirects=True, timeout=15) as client:
     site_html = client.get("/", headers={"Host": "rafnixg.dev"}).text
+    projects_html = client.get("/projects.html", headers={"Host": "rafnixg.dev"}).text
     cv_html = client.get("/", headers={"Host": "resume.rafnixg.dev"}).text
     assert '<link rel="canonical" href="https://rafnixg.dev/">' in site_html and "Mis Proyectos" in site_html, "Server-rendered site SEO failed"
+    assert 'data-umami-event="project_open"' in site_html and 'data-umami-event="cv_open"' in site_html, "Public analytics events missing"
+    assert 'id="project-search"' in projects_html and 'data-project-filter="all"' in projects_html, "Projects browser missing"
     assert '<link rel="canonical" href="https://resume.rafnixg.dev/">' in cv_html and "Rafnix Gabriel" in cv_html, "Server-rendered CV SEO failed"
     assert 'class="resume-index"' in cv_html and 'Ver todos los proyectos' in cv_html and 'QR &amp; Barcode Reader' in cv_html, "Document-style CV or expandable projects missing"
     login_page = client.get("/admin")
