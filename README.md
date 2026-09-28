@@ -10,19 +10,20 @@
 
 Sitio personal de [Rafnix Guzman](https://rafnixg.dev) — Python Backend | AI Engineer | Odoo Developer.
 
-Construido con HTML estático, Tailwind CSS y Vanilla JS Web Components. El contenido se administra con un CMS modular FastAPI + PostgreSQL; el frontend continúa disponible en `rafnixg.dev` y GitHub Pages.
+Construido con FastAPI, PostgreSQL, Jinja, Tailwind CSS y JavaScript. FastAPI sirve las páginas públicas con metadatos SEO renderizados en servidor y ofrece un panel CMS de uso personal. El antiguo frontend estático se conserva en el repositorio como referencia.
 
 ---
 
 ## Inicio rápido
 
 ```bash
-npm install                  # instalar dependencias del frontend
-npm run build                # compilar CSS
-python -m http.server 8000   # servidor local en http://localhost:8000
+cp .env.compose.example .env.compose.local  # define secretos locales
+docker compose --env-file .env.compose.local up --build -d
 ```
 
-El backend se empaqueta con Docker y se despliega en Dokploy. Al primer inicio, las migraciones crean las tablas y el backend carga el contenido inicial de `data/`. Para desarrollo local, configura las variables indicadas en `backend/.env.example`, inicia FastAPI desde `backend/` y sirve el frontend estático desde la raíz. Para el frontend local, agrega su origen a `CORS_ORIGINS` y usa `COOKIE_SECURE=false`. El frontend consulta `https://api.rafnixg.dev`.
+Abre `http://localhost:8000` para la web y `http://localhost:8001/admin` para el CMS. Para reconstruir los recursos del panel después de cambiar Tailwind o Quill, ejecuta `npm install && npm run build` antes de crear la imagen.
+
+El monolito se empaqueta con Docker y se despliega en Dokploy. Al primer inicio, Alembic crea las tablas y carga el contenido inicial de `data/`. El panel, la web y el CV comparten aplicación; los archivos subidos se guardan en un volumen persistente. Para desarrollo local usa Docker Compose y `COOKIE_SECURE=false`.
 
 ---
 
@@ -30,12 +31,12 @@ El backend se empaqueta con Docker y se despliega en Dokploy. Al primer inicio, 
 
 | Capa       | Tecnología |
 | ---------- | ---------- |
-| Markup     | HTML estático (`index.html`, `projects.html`) |
+| Markup     | Plantillas Jinja con componentes reutilizables |
 | Estilos    | Tailwind CSS CLI → `assets/css/tailwind.css` |
-| JS         | Vanilla JS + Web Components (Light DOM) |
+| JS         | Panel con formularios; editor visual Quill servido localmente |
 | Datos      | FastAPI + PostgreSQL; sincronización mensual de artículos desde Hashnode |
-| CI/CD      | GitHub Actions — Pages + sincronización mensual de artículos |
-| Deploy     | Dokploy (API y panel) + hosting estático + GitHub Pages (espejo) |
+| CI/CD      | GitHub Actions — sincronización mensual de artículos |
+| Deploy     | Dokploy (web, CV, API y panel) + PostgreSQL y volumen de medios |
 
 ---
 
@@ -45,23 +46,26 @@ El backend se empaqueta con Docker y se despliega en Dokploy. Al primer inicio, 
 # Compilar CSS
 npm run build
 
-# Servidor local
-python -m http.server 8000
-npx serve .
+# Ejemplo completo con PostgreSQL
+docker compose --env-file .env.compose.local up --build -d
 ```
 
 ### Prueba local con Docker Compose
 
 1. Copia `.env.compose.example` a `.env.compose.local` y reemplaza los cuatro valores por secretos locales. El archivo local está ignorado por Git.
 2. Ejecuta `docker compose --env-file .env.compose.local up --build -d` desde la raíz del repositorio.
-3. Abre la web en `http://localhost:8000`, comprueba la API en `http://localhost:8001/health` y entra al panel en `http://localhost:8001/admin`. PostgreSQL queda disponible solo en `127.0.0.1:5433`.
-4. Para detener los servicios, ejecuta `docker compose --env-file .env.compose.local down`. Los datos permanecen en el volumen `postgres_data`.
+3. Abre la web en `http://localhost:8000`, el CV en `http://localhost:8000/cv`, comprueba la API en `http://localhost:8001/health` y entra al panel en `http://localhost:8001/admin`. PostgreSQL queda disponible solo en `127.0.0.1:5433`.
+4. Para detener los servicios, ejecuta `docker compose --env-file .env.compose.local down`. PostgreSQL y medios permanecen en los volúmenes `postgres_data` y `media_data`.
 
 Para repetir la prueba automatizada de salud, contenido, autenticación y CORS, ejecuta `docker compose --env-file .env.compose.local --profile test run --rm smoke` con los servicios levantados.
 
-El usuario local del panel es `admin`. El frontend detecta `localhost` y consume automáticamente el CMS local en `http://localhost:8001/api`.
+El usuario local del panel es `admin`. La web pública se renderiza desde FastAPI con los datos guardados en PostgreSQL; la API JSON queda disponible para otros consumidores.
 
-El panel administrativo está en `https://api.rafnixg.dev/admin`. La API pública usa `/api/site-content`, `/api/projects`, `/api/articles` y `/api/resume`. El currículum se administra como un documento JSON Resume completo; los proyectos visibles en el sitio tienen su propia curación en el panel. El repositorio `rafnixg/resume` consume `GET /api/resume` sin autenticación mediante su workflow manual «Publish resume from CMS»; después de guardar el CV, ejecuta ese workflow para actualizar su página estática. En Dokploy configura `DATABASE_URL`, `ADMIN_USERNAME`, `ADMIN_PASSWORD`, `SESSION_SECRET`, `ARTICLE_SYNC_TOKEN`, `COOKIE_SECURE=true` y `CORS_ORIGINS`; incluye `https://resume.rafnixg.dev` en la lista si su web consulta la API desde el navegador. Los secretos deben ser fuertes, distintos y mantenerse fuera del repositorio. Usa PostgreSQL con almacenamiento persistente y define el mismo `ARTICLE_SYNC_TOKEN` como secreto de GitHub Actions para habilitar la sincronización mensual.
+### Métricas Umami
+
+La web pública conserva el seguimiento de páginas de Umami y añade eventos de interacción sin cookies: `project_open`, `project_filter`, `article_open`, `cv_open`, `projects_open`, `articles_open`, `social_open`, `contact_jump` y `projects_jump`. Los enlaces incluyen la superficie (`home`, `projects`, `nav`) y, cuando aplica, el nombre del proyecto o red. Estos eventos se consultan en el panel de Umami asociado al sitio; no se almacenan métricas en PostgreSQL ni se envían datos personales.
+
+El panel está en `https://api.rafnixg.dev/admin`. Desde allí se editan Inicio, Proyectos, Artículos, Páginas, CV, Medios y SEO mediante formularios. Los cambios se publican al guardar. La API pública conserva `/api/site-content`, `/api/projects`, `/api/articles` y `/api/resume`. En Dokploy configura `DATABASE_URL`, `ADMIN_USERNAME`, `ADMIN_PASSWORD`, `SESSION_SECRET`, `ARTICLE_SYNC_TOKEN`, `COOKIE_SECURE=true`, `CORS_ORIGINS` y `MEDIA_DIR=/app/uploads`, con un volumen persistente en esa última ruta. Dirige `rafnixg.dev`, `resume.rafnixg.dev` y `api.rafnixg.dev` al mismo servicio; FastAPI usa el host para servir el sitio correcto. Los secretos deben ser fuertes, distintos y quedar fuera del repositorio.
 
 ---
 
@@ -209,12 +213,11 @@ Variables definidas en `assets/css/input.css`:
 
 ## Despliegue
 
-### Dokploy (backend CMS)
-El backend y el panel CMS se despliegan en Dokploy en `api.rafnixg.dev`. El frontend estático conserva sus alojamientos actuales y consume esa API.
+### Dokploy (monolito CMS)
+El mismo contenedor sirve `rafnixg.dev`, `resume.rafnixg.dev` y `api.rafnixg.dev`. Configura los tres dominios en el proxy, PostgreSQL persistente y un volumen para `/app/uploads`. Verifica DNS/TLS antes de retirar el alojamiento estático principal. El panel queda bajo `/admin` y la API bajo `/api`.
 
-### GitHub Pages (espejo)
-Desplegado automáticamente desde la rama `main` via GitHub Actions (`pages-build-deployment`).  
-URL: `https://rafnixg.github.io`
+### GitHub Pages (copia histórica)
+La rama `main` puede seguir mostrando el frontend estático anterior en `https://rafnixg.github.io`, pero no refleja las ediciones inmediatas del CMS y no debe anunciarse como origen canónico.
 
 ### Actualización de artículos
 `.github/workflows/update-articles.yml` solicita la sincronización de Hashnode una vez al mes. Los artículos y el resto del contenido persisten en PostgreSQL. El currículum deja de actualizarse desde este workflow.

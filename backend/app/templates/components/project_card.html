@@ -1,0 +1,1 @@
+<article class="card"><h3><a href="{{ project.url }}" rel="noopener noreferrer">{{ project.name }}</a></h3><p>{{ project.description }}</p>{% if show_entity %}<small class="muted">{{ project.entity }}</small>{% endif %}<div>{% for keyword in project.keywords %}<span class="tag">{{ keyword }}</span>{% endfor %}</div></article>

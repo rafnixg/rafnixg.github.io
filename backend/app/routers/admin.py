@@ -30,7 +30,7 @@ _LOGIN_LIMIT = 5
 def admin_page(request: Request):
     if not request.session.get("admin"):
         return templates.TemplateResponse(request, "login.html", {"csrf": csrf_token(request)})
-    return templates.TemplateResponse(request, "admin.html", {"csrf": csrf_token(request)})
+    return templates.TemplateResponse(request, "cms.html", {"csrf": csrf_token(request)})
 
 
 @router.post("/admin/login")
@@ -88,6 +88,9 @@ async def update_admin_content(request: Request, db: Session = Depends(get_db)):
             parsed = urlparse(str(content[key]))
             if parsed.scheme != "https" or not parsed.netloc:
                 raise HTTPException(422, f"{key} must be an HTTPS URL")
+    for key in ("home_og_image", "projects_og_image"):
+        if content.get(key) and not (str(content[key]).startswith("/media/") or str(content[key]).startswith("https://")):
+            raise HTTPException(422, f"{key} must use HTTPS or /media/")
     social_links = content.get("social_links", [])
     if not isinstance(social_links, list) or len(social_links) > 20:
         raise HTTPException(422, "social_links must be a list of at most 20 items")

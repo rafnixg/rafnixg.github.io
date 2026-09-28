@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "build:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/tailwind.css --minify",
-    "build": "npm run build:css"
+    "build:admin": "node build/copy-admin-assets.mjs",
+    "build": "npm run build:css && npm run build:admin"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.0",
     "postcss": "^8.4.0",
-    "autoprefixer": "^10.4.0"
+    "autoprefixer": "^10.4.0",
+    "quill": "2.0.3"
   }
 }

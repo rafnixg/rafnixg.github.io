@@ -3,6 +3,8 @@
   "meta_description": "Rafnix Guzman — Python Backend con +15 años construyendo sistemas en producción: FastAPI, Django, Odoo ERP, PostgreSQL. Infraestructura propia con Docker y Kubernetes. AI Engineering con RAG pipelines y Agentic AI.",
   "projects_meta_title": "Proyectos — Rafnix Guzman",
   "projects_meta_description": "Proyectos de Rafnix Guzman — Python, Odoo, FastAPI, AI Engineering y más.",
+  "home_og_image": "https://rafnixg.dev/assets/images/banner_web.png",
+  "projects_og_image": "https://rafnixg.dev/assets/images/banner_web.png",
   "hero_title_prefix": "Ingeniero ",
   "hero_title_suffix": "Backend & Odoo",
   "hero_description": "Desarrollador Python especializado en sistemas empresariales, con 15+ años de experiencia en arquitectura, desarrollo e implementación de soluciones web.",
