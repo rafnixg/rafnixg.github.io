@@ -17,11 +17,12 @@ function _escAttr(s) {
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
 }
 
 function _buildCard(p) {
-  const kw = JSON.stringify(p.keywords || []);
+  const kw = _escAttr(JSON.stringify(p.keywords || []));
   return `<project-card
     name="${_escAttr(p.name)}"
     description="${_escAttr(p.description)}"
@@ -38,7 +39,7 @@ class ProjectsGrid extends HTMLElement {
   }
 
   async _load() {
-    const src = this.getAttribute('src') || '/data/resume.json';
+    const src = this.getAttribute('src') || `${window.CMS_API_BASE_URL || 'https://api.rafnixg.dev/api'}/projects${this.hasAttribute('featured') ? '?featured=true' : ''}`;
     this.innerHTML =
       '<p class="col-span-full py-12 text-center text-muted-foreground">Cargando proyectos...</p>';
 
@@ -46,7 +47,7 @@ class ProjectsGrid extends HTMLElement {
       const res = await fetch(src);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
-      const projects = Array.isArray(data.projects) ? data.projects : [];
+      const projects = Array.isArray(data) ? data : [];
 
       if (!projects.length) {
         this.innerHTML =

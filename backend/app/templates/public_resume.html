@@ -1,0 +1,87 @@
+{% extends "public_base.html" %}
+{% block body_class %}resume-page{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="/tokens.css"><link rel="stylesheet" href="/assets/css/resume.css">{% endblock %}
+{% block body %}
+{% set summary_parts = basics.get('summary', '').split('\n\n') %}
+<article class="resume-document">
+  <header class="resume-intro">
+    <div class="resume-intro-name">
+      <h1>{{ basics.get('name', '') }}</h1>
+      {% if basics.get('label') %}<p class="resume-role">{{ basics.label }}</p>{% endif %}
+    </div>
+    {% if summary_parts[0] %}<p class="resume-lede">{{ summary_parts[0] }}</p>{% endif %}
+    <div class="resume-contact">
+      {% if basics.get('email') and '@' in basics.email %}<a href="mailto:{{ basics.email }}">{{ basics.email }}</a>{% endif %}
+      {% if basics.get('location', {}).get('address') %}<span>{{ basics.location.address }}</span>{% endif %}
+      {% for profile in basics.get('profiles', []) %}{% if profile.get('url')|https_url %}<a href="{{ profile.url }}" rel="noopener noreferrer" target="_blank">{{ profile.get('network', 'Perfil') }}</a>{% endif %}{% endfor %}
+    </div>
+  </header>
+
+  <nav class="resume-index" aria-label="Secciones del currículum">
+    {% if resume.get('work') %}<a href="#experiencia">Experiencia</a>{% endif %}
+    {% if resume.get('skills') %}<a href="#habilidades">Habilidades</a>{% endif %}
+    {% if resume.get('projects') %}<a href="#proyectos-cv">Proyectos</a>{% endif %}
+    {% if resume.get('education') %}<a href="#educacion">Educación</a>{% endif %}
+    {% if resume.get('certificates') or resume.get('awards') or resume.get('references') %}<a href="#mas">Más</a>{% endif %}
+  </nav>
+
+  {% if summary_parts|length > 1 %}
+  <section class="resume-section resume-profile" aria-labelledby="perfil-title">
+    <h2 id="perfil-title">Perfil</h2>
+    <div class="resume-copy">{% for paragraph in summary_parts[1:] %}{% if paragraph %}<p>{{ paragraph }}</p>{% endif %}{% endfor %}</div>
+  </section>
+  {% endif %}
+
+  {% if resume.get('work') %}
+  <section class="resume-section" id="experiencia" aria-labelledby="experiencia-title">
+    <h2 id="experiencia-title">Experiencia</h2>
+    <div class="resume-rows">
+      {% for item in resume.work %}{% with entry_title=item.get('position', ''), entry_context=item.get('name', '') %}{% include "components/resume_timeline_entry.html" %}{% endwith %}{% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {% if resume.get('skills') %}
+  <section class="resume-section" id="habilidades" aria-labelledby="habilidades-title">
+    <h2 id="habilidades-title">Habilidades</h2>
+    <div class="resume-skills">
+      {% for item in resume.skills %}<div class="resume-skill"><h3>{{ item.get('name', '') }}</h3>{% if item.get('level') %}<p class="resume-muted">{{ item.level }}</p>{% endif %}<p>{{ item.get('keywords', [])|join(' · ') }}</p></div>{% endfor %}
+    </div>
+    {% if resume.get('languages') %}<div class="resume-languages"><h3>Idiomas</h3><p>{% for item in resume.languages %}{{ item.get('language', '') }}{% if item.get('fluency') %} — {{ item.fluency }}{% endif %}{% if not loop.last %} · {% endif %}{% endfor %}</p></div>{% endif %}
+  </section>
+  {% endif %}
+
+  {% if resume.get('projects') %}
+  <section class="resume-section" id="proyectos-cv" aria-labelledby="proyectos-cv-title">
+    <h2 id="proyectos-cv-title">Proyectos</h2>
+    <div class="resume-rows">{% for item in resume.projects[:5] %}{% include "components/resume_project_entry.html" %}{% endfor %}</div>
+    {% if resume.projects|length > 5 %}<details class="resume-disclosure"><summary>Ver todos los proyectos <span>{{ resume.projects|length }}</span></summary><div class="resume-rows">{% for item in resume.projects[5:] %}{% include "components/resume_project_entry.html" %}{% endfor %}</div></details>{% endif %}
+  </section>
+  {% endif %}
+
+  {% if resume.get('education') %}
+  <section class="resume-section" id="educacion" aria-labelledby="educacion-title">
+    <h2 id="educacion-title">Educación</h2>
+    <div class="resume-rows">{% for item in resume.education %}{% with entry_title=item.get('institution', ''), entry_context=item.get('area', '') %}{% include "components/resume_timeline_entry.html" %}{% endwith %}{% endfor %}</div>
+  </section>
+  {% endif %}
+
+  {% if resume.get('volunteer') %}<section class="resume-section" aria-labelledby="voluntariado-title"><h2 id="voluntariado-title">Voluntariado</h2><div class="resume-rows">{% for item in resume.volunteer %}{% with entry_title=item.get('position', ''), entry_context=item.get('organization', '') %}{% include "components/resume_timeline_entry.html" %}{% endwith %}{% endfor %}</div></section>{% endif %}
+
+  {% if resume.get('awards') or resume.get('certificates') or resume.get('publications') or resume.get('references') or resume.get('interests') %}
+  <section class="resume-section" id="mas" aria-labelledby="mas-title">
+    <h2 id="mas-title">Más sobre mi trabajo</h2>
+    {% for key, heading, title_key, context_key in [('awards','Premios','title','awarder'),('certificates','Certificaciones','name','issuer'),('publications','Publicaciones','name','publisher')] %}
+      {% set entries = resume.get(key, []) %}
+      {% if entries %}
+      <div class="resume-supplement"><h3>{{ heading }}</h3><div class="resume-compact-list">{% for item in entries[:5] %}{% with entry_title=item.get(title_key, ''), entry_context=item.get(context_key, '') %}{% include "components/resume_compact_entry.html" %}{% endwith %}{% endfor %}</div>
+        {% if entries|length > 5 %}<details class="resume-disclosure"><summary>Ver {{ heading|lower }} <span>{{ entries|length }}</span></summary><div class="resume-compact-list">{% for item in entries[5:] %}{% with entry_title=item.get(title_key, ''), entry_context=item.get(context_key, '') %}{% include "components/resume_compact_entry.html" %}{% endwith %}{% endfor %}</div></details>{% endif %}
+      </div>
+      {% endif %}
+    {% endfor %}
+    {% if resume.get('references') %}<div class="resume-supplement"><h3>Referencias</h3><div class="resume-compact-list">{% for item in resume.references %}<details class="resume-reference"><summary>{{ item.get('name', '') }}</summary><blockquote>{{ item.get('reference', '') }}</blockquote></details>{% endfor %}</div></div>{% endif %}
+    {% if resume.get('interests') %}<div class="resume-supplement"><h3>Intereses</h3><p>{{ resume.interests|map(attribute='name')|join(' · ') }}</p></div>{% endif %}
+  </section>
+  {% endif %}
+</article>
+{% endblock %}

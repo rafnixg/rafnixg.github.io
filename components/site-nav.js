@@ -32,10 +32,10 @@ class SiteNav extends HTMLElement {
         ? `<span class="text-sm font-semibold text-foreground">${page}</span>`
         : ''
       : `<nav class="hidden gap-6 sm:flex" aria-label="Navegación principal">
-           <a href="#articles" class="text-sm text-muted-foreground hover:text-foreground">Articulos</a>
-           <a href="#contact"  class="text-sm text-muted-foreground hover:text-foreground">Contacto</a>
-           <a href="https://resume.rafnixg.dev" target="_blank" rel="noopener noreferrer" class="text-sm text-muted-foreground hover:text-foreground">CV</a>
-           <a href="projects.html" class="text-sm font-semibold text-primary hover:text-primary/80">Todos los Proyectos →</a>
+           <a href="#articles" data-content-key="nav_articles_label" class="text-sm text-muted-foreground hover:text-foreground">Articulos</a>
+           <a href="#contact" data-content-key="nav_contact_label" class="text-sm text-muted-foreground hover:text-foreground">Contacto</a>
+           <a href="https://resume.rafnixg.dev" data-content-href="cv_url" data-content-key="cv_label" target="_blank" rel="noopener noreferrer" class="cv-link text-sm text-muted-foreground hover:text-foreground">CV</a>
+           <a href="projects.html" data-content-key="nav_projects_label" class="text-sm font-semibold text-primary hover:text-primary/80">Todos los Proyectos →</a>
          </nav>
          <button class="sm:hidden rounded-lg border border-border bg-card p-2 text-muted-foreground hover:text-foreground"
                  id="site-nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="site-nav-mobile">
@@ -51,10 +51,10 @@ class SiteNav extends HTMLElement {
       </div>
       <div id="site-nav-mobile" class="hidden border-t border-border bg-background/95 px-4 pb-4 sm:hidden">
         <nav class="flex flex-col gap-1 pt-2" aria-label="Menú móvil">
-          <a href="#articles" class="rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-card hover:text-foreground">Articulos</a>
-          <a href="#contact"  class="rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-card hover:text-foreground">Contacto</a>
-          <a href="https://resume.rafnixg.dev" target="_blank" rel="noopener noreferrer" class="rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-card hover:text-foreground">CV</a>
-          <a href="projects.html" class="rounded-lg px-3 py-2 text-sm font-semibold text-primary hover:bg-card">Todos los Proyectos →</a>
+          <a href="#articles" data-content-key="nav_articles_label" class="rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-card hover:text-foreground">Articulos</a>
+          <a href="#contact" data-content-key="nav_contact_label" class="rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-card hover:text-foreground">Contacto</a>
+          <a href="https://resume.rafnixg.dev" data-content-href="cv_url" data-content-key="cv_label" target="_blank" rel="noopener noreferrer" class="cv-link rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-card hover:text-foreground">CV</a>
+          <a href="projects.html" data-content-key="nav_projects_label" class="rounded-lg px-3 py-2 text-sm font-semibold text-primary hover:bg-card">Todos los Proyectos →</a>
         </nav>
       </div>`;
 

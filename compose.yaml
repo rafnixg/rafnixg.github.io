@@ -1,0 +1,64 @@
+name: rafnixg-cms-local
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: cms
+      POSTGRES_USER: cms
+      POSTGRES_PASSWORD: ${CMS_POSTGRES_PASSWORD:?Define CMS_POSTGRES_PASSWORD in .env.compose.local}
+    ports:
+      - "127.0.0.1:5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cms -d cms"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  cms:
+    image: rafnixg-cms-local-cms
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql+psycopg://cms:${CMS_POSTGRES_PASSWORD}@db:5432/cms
+      ADMIN_USERNAME: admin
+      ADMIN_PASSWORD: ${CMS_ADMIN_PASSWORD:?Define CMS_ADMIN_PASSWORD in .env.compose.local}
+      SESSION_SECRET: ${CMS_SESSION_SECRET:?Define CMS_SESSION_SECRET in .env.compose.local}
+      ARTICLE_SYNC_TOKEN: ${CMS_ARTICLE_SYNC_TOKEN:?Define CMS_ARTICLE_SYNC_TOKEN in .env.compose.local}
+      COOKIE_SECURE: "false"
+      CORS_ORIGINS: http://localhost:8000,http://127.0.0.1:8000,http://localhost:5500,http://127.0.0.1:5500
+      MEDIA_DIR: /app/uploads
+    ports:
+      - "127.0.0.1:8001:8000"
+    volumes:
+      - media_data:/app/uploads
+
+  web:
+    image: nginx:1.27-alpine
+    depends_on:
+      cms:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:8000:80"
+    volumes:
+      - ./backend/nginx.local.conf:/etc/nginx/conf.d/default.conf:ro
+
+  smoke:
+    image: rafnixg-cms-local-cms
+    profiles: [test]
+    depends_on:
+      cms:
+        condition: service_healthy
+    environment:
+      ADMIN_PASSWORD: ${CMS_ADMIN_PASSWORD:?Define CMS_ADMIN_PASSWORD in .env.compose.local}
+    entrypoint: ["python", "/app/backend/smoke.py"]
+
+volumes:
+  postgres_data:
+  media_data:

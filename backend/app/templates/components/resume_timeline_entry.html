@@ -1,0 +1,13 @@
+<article class="resume-entry">
+  <div class="resume-entry-date">
+    {% if item.get('startDate') %}<time datetime="{{ item.startDate }}">{{ item.startDate[:4] }}</time>{% if item.get('endDate') %}–<time datetime="{{ item.endDate }}">{{ item.endDate[:4] }}</time>{% else %}–actualidad{% endif %}{% endif %}
+  </div>
+  <div class="resume-entry-content">
+    <h3>{{ entry_title }}</h3>
+    <p class="resume-entry-context">{{ entry_context }}{% if item.get('location') %} · {{ item.location }}{% endif %}{% if item.get('studyType') %} · {{ item.studyType }}{% endif %}</p>
+    {% if item.get('summary') %}<p class="resume-entry-summary">{{ item.summary }}</p>{% endif %}
+    {% if item.get('highlights') %}<p class="resume-entry-keywords">{{ item.highlights|unique|join(' · ') }}</p>{% endif %}
+    {% if item.get('courses') %}<p class="resume-entry-keywords">{{ item.courses|join(' · ') }}</p>{% endif %}
+    {% if item.get('url')|https_url %}<a class="resume-text-link" href="{{ item.url }}" rel="noopener noreferrer" target="_blank">Ver organización</a>{% endif %}
+  </div>
+</article>

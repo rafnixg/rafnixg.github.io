@@ -1,0 +1,12 @@
+fastapi==0.115.12
+uvicorn[standard]==0.34.2
+sqlalchemy==2.0.40
+psycopg[binary]==3.2.6
+alembic==1.15.2
+jinja2==3.1.6
+python-multipart==0.0.20
+itsdangerous==2.2.0
+pwdlib[argon2]==0.2.1
+httpx==0.28.1
+nh3>=0.3,<0.4
+Pillow>=11,<13

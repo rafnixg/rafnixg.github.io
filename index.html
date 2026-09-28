@@ -23,17 +23,20 @@
   <link rel="preload" href="/assets/fonts/Mona-Sans.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="assets/css/tailwind.css" />
   <link rel="stylesheet" href="assets/css/style.css?v=2026.1" />
+  <script src="components/api-config.js" defer></script>
   <script src="components/site-nav.js" defer></script>
   <script src="components/site-footer.js" defer></script>
   <script src="components/section-header.js" defer></script>
   <script src="components/social-links.js" defer></script>
   <script src="components/project-card.js" defer></script>
+  <script src="components/projects-grid.js" defer></script>
   <script src="components/article-card.js" defer></script>
   <script src="components/articles.js" defer></script>
+  <script src="components/site-content.js" defer></script>
   <script defer src="https://umami.rafnixg.dev/script.js" data-website-id="de845f91-cb4e-4381-aeda-12aced209665"></script>
-  <title>Rafnix Guzman - Python Backend | AI Engineer | Odoo Developer</title>
+  <title data-content-key="meta_title">Rafnix Guzman - Python Backend | AI Engineer | Odoo Developer</title>
 </head>
-<body class="dark">
+<body class="dark" data-page="home">
   <main class="overflow-hidden">
 
     <site-nav></site-nav>
@@ -49,10 +52,10 @@
         <div class="mx-auto max-w-4xl space-y-8 text-center">
           <div class="space-y-4">
             <h1 class="text-balance text-5xl font-bold leading-tight md:text-7xl">
-              <span class="text-foreground">Ingeniero </span>
-              <span class="gradient-shift bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">Backend &amp; Odoo</span>
+              <span class="text-foreground" data-content-key="hero_title_prefix">Ingeniero </span>
+              <span class="gradient-shift bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent" data-content-key="hero_title_suffix">Backend &amp; Odoo</span>
             </h1>
-            <p class="mx-auto max-w-2xl text-xl text-muted-foreground md:text-2xl">
+            <p class="mx-auto max-w-2xl text-xl text-muted-foreground md:text-2xl" data-content-key="hero_description">
               Desarrollador Python especializado en sistemas empresariales, con 15+ años de experiencia en arquitectura,
               desarrollo e implementación de soluciones web.
             </p>
@@ -60,16 +63,16 @@
 
           <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a href="#contact" class="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-base font-semibold text-primary-foreground shadow-glow hover:bg-primary/90">
-              Contactame
+              <span data-content-key="hero_contact_label">Contactame</span>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4" aria-hidden="true">
                 <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
               </svg>
             </a>
             <a href="#projects" class="inline-flex items-center rounded-lg border border-border bg-card/40 px-6 py-3 text-base font-semibold text-foreground hover:border-primary/50 hover:bg-card">
-              Ver mi trabajo
+              <span data-content-key="hero_projects_label">Ver mi trabajo</span>
             </a>
-            <a href="https://resume.rafnixg.dev" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg border border-border bg-card/40 px-6 py-3 text-base font-semibold text-foreground hover:border-primary/50 hover:bg-card">
-              Ver CV
+            <a href="https://resume.rafnixg.dev" data-content-href="cv_url" target="_blank" rel="noopener noreferrer" class="cv-link inline-flex items-center gap-2 rounded-lg border border-border bg-card/40 px-6 py-3 text-base font-semibold text-foreground hover:border-primary/50 hover:bg-card">
+              <span data-content-key="cv_label">Ver CV</span>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4" aria-hidden="true">
                 <path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
               </svg>
@@ -79,8 +82,8 @@
           <social-links class="pt-8"></social-links>
 
           <div class="pt-12">
-            <p class="mb-4 text-sm text-muted-foreground">Especializado en:</p>
-            <div class="flex flex-wrap justify-center gap-2">
+            <p class="mb-4 text-sm text-muted-foreground" data-content-key="specialties_label">Especializado en:</p>
+            <div id="specialties-list" class="flex flex-wrap justify-center gap-2">
               <span class="rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">Python</span>
               <span class="rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">Odoo</span>
               <span class="rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">FastAPI</span>
@@ -97,46 +100,17 @@
     <section id="projects" class="scroll-mt-16 bg-card/30 px-4 py-20 md:px-6">
       <div class="container mx-auto max-w-6xl">
         <section-header
+          data-content-key="projects_title"
+          data-content-sub-key="projects_description"
           heading="Mis Proyectos"
           sub="Proyectos destacados de codigo abierto. Explora los repositorios y contribuciones."
         ></section-header>
 
-        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <project-card
-            name="Femtobot - AI Agent Educativo"
-            description="Plantilla mínima para agentes conversacionales en Python (inspirado en 'nanobot')."
-            url="https://github.com/rafnixg/femtobot"
-            keywords='["Agents","Python","LLM","Tool-calling","Educational"]'
-            show-image
-          ></project-card>
-          <project-card
-            name="BCV Exchange Rate API"
-            description="API REST para obtener tasas de cambio del Banco Central de Venezuela en tiempo real. Ideal para aplicaciones que necesitan datos de divisas actualizados."
-            url="https://github.com/rafnixg/bcv-api"
-            keywords='["FastAPI","Python","REST API","Exchange Rates"]'
-            show-image
-          ></project-card>
-
-          <project-card
-            name="SismosVE - Venezuela Earthquake Monitor"
-            description="Aplicacion web moderna para visualizar y monitorear sismos en Venezuela usando datos oficiales de FUNVISIS con arquitectura modular optimizada."
-            url="https://github.com/rafnixg/sismosve"
-            keywords='["FastAPI","Python","Leaflet.js","Real-time Monitoring","Docker"]'
-            show-image
-          ></project-card>
-
-          <project-card
-            name="Own WSGI Server"
-            description="Tutorial educativo sobre como crear tu propio servidor WSGI desde cero. Implementacion completa con soporte para aplicaciones FastAPI y frameworks WSGI."
-            url="https://github.com/rafnixg/own_wsgi"
-            keywords='["Python","WSGI","Server Architecture","Educational"]'
-            show-image
-          ></project-card>
-        </div>
+        <projects-grid featured class="grid grid-cols-1 gap-6 md:grid-cols-2"></projects-grid>
 
         <div class="mt-12 text-center">
           <a href="projects.html" class="inline-flex items-center gap-2 rounded-lg border border-border bg-card/40 px-6 py-3 text-base font-semibold text-foreground hover:border-primary/50 hover:bg-card">
-            Ver mas proyectos
+            <span data-content-key="projects_more_label">Ver mas proyectos</span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4" aria-hidden="true">
               <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
             </svg>
@@ -149,6 +123,8 @@
     <section id="articles" class="scroll-mt-16 px-4 py-20 md:px-6">
       <div class="container mx-auto max-w-6xl">
         <section-header
+          data-content-key="articles_title"
+          data-content-sub-key="articles_description"
           heading="Articulos Recientes"
           sub="Explora mis ultimos articulos sobre desarrollo backend, Python, Odoo y tecnologias emergentes."
         ></section-header>
@@ -158,8 +134,8 @@
         </div>
 
         <div class="mt-12 text-center">
-          <a href="https://blog.rafnixg.dev" target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-lg border border-border bg-card/40 px-6 py-3 text-base font-semibold text-foreground hover:border-primary/50 hover:bg-card">
-            Ver todos los articulos
+          <a href="https://blog.rafnixg.dev" data-content-href="articles_url" target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-lg border border-border bg-card/40 px-6 py-3 text-base font-semibold text-foreground hover:border-primary/50 hover:bg-card">
+            <span data-content-key="articles_all_label">Ver todos los articulos</span>
           </a>
         </div>
       </div>
@@ -170,12 +146,14 @@
       <div class="container mx-auto max-w-4xl">
         <div class="space-y-8 text-center">
           <section-header
+            data-content-key="contact_title"
+            data-content-sub-key="contact_description"
             heading="Tienes un proyecto en mente?"
             sub="Estoy disponible para consultoria, desarrollo e implementacion de soluciones empresariales."
           ></section-header>
 
           <div class="space-y-6 border-t border-border pt-8">
-            <p class="text-sm text-muted-foreground">Conectate conmigo en:</p>
+            <p class="text-sm text-muted-foreground" data-content-key="contact_links_label">Conectate conmigo en:</p>
             <social-links variant="pills"></social-links>
           </div>
         </div>

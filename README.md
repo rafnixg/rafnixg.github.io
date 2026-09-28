@@ -1,7 +1,7 @@
 # Rafnixg.dev
 
 [![pages-build-deployment](https://github.com/rafnixg/rafnixg.github.io/actions/workflows/pages/pages-build-deployment/badge.svg?branch=main)](https://github.com/rafnixg/rafnixg.github.io/actions/workflows/pages/pages-build-deployment)
-[![Update Articles & Resume](https://github.com/rafnixg/rafnixg.github.io/actions/workflows/update-articles.yml/badge.svg)](https://github.com/rafnixg/rafnixg.github.io/actions/workflows/update-articles.yml)
+[![Sync Hashnode articles](https://github.com/rafnixg/rafnixg.github.io/actions/workflows/update-articles.yml/badge.svg)](https://github.com/rafnixg/rafnixg.github.io/actions/workflows/update-articles.yml)
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/rafnixg/rafnixg.github.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
@@ -10,17 +10,20 @@
 
 Sitio personal de [Rafnix Guzman](https://rafnixg.dev) — Python Backend | AI Engineer | Odoo Developer.
 
-Construido con HTML estático, Tailwind CSS y Vanilla JS Web Components. Desplegado en **Coolify** (dominio `rafnixg.dev`) y en **GitHub Pages** como espejo.
+Construido con FastAPI, PostgreSQL, Jinja, Tailwind CSS y JavaScript. FastAPI sirve las páginas públicas con metadatos SEO renderizados en servidor y ofrece un panel CMS de uso personal. El antiguo frontend estático se conserva en el repositorio como referencia.
 
 ---
 
 ## Inicio rápido
 
 ```bash
-npm install                  # instalar dependencias
-npm run build                # fetch artículos + resume + compilar CSS
-python -m http.server 8000   # servidor local en http://localhost:8000
+cp .env.compose.example .env.compose.local  # define secretos locales
+docker compose --env-file .env.compose.local up --build -d
 ```
+
+Abre `http://localhost:8000` para la web y `http://localhost:8001/admin` para el CMS. Para reconstruir los recursos del panel después de cambiar Tailwind o Quill, ejecuta `npm install && npm run build` antes de crear la imagen.
+
+El monolito se empaqueta con Docker y se despliega en Dokploy. Al primer inicio, Alembic crea las tablas y carga el contenido inicial de `data/`. El panel, la web y el CV comparten aplicación; los archivos subidos se guardan en un volumen persistente. Para desarrollo local usa Docker Compose y `COOKIE_SECURE=false`.
 
 ---
 
@@ -28,30 +31,41 @@ python -m http.server 8000   # servidor local en http://localhost:8000
 
 | Capa       | Tecnología |
 | ---------- | ---------- |
-| Markup     | HTML estático (`index.html`, `projects.html`) |
+| Markup     | Plantillas Jinja con componentes reutilizables |
 | Estilos    | Tailwind CSS CLI → `assets/css/tailwind.css` |
-| JS         | Vanilla JS + Web Components (Light DOM) |
-| Datos      | `data/articles.json` (Hashnode GraphQL API) · `data/resume.json` (JSON Resume local) |
-| CI/CD      | GitHub Actions — Pages + actualización mensual de datos |
-| Deploy     | Coolify (self-hosted) + GitHub Pages (espejo) |
+| JS         | Panel con formularios; editor visual Quill servido localmente |
+| Datos      | FastAPI + PostgreSQL; sincronización mensual de artículos desde Hashnode |
+| CI/CD      | GitHub Actions — sincronización mensual de artículos |
+| Deploy     | Dokploy (web, CV, API y panel) + PostgreSQL y volumen de medios |
 
 ---
 
 ## Comandos
 
 ```bash
-# Build completo (artículos + resume + CSS)
+# Compilar CSS
 npm run build
 
-# Tareas individuales
-npm run build:css          # compilar Tailwind
-npm run build:articles     # fetch de artículos desde Hashnode
-npm run build:resume       # fetch de resume.rafnixg.dev
-
-# Servidor local
-python -m http.server 8000
-npx serve .
+# Ejemplo completo con PostgreSQL
+docker compose --env-file .env.compose.local up --build -d
 ```
+
+### Prueba local con Docker Compose
+
+1. Copia `.env.compose.example` a `.env.compose.local` y reemplaza los cuatro valores por secretos locales. El archivo local está ignorado por Git.
+2. Ejecuta `docker compose --env-file .env.compose.local up --build -d` desde la raíz del repositorio.
+3. Abre la web en `http://localhost:8000`, el CV en `http://localhost:8000/cv`, comprueba la API en `http://localhost:8001/health` y entra al panel en `http://localhost:8001/admin`. PostgreSQL queda disponible solo en `127.0.0.1:5433`.
+4. Para detener los servicios, ejecuta `docker compose --env-file .env.compose.local down`. PostgreSQL y medios permanecen en los volúmenes `postgres_data` y `media_data`.
+
+Para repetir la prueba automatizada de salud, contenido, autenticación y CORS, ejecuta `docker compose --env-file .env.compose.local --profile test run --rm smoke` con los servicios levantados.
+
+El usuario local del panel es `admin`. La web pública se renderiza desde FastAPI con los datos guardados en PostgreSQL; la API JSON queda disponible para otros consumidores.
+
+### Métricas Umami
+
+La web pública conserva el seguimiento de páginas de Umami y añade eventos de interacción sin cookies: `project_open`, `project_filter`, `article_open`, `cv_open`, `projects_open`, `articles_open`, `social_open`, `contact_jump` y `projects_jump`. Los enlaces incluyen la superficie (`home`, `projects`, `nav`) y, cuando aplica, el nombre del proyecto o red. Estos eventos se consultan en el panel de Umami asociado al sitio; no se almacenan métricas en PostgreSQL ni se envían datos personales.
+
+El panel está en `https://api.rafnixg.dev/admin`. Desde allí se editan Inicio, Proyectos, Artículos, Páginas, CV, Medios y SEO mediante formularios. Los cambios se publican al guardar. La API pública conserva `/api/site-content`, `/api/projects`, `/api/articles` y `/api/resume`. En Dokploy configura `DATABASE_URL`, `ADMIN_USERNAME`, `ADMIN_PASSWORD`, `SESSION_SECRET`, `ARTICLE_SYNC_TOKEN`, `COOKIE_SECURE=true`, `CORS_ORIGINS` y `MEDIA_DIR=/app/uploads`, con un volumen persistente en esa última ruta. Dirige `rafnixg.dev`, `resume.rafnixg.dev` y `api.rafnixg.dev` al mismo servicio; FastAPI usa el host para servir el sitio correcto. Los secretos deben ser fuertes, distintos y quedar fuera del repositorio.
 
 ---
 
@@ -75,9 +89,8 @@ npx serve .
 │   │   └── apple-icon.png
 │   └── images/
 │       └── banner_web.png  ← og:image / Twitter card
-├── build/
-│   ├── fetch-articles.js   ← Fetch artículos desde Hashnode
-│   └── fetch-resume.js     ← Fetch resume.rafnixg.dev → data/resume.json
+├── backend/                ← FastAPI, panel CMS, modelos y migraciones
+├── Dockerfile              ← Imagen de backend para Dokploy
 ├── components/             ← Web Components
 │   ├── site-nav.js
 │   ├── site-footer.js
@@ -86,10 +99,12 @@ npx serve .
 │   ├── project-card.js
 │   ├── projects-grid.js
 │   ├── article-card.js
-│   └── articles.js
+│   ├── articles.js
+│   └── site-content.js     ← Carga contenido desde la API
 ├── data/
-│   ├── articles.json       ← Generado por build:articles
-│   └── resume.json         ← Generado por build:resume
+│   ├── articles.json       ← Datos iniciales para PostgreSQL
+│   ├── resume.json         ← CV JSON Resume inicial y fuente inicial de proyectos
+│   └── site-content.json   ← Contenido editable inicial del sitio
 ├── .github/
 │   └── workflows/
 │       └── update-articles.yml
@@ -159,11 +174,11 @@ Tarjeta de proyecto con imagen OpenGraph, descripción, etiquetas y enlace.
 ---
 
 ### `<projects-grid>`
-Carga `data/resume.json` y renderiza una `<project-card>` por proyecto. Emite el evento `projects-ready` cuando las tarjetas están en el DOM.
+Carga proyectos desde la API del CMS y renderiza una `<project-card>` por proyecto. El atributo `featured` limita el resultado a los destacados. Emite el evento `projects-ready` cuando las tarjetas están en el DOM.
 
 | Atributo | Tipo   | Descripción |
 | -------- | ------ | ----------- |
-| `src`    | string | URL del JSON Resume (default: `/data/resume.json`) |
+| `src`    | string | URL de una API compatible (default: endpoint público de proyectos CMS) |
 
 ---
 
@@ -198,15 +213,14 @@ Variables definidas en `assets/css/input.css`:
 
 ## Despliegue
 
-### Coolify (producción — `rafnixg.dev`)
-El sitio se sirve desde infrastructure self-hosted con **Coolify**. El dominio `rafnixg.dev` apunta a este servidor.
+### Dokploy (monolito CMS)
+El mismo contenedor sirve `rafnixg.dev`, `resume.rafnixg.dev` y `api.rafnixg.dev`. Configura los tres dominios en el proxy, PostgreSQL persistente y un volumen para `/app/uploads`. Verifica DNS/TLS antes de retirar el alojamiento estático principal. El panel queda bajo `/admin` y la API bajo `/api`.
 
-### GitHub Pages (espejo)
-Desplegado automáticamente desde la rama `main` via GitHub Actions (`pages-build-deployment`).  
-URL: `https://rafnixg.github.io`
+### GitHub Pages (copia histórica)
+La rama `main` puede seguir mostrando el frontend estático anterior en `https://rafnixg.github.io`, pero no refleja las ediciones inmediatas del CMS y no debe anunciarse como origen canónico.
 
-### Actualización de datos
-`.github/workflows/update-articles.yml` ejecuta `build:articles` y `build:resume` mensualmente y commitea los JSON actualizados.
+### Actualización de artículos
+`.github/workflows/update-articles.yml` solicita la sincronización de Hashnode una vez al mes. Los artículos y el resto del contenido persisten en PostgreSQL. El currículum deja de actualizarse desde este workflow.
 
 ---
 
