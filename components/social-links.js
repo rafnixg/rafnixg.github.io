@@ -31,18 +31,32 @@ class SocialLinks extends HTMLElement {
     this._render();
   }
 
+  setLinks(links) {
+    this.links = links.map(link => {
+      const original = LINKS.find(item => item.label === link.label);
+      let url;
+      try {
+        const parsed = new URL(link.url);
+        if (parsed.protocol !== 'https:') return null;
+        url = parsed.href;
+      } catch { return null; }
+      return original ? { ...original, url } : { label: String(link.label || '').slice(0, 40), url, svg: null };
+    }).filter(Boolean);
+    this._render();
+  }
+
   _render() {
     const variant = this.getAttribute('variant') || 'icons';
 
     if (variant === 'pills') {
       this.className = 'flex flex-wrap justify-center gap-4';
-      this.innerHTML = LINKS.map(l =>
-        `<a href="${l.url}" target="_blank" rel="noopener noreferrer"
-            class="rounded-lg bg-card px-4 py-2 text-sm font-medium hover:bg-primary/10">${l.label}</a>`
+      this.innerHTML = (this.links || LINKS).map(l =>
+        `<a href="${this._esc(l.url)}" target="_blank" rel="noopener noreferrer"
+            class="rounded-lg bg-card px-4 py-2 text-sm font-medium hover:bg-primary/10">${this._esc(l.label)}</a>`
       ).join('');
     } else {
       this.className = 'flex justify-center gap-4';
-      this.innerHTML = LINKS.filter(l => l.svg).map(l => {
+      this.innerHTML = (this.links || LINKS).filter(l => l.svg).map(l => {
         const svgAttrs = l.strokeOnly
           ? 'fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"'
           : 'fill="currentColor"';
@@ -55,6 +69,10 @@ class SocialLinks extends HTMLElement {
           </a>`;
       }).join('');
     }
+  }
+
+  _esc(value) {
+    return String(value ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
   }
 }
 

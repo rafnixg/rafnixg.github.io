@@ -1,7 +1,7 @@
 # Rafnixg.dev
 
 [![pages-build-deployment](https://github.com/rafnixg/rafnixg.github.io/actions/workflows/pages/pages-build-deployment/badge.svg?branch=main)](https://github.com/rafnixg/rafnixg.github.io/actions/workflows/pages/pages-build-deployment)
-[![Update Articles & Resume](https://github.com/rafnixg/rafnixg.github.io/actions/workflows/update-articles.yml/badge.svg)](https://github.com/rafnixg/rafnixg.github.io/actions/workflows/update-articles.yml)
+[![Sync Hashnode articles](https://github.com/rafnixg/rafnixg.github.io/actions/workflows/update-articles.yml/badge.svg)](https://github.com/rafnixg/rafnixg.github.io/actions/workflows/update-articles.yml)
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/rafnixg/rafnixg.github.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
@@ -10,17 +10,19 @@
 
 Sitio personal de [Rafnix Guzman](https://rafnixg.dev) — Python Backend | AI Engineer | Odoo Developer.
 
-Construido con HTML estático, Tailwind CSS y Vanilla JS Web Components. Desplegado en **Coolify** (dominio `rafnixg.dev`) y en **GitHub Pages** como espejo.
+Construido con HTML estático, Tailwind CSS y Vanilla JS Web Components. El contenido se administra con un CMS modular FastAPI + PostgreSQL; el frontend continúa disponible en `rafnixg.dev` y GitHub Pages.
 
 ---
 
 ## Inicio rápido
 
 ```bash
-npm install                  # instalar dependencias
-npm run build                # fetch artículos + resume + compilar CSS
+npm install                  # instalar dependencias del frontend
+npm run build                # compilar CSS
 python -m http.server 8000   # servidor local en http://localhost:8000
 ```
+
+El backend se empaqueta con Docker y se despliega en Dokploy. Al primer inicio, las migraciones crean las tablas y el backend carga el contenido inicial de `data/`. Para desarrollo local, configura las variables indicadas en `backend/.env.example`, inicia FastAPI desde `backend/` y sirve el frontend estático desde la raíz. Para el frontend local, agrega su origen a `CORS_ORIGINS` y usa `COOKIE_SECURE=false`. El frontend consulta `https://api.rafnixg.dev`.
 
 ---
 
@@ -31,27 +33,35 @@ python -m http.server 8000   # servidor local en http://localhost:8000
 | Markup     | HTML estático (`index.html`, `projects.html`) |
 | Estilos    | Tailwind CSS CLI → `assets/css/tailwind.css` |
 | JS         | Vanilla JS + Web Components (Light DOM) |
-| Datos      | `data/articles.json` (Hashnode GraphQL API) · `data/resume.json` (JSON Resume local) |
-| CI/CD      | GitHub Actions — Pages + actualización mensual de datos |
-| Deploy     | Coolify (self-hosted) + GitHub Pages (espejo) |
+| Datos      | FastAPI + PostgreSQL; sincronización mensual de artículos desde Hashnode |
+| CI/CD      | GitHub Actions — Pages + sincronización mensual de artículos |
+| Deploy     | Dokploy (API y panel) + hosting estático + GitHub Pages (espejo) |
 
 ---
 
 ## Comandos
 
 ```bash
-# Build completo (artículos + resume + CSS)
+# Compilar CSS
 npm run build
-
-# Tareas individuales
-npm run build:css          # compilar Tailwind
-npm run build:articles     # fetch de artículos desde Hashnode
-npm run build:resume       # fetch de resume.rafnixg.dev
 
 # Servidor local
 python -m http.server 8000
 npx serve .
 ```
+
+### Prueba local con Docker Compose
+
+1. Copia `.env.compose.example` a `.env.compose.local` y reemplaza los cuatro valores por secretos locales. El archivo local está ignorado por Git.
+2. Ejecuta `docker compose --env-file .env.compose.local up --build -d` desde la raíz del repositorio.
+3. Abre la web en `http://localhost:8000`, comprueba la API en `http://localhost:8001/health` y entra al panel en `http://localhost:8001/admin`. PostgreSQL queda disponible solo en `127.0.0.1:5433`.
+4. Para detener los servicios, ejecuta `docker compose --env-file .env.compose.local down`. Los datos permanecen en el volumen `postgres_data`.
+
+Para repetir la prueba automatizada de salud, contenido, autenticación y CORS, ejecuta `docker compose --env-file .env.compose.local --profile test run --rm smoke` con los servicios levantados.
+
+El usuario local del panel es `admin`. El frontend detecta `localhost` y consume automáticamente el CMS local en `http://localhost:8001/api`.
+
+El panel administrativo está en `https://api.rafnixg.dev/admin`. La API pública usa `/api/site-content`, `/api/projects`, `/api/articles` y `/api/resume`. El currículum se administra como un documento JSON Resume completo; los proyectos visibles en el sitio tienen su propia curación en el panel. El repositorio `rafnixg/resume` consume `GET /api/resume` sin autenticación mediante su workflow manual «Publish resume from CMS»; después de guardar el CV, ejecuta ese workflow para actualizar su página estática. En Dokploy configura `DATABASE_URL`, `ADMIN_USERNAME`, `ADMIN_PASSWORD`, `SESSION_SECRET`, `ARTICLE_SYNC_TOKEN`, `COOKIE_SECURE=true` y `CORS_ORIGINS`; incluye `https://resume.rafnixg.dev` en la lista si su web consulta la API desde el navegador. Los secretos deben ser fuertes, distintos y mantenerse fuera del repositorio. Usa PostgreSQL con almacenamiento persistente y define el mismo `ARTICLE_SYNC_TOKEN` como secreto de GitHub Actions para habilitar la sincronización mensual.
 
 ---
 
@@ -75,9 +85,8 @@ npx serve .
 │   │   └── apple-icon.png
 │   └── images/
 │       └── banner_web.png  ← og:image / Twitter card
-├── build/
-│   ├── fetch-articles.js   ← Fetch artículos desde Hashnode
-│   └── fetch-resume.js     ← Fetch resume.rafnixg.dev → data/resume.json
+├── backend/                ← FastAPI, panel CMS, modelos y migraciones
+├── Dockerfile              ← Imagen de backend para Dokploy
 ├── components/             ← Web Components
 │   ├── site-nav.js
 │   ├── site-footer.js
@@ -86,10 +95,12 @@ npx serve .
 │   ├── project-card.js
 │   ├── projects-grid.js
 │   ├── article-card.js
-│   └── articles.js
+│   ├── articles.js
+│   └── site-content.js     ← Carga contenido desde la API
 ├── data/
-│   ├── articles.json       ← Generado por build:articles
-│   └── resume.json         ← Generado por build:resume
+│   ├── articles.json       ← Datos iniciales para PostgreSQL
+│   ├── resume.json         ← CV JSON Resume inicial y fuente inicial de proyectos
+│   └── site-content.json   ← Contenido editable inicial del sitio
 ├── .github/
 │   └── workflows/
 │       └── update-articles.yml
@@ -159,11 +170,11 @@ Tarjeta de proyecto con imagen OpenGraph, descripción, etiquetas y enlace.
 ---
 
 ### `<projects-grid>`
-Carga `data/resume.json` y renderiza una `<project-card>` por proyecto. Emite el evento `projects-ready` cuando las tarjetas están en el DOM.
+Carga proyectos desde la API del CMS y renderiza una `<project-card>` por proyecto. El atributo `featured` limita el resultado a los destacados. Emite el evento `projects-ready` cuando las tarjetas están en el DOM.
 
 | Atributo | Tipo   | Descripción |
 | -------- | ------ | ----------- |
-| `src`    | string | URL del JSON Resume (default: `/data/resume.json`) |
+| `src`    | string | URL de una API compatible (default: endpoint público de proyectos CMS) |
 
 ---
 
@@ -198,15 +209,15 @@ Variables definidas en `assets/css/input.css`:
 
 ## Despliegue
 
-### Coolify (producción — `rafnixg.dev`)
-El sitio se sirve desde infrastructure self-hosted con **Coolify**. El dominio `rafnixg.dev` apunta a este servidor.
+### Dokploy (backend CMS)
+El backend y el panel CMS se despliegan en Dokploy en `api.rafnixg.dev`. El frontend estático conserva sus alojamientos actuales y consume esa API.
 
 ### GitHub Pages (espejo)
 Desplegado automáticamente desde la rama `main` via GitHub Actions (`pages-build-deployment`).  
 URL: `https://rafnixg.github.io`
 
-### Actualización de datos
-`.github/workflows/update-articles.yml` ejecuta `build:articles` y `build:resume` mensualmente y commitea los JSON actualizados.
+### Actualización de artículos
+`.github/workflows/update-articles.yml` solicita la sincronización de Hashnode una vez al mes. Los artículos y el resto del contenido persisten en PostgreSQL. El currículum deja de actualizarse desde este workflow.
 
 ---
 

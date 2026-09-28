@@ -16,17 +16,17 @@ class SiteFooter extends HTMLElement {
     const back = this.hasAttribute('back');
 
     const right = back
-      ? `<a href="/" class="hover:text-foreground">← Volver al inicio</a>`
+      ? `<a href="/" data-content-key="footer_back_label" class="hover:text-foreground">← Volver al inicio</a>`
       : `<div class="flex gap-6">
-           <a href="/sitemap.xml" class="hover:text-foreground">Sitemap</a>
+           <a href="/sitemap.xml" data-content-key="footer_sitemap_label" class="hover:text-foreground">Sitemap</a>
          </div>`;
 
     this.innerHTML = `
       <div class="container mx-auto max-w-6xl">
         <div class="flex flex-col items-center justify-between gap-4 text-sm text-muted-foreground md:flex-row">
-          <p>Hecho con ❤️ por <a href="https://github.com/rafnixg" target="_blank" rel="noopener noreferrer" class="hover:text-foreground font-medium">rafnixg</a>
+          <p><span data-content-key="footer_made_label">Hecho con ❤️ por</span> <a href="https://github.com/rafnixg" target="_blank" rel="noopener noreferrer" class="hover:text-foreground font-medium">rafnixg</a>
             &mdash;
-            <a href="https://github.com/rafnixg/rafnixg.github.io" target="_blank" rel="noopener noreferrer" class="hover:text-foreground">source code</a>
+            <a href="https://github.com/rafnixg/rafnixg.github.io" target="_blank" rel="noopener noreferrer" class="hover:text-foreground"><span data-content-key="footer_source_label">source code</span></a>
           </p>
           ${right}
         </div>
