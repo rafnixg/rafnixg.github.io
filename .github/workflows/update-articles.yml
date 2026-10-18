@@ -5,9 +5,17 @@ on:
     - cron: '0 0 1 * *' # run monthly on day 1
   workflow_dispatch: {}
 
+permissions:
+  contents: read
+
+concurrency:
+  group: article-sync
+  cancel-in-progress: false
+
 jobs:
   sync:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - name: Request article sync
         env:
@@ -15,6 +23,10 @@ jobs:
         run: |
           test -n "$ARTICLE_SYNC_TOKEN"
           curl --fail --show-error --silent \
+            --retry 3 \
+            --retry-delay 5 \
+            --connect-timeout 10 \
+            --max-time 60 \
             --request POST \
             --header "X-Article-Sync-Token: $ARTICLE_SYNC_TOKEN" \
             https://api.rafnixg.dev/api/admin/sync/articles

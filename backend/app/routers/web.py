@@ -17,6 +17,43 @@ templates = Jinja2Templates(directory=str(Path(__file__).resolve().parents[1] / 
 SITE_URL = "https://rafnixg.dev"
 CV_URL = "https://resume.rafnixg.dev"
 
+LLMS_TEXT = """# Rafnixg.dev
+
+> Sitio personal de Rafnix Guzman: Python Backend, AI Engineering y Odoo.
+
+## Recursos
+
+- Inicio: https://rafnixg.dev/
+- Proyectos: https://rafnixg.dev/projects.html
+- CV: https://resume.rafnixg.dev/
+- API pública: https://api.rafnixg.dev/api/site-content
+
+## Temas
+
+Python, FastAPI, Django, Odoo, PostgreSQL, Docker, DevOps y AI Engineering.
+
+El contenido público puede indexarse y resumirse. No rastrear rutas administrativas
+ni datos internos del CMS.
+"""
+
+HUMANS_TEXT = """/* TEAM */
+Developer & Designer: Rafnix Guzman
+Site: https://rafnixg.dev
+Location: Venezuela
+
+/* SITE */
+Last update: 2026-10-18
+Standards: HTML5, CSS3, FastAPI, Jinja, PostgreSQL
+Fonts: Mona Sans
+Preferred-Languages: es, en
+"""
+
+SECURITY_TEXT = """Contact: mailto:rafnixg@gmail.com
+Expires: 2027-10-18T00:00:00.000Z
+Preferred-Languages: es, en
+Canonical: https://rafnixg.dev/.well-known/security.txt
+"""
+
 
 def https_url(value: object) -> str:
     if not isinstance(value, str):
@@ -93,6 +130,21 @@ def local_resume_preview(request: Request, db: Session = Depends(get_db)):
 def robots(request: Request):
     domain = CV_URL if _cv_host(request) else SITE_URL
     return f"User-agent: *\nAllow: /\nDisallow: /admin\nDisallow: /api/admin/\nSitemap: {domain}/sitemap.xml\n"
+
+
+@router.get("/llms.txt", response_class=PlainTextResponse)
+def llms():
+    return LLMS_TEXT
+
+
+@router.get("/humans.txt", response_class=PlainTextResponse)
+def humans():
+    return HUMANS_TEXT
+
+
+@router.get("/.well-known/security.txt", response_class=PlainTextResponse)
+def security_txt():
+    return SECURITY_TEXT
 
 
 @router.get("/sitemap.xml")

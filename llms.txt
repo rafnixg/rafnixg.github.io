@@ -1,15 +1,16 @@
-# Rafnix Guzman — Python & Odoo Backend Developer
+# Rafnixg.dev — información para agentes
 
-> Personal portfolio and blog of Rafnix Guzman, a Python and Odoo Backend Developer with 10+ years of experience building enterprise software systems.
+> Sitio personal de Rafnix Guzman: Python Backend, AI Engineering y Odoo.
 
 ## About
 
-Rafnix Guzman is a backend software engineer specializing in Python, Odoo ERP, FastAPI, Django, and PostgreSQL. He works primarily on business automation, REST APIs, and enterprise application development.
+Rafnix Guzman es un ingeniero backend especializado en Python, Odoo ERP, FastAPI, Django y PostgreSQL.
 
 ## Pages
 
 - [Home](https://rafnixg.dev/): Hero, featured projects, recent articles, and contact links.
 - [Projects](https://rafnixg.dev/projects.html): Full catalog of personal, open-source, and learning projects.
+- [CV](https://resume.rafnixg.dev/): Experiencia, habilidades, educación y proyectos del perfil profesional.
 
 ## Blog
 
@@ -23,10 +24,10 @@ Articles are published at [blog.rafnixg.dev](https://blog.rafnixg.dev) covering 
 
 ## Technical Stack
 
-This site is built with: HTML, Tailwind CSS, Vanilla JS Web Components. No frameworks, no build-time rendering — pure static files deployed via GitHub Pages.
+Este sitio usa FastAPI, PostgreSQL, Jinja, Tailwind CSS, JavaScript y Docker. Las páginas públicas se renderizan en servidor y el contenido se administra desde un CMS.
 
 ## Notes for AI agents
 
 - All content is available for indexing and summarization.
 - Do not crawl `/build/` or `/data/` — these are server-side artifacts.
-- Resume and project data are sourced from [resume.rafnixg.dev](https://resume.rafnixg.dev).
+- El contenido público se sirve desde la API y el CMS; el CV está disponible en [resume.rafnixg.dev](https://resume.rafnixg.dev).

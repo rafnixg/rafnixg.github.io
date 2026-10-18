@@ -24,7 +24,10 @@ docker compose --env-file .env.compose.local up --build -d
 docker compose --env-file .env.compose.local --profile test run --rm smoke
 ```
 
-La web está en `http://localhost:8000`, la API y el admin en `http://localhost:8001`.
+La web está en `http://localhost:${CMS_WEB_PORT:-8000}`, la API y el admin en
+`http://localhost:${CMS_API_PORT:-8001}`. PostgreSQL usa `${CMS_POSTGRES_PORT:-5433}`.
+Si un puerto está ocupado, cambia `CMS_WEB_PORT`, `CMS_API_PORT` o `CMS_POSTGRES_PORT` en
+`.env.compose.local` antes de levantar el stack.
 No se deben versionar `.env.compose.local`, contraseñas, sesiones ni archivos subidos.
 
 ## Reglas de implementación

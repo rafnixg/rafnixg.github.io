@@ -1,3 +1,4 @@
 Contact: mailto:rafnixg@gmail.com
+Expires: 2027-10-18T00:00:00.000Z
 Preferred-Languages: es, en
-Expires: 2027-03-10T00:00:00.000Z
+Canonical: https://rafnixg.dev/.well-known/security.txt

@@ -61,6 +61,10 @@ Para repetir la prueba automatizada de salud, contenido, autenticación y CORS, 
 
 El usuario local del panel es `admin`. La web pública se renderiza desde FastAPI con los datos guardados en PostgreSQL; la API JSON queda disponible para otros consumidores.
 
+Los recursos para descubrimiento también se sirven desde FastAPI: `/robots.txt`,
+`/sitemap.xml`, `/llms.txt`, `/humans.txt` y `/.well-known/security.txt`. Los
+archivos equivalentes del repositorio se conservan para la copia estática histórica.
+
 ### Métricas Umami
 
 La web pública conserva el seguimiento de páginas de Umami y añade eventos de interacción sin cookies: `project_open`, `project_filter`, `article_open`, `cv_open`, `projects_open`, `articles_open`, `social_open`, `contact_jump` y `projects_jump`. Los enlaces incluyen la superficie (`home`, `projects`, `nav`) y, cuando aplica, el nombre del proyecto o red. Estos eventos se consultan en el panel de Umami asociado al sitio; no se almacenan métricas en PostgreSQL ni se envían datos personales.

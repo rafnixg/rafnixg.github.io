@@ -8,9 +8,14 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: quality-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   static:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -20,6 +25,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+          cache: pip
+          cache-dependency-path: backend/requirements.txt
       - name: Install frontend dependencies
         run: npm ci
       - name: Build frontend assets
@@ -28,3 +35,19 @@ jobs:
         run: python -m compileall -q backend
       - name: Check repository whitespace
         run: git diff --check
+
+  compose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs: static
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Compose file
+        run: docker compose --env-file .env.compose.example config --quiet
+      - name: Run local integration smoke test
+        run: |
+          docker compose --env-file .env.compose.example up --build -d
+          docker compose --env-file .env.compose.example --profile test run --rm smoke
+      - name: Tear down Compose stack
+        if: always()
+        run: docker compose --env-file .env.compose.example down -v
