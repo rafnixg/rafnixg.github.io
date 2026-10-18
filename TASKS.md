@@ -22,11 +22,13 @@ de alcance debe actualizar las listas de completadas y pendientes.
 - [x] CI estático para build frontend, compilación Python y whitespace checks.
 - [x] CI de integración con Docker Compose y smoke test en GitHub Actions.
 - [x] Workflow mensual de artículos con permisos mínimos, timeout y reintentos.
+- [x] Dependabot configurado para Python, npm y GitHub Actions.
 - [x] PR #1 creada desde la rama `quality-improvements`.
 
 ## Pendientes
 
 - [ ] Revisar y fusionar PR #1 cuando los checks de GitHub estén verdes.
+- [ ] Revisar las 12 alertas de Dependabot reportadas por GitHub (5 altas, 6 moderadas y 1 baja).
 - [ ] Confirmar en el panel Umami que los eventos aparecen después de publicar.
 - [ ] Configurar dominios/DNS/TLS finales en Dokploy.
 - [ ] Ejecutar una prueba de despliegue con `COOKIE_SECURE=true` y dominios reales.
