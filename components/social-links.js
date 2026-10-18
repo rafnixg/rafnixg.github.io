@@ -61,8 +61,8 @@ class SocialLinks extends HTMLElement {
           ? 'fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"'
           : 'fill="currentColor"';
         return `
-          <a href="${l.url}" target="_blank" rel="noopener noreferrer"
-             class="rounded-full bg-card p-3 hover:bg-primary/10" aria-label="${l.label}">
+          <a href="${this._esc(l.url)}" target="_blank" rel="noopener noreferrer"
+             class="rounded-full bg-card p-3 hover:bg-primary/10" aria-label="${this._esc(l.label)}">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" ${svgAttrs} class="h-5 w-5">
               ${l.svg}
             </svg>

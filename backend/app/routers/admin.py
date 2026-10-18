@@ -24,6 +24,32 @@ templates = Jinja2Templates(directory=str(Path(__file__).resolve().parents[1] / 
 _login_attempts: dict[str, list[float]] = {}
 _LOGIN_WINDOW = 10 * 60
 _LOGIN_LIMIT = 5
+_RESUME_LIST_SECTIONS = (
+    "work", "volunteer", "education", "awards", "certificates", "publications",
+    "skills", "languages", "interests", "references", "projects",
+)
+
+
+def _validate_resume_document(document: object) -> None:
+    if not isinstance(document, dict):
+        raise HTTPException(422, "Resume must be a JSON object")
+    basics = document.get("basics")
+    if not isinstance(basics, dict) or not isinstance(basics.get("name"), str) or not basics["name"].strip():
+        raise HTTPException(422, "Resume basics.name is required")
+    for field in ("label", "image", "email", "url", "summary"):
+        if field in basics and not isinstance(basics[field], str):
+            raise HTTPException(422, f"Resume basics.{field} must be a string")
+    if "location" in basics and not isinstance(basics["location"], dict):
+        raise HTTPException(422, "Resume basics.location must be an object")
+    if "profiles" in basics:
+        if not isinstance(basics["profiles"], list) or not all(isinstance(item, dict) for item in basics["profiles"]):
+            raise HTTPException(422, "Resume basics.profiles must contain objects")
+    for section in _RESUME_LIST_SECTIONS:
+        if section not in document:
+            continue
+        value = document[section]
+        if not isinstance(value, list) or not all(isinstance(item, dict) for item in value):
+            raise HTTPException(422, f"Resume {section} must be a list of objects")
 
 
 @router.get("/admin", response_class=HTMLResponse)
@@ -125,12 +151,7 @@ async def update_admin_resume(request: Request, db: Session = Depends(get_db)):
         raise HTTPException(400, "Invalid JSON") from exc
     if not isinstance(document, dict) or len(json.dumps(document, ensure_ascii=False).encode("utf-8")) > 1_000_000:
         raise HTTPException(422, "Resume must be a JSON object under 1 MB")
-    basics = document.get("basics")
-    if not isinstance(basics, dict) or not isinstance(basics.get("name"), str) or not basics["name"].strip():
-        raise HTTPException(422, "Resume basics.name is required")
-    for section in ("work", "volunteer", "education", "awards", "certificates", "publications", "skills", "languages", "interests", "references", "projects"):
-        if section in document and not isinstance(document[section], list):
-            raise HTTPException(422, f"Resume {section} must be a list")
+    _validate_resume_document(document)
     item = db.get(ResumeDocument, 1)
     if item is None:
         db.add(ResumeDocument(id=1, document=document))

@@ -14,6 +14,10 @@ COPY data /app/data
 COPY assets /app/assets
 COPY components /app/components
 COPY tokens.css /app/tokens.css
+COPY robots.txt /app/robots.txt
+COPY llms.txt /app/llms.txt
+COPY humans.txt /app/humans.txt
+COPY .well-known /app/.well-known
 RUN mkdir -p /app/uploads && chown -R app:app /app
 
 WORKDIR /app/backend

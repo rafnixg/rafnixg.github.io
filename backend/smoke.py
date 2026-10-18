@@ -80,6 +80,8 @@ with httpx.Client(base_url=BASE, headers={"Host": "api.rafnixg.dev"}, follow_red
     current_resume = client.get("/api/admin/resume").json()
     assert current_resume.get("basics", {}).get("name"), "CV form data missing"
     assert client.put("/api/admin/resume", json=current_resume).status_code == 403, "CSRF check failed"
+    malformed_resume = {"basics": {"name": "Invalid", "summary": {}}, "work": ["not-an-object"]}
+    assert client.put("/api/admin/resume", json=malformed_resume, headers=headers).status_code == 422, "Malformed CV accepted"
     assert client.put("/api/admin/resume", json=current_resume, headers=headers).status_code == 200, "CV save failed"
 
     slug = "cms-smoke-" + uuid4().hex[:8]

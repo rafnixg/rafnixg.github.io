@@ -26,7 +26,12 @@ services:
       db:
         condition: service_healthy
     environment:
-      DATABASE_URL: postgresql+psycopg://cms:${CMS_POSTGRES_PASSWORD}@db:5432/cms
+      DATABASE_SCHEME: postgresql+psycopg
+      DATABASE_USER: cms
+      DATABASE_PASSWORD: ${CMS_POSTGRES_PASSWORD:?Define CMS_POSTGRES_PASSWORD in .env.compose.local}
+      DATABASE_HOST: db
+      DATABASE_PORT: 5432
+      DATABASE_NAME: cms
       ADMIN_USERNAME: admin
       ADMIN_PASSWORD: ${CMS_ADMIN_PASSWORD:?Define CMS_ADMIN_PASSWORD in .env.compose.local}
       SESSION_SECRET: ${CMS_SESSION_SECRET:?Define CMS_SESSION_SECRET in .env.compose.local}
