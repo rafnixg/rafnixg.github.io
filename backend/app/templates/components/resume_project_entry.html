@@ -1,0 +1,6 @@
+<article class="resume-project">
+  <div class="resume-project-heading"><h3>{{ item.get('name', '') }}</h3>{% if item.get('url')|https_url %}<a class="resume-text-link" href="{{ item.url }}" rel="noopener noreferrer" target="_blank" aria-label="Abrir {{ item.get('name', 'proyecto') }}">Abrir proyecto</a>{% endif %}</div>
+  {% if item.get('description') %}<p>{{ item.description }}</p>{% endif %}
+  {% if item.get('highlights') %}<p class="resume-entry-summary">{{ item.highlights|join(' · ') }}</p>{% endif %}
+  {% if item.get('keywords') %}<p class="resume-entry-keywords">{{ item.keywords|unique|join(' · ') }}</p>{% endif %}
+</article>

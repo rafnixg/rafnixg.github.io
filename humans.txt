@@ -8,7 +8,10 @@ Tailwind CSS — https://tailwindcss.com
 Mona Sans — https://github.com/github/mona-sans
 
 /* SITE */
-Last update: 2026/03/10
-Standards: HTML5, CSS3, Web Components
-Components: Vanilla JS Custom Elements
+Last update: 2026/10/18
+Standards: HTML5, CSS3, FastAPI, Jinja, PostgreSQL
+Components: Reusable Jinja templates and vanilla JS
 Fonts: Mona Sans (GitHub)
+Contact: mailto:rafnixg@gmail.com
+Preferred-Languages: es, en
+Expires: 2027-10-18T00:00:00.000Z

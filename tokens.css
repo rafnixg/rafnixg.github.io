@@ -1,0 +1,39 @@
+/* Hallmark · pre-emit critique: P4 H4 E4 S4 R4 V4 */
+/* Rafnixg CMS · technical workbench · existing blue identity */
+:root {
+  --color-paper: oklch(14% 0.023 260);
+  --color-paper-2: oklch(19% 0.025 260);
+  --color-paper-3: oklch(23% 0.025 260);
+  --color-field: oklch(12% 0.021 260);
+  --color-ink: oklch(94% 0.009 260);
+  --color-muted: oklch(76% 0.018 260);
+  --color-rule: oklch(35% 0.027 260);
+  --color-accent: oklch(66% 0.16 265);
+  --color-accent-ink: oklch(12% 0.021 260);
+  --color-focus: oklch(82% 0.12 255);
+  --color-error: oklch(75% 0.13 20);
+  --color-success: oklch(79% 0.11 155);
+  --font-display: "Mona Sans", ui-sans-serif, sans-serif;
+  --font-body: "Mona Sans", ui-sans-serif, sans-serif;
+  --font-data: ui-monospace, monospace;
+  --space-xs: .5rem;
+  --space-sm: .75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 4rem;
+  --text-sm: .875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5625rem;
+  --text-2xl: 1.953rem;
+  --radius-sm: .35rem;
+  --radius-md: .6rem;
+  --radius-lg: .9rem;
+  --ease-out: cubic-bezier(.16,1,.3,1);
+  --ease-in: cubic-bezier(.7,0,.84,0);
+  --ease-in-out: cubic-bezier(.65,0,.35,1);
+  --dur-micro: 120ms;
+  --dur-short: 220ms;
+  --rule-thin: 1px;
+}

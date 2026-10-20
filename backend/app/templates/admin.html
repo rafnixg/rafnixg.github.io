@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="{{ csrf }}">
+  <title>CMS — Rafnixg.dev</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:#0b1020;color:#e8ecf5;font:15px system-ui,sans-serif}header{position:sticky;top:0;z-index:1;display:flex;justify-content:space-between;align-items:center;padding:1rem max(4vw,1rem);background:#121a2c;border-bottom:1px solid #28324a}main{width:min(1100px,94vw);margin:2rem auto;display:grid;gap:1.25rem}.panel{padding:1.25rem;border:1px solid #28324a;border-radius:.8rem;background:#121a2c}h1,h2{margin:.2rem 0 1rem}label{display:block;margin:.7rem 0 .3rem;color:#b8c3d8}input,textarea,select,button{width:100%;padding:.7rem;border:1px solid #35415e;border-radius:.45rem;background:#0b1020;color:inherit;font:inherit}textarea{min-height:280px;font:13px ui-monospace,monospace}button{width:auto;background:#5271ff;border:0;font-weight:650;cursor:pointer}button.secondary{background:#27334d}button.danger{background:#8b2f45}.row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}.item{padding:.85rem 0;border-top:1px solid #28324a}.item strong{display:block}.item small{color:#aeb9d0;overflow-wrap:anywhere}.item-controls{display:flex;gap:.6rem;align-items:center;margin-top:.5rem}.item-controls label{margin:0;display:flex;align-items:center;gap:.4rem}.item-controls input[type=checkbox]{width:auto}.status{min-height:1.5rem;color:#91e2b3}.project-form{margin-top:1rem;padding-top:1rem;border-top:1px solid #28324a}.actions{display:flex;gap:.5rem;align-items:center}@media(max-width:640px){.row{grid-template-columns:1fr}header{align-items:flex-start}}
+  </style>
+</head>
+<body>
+<header><div><strong>Rafnixg.dev</strong><div>Administración CMS</div></div><form method="post" action="/admin/logout"><input type="hidden" name="csrf" value="{{ csrf }}"><button class="secondary">Cerrar sesión</button></form></header>
+<main>
+  <section class="panel"><h1>Contenido del sitio</h1><p>Editar los textos y enlaces visibles. El contenido se guarda y publica al instante.</p><textarea id="content" spellcheck="false" aria-label="Contenido del sitio en JSON"></textarea><div class="actions"><button id="save-content">Guardar contenido</button><span class="status" id="content-status" role="status"></span></div></section>
+    <section class="panel"><h2>Currículum (JSON Resume)</h2><p>Guarda el JSON completo para actualizar <code>/api/resume</code> inmediatamente. Para actualizar la página estática de <code>resume.rafnixg.dev</code>, ejecuta el workflow «Publish resume from CMS» en ese repositorio.</p><textarea id="resume" spellcheck="false" aria-label="Currículum en formato JSON Resume"></textarea><div class="actions"><button id="save-resume">Guardar currículum</button><span class="status" id="resume-status" role="status"></span></div></section>
+  <section class="panel"><h2>Proyectos</h2><div id="projects"></div><div class="project-form"><h3 id="project-form-title">Agregar proyecto</h3><form id="project-form">
+    <input type="hidden" id="project-id">
+    <div class="row"><div><label for="project-name">Nombre</label><input id="project-name" required maxlength="180"></div><div><label for="project-url">URL</label><input id="project-url" type="url" required></div></div>
+    <label for="project-description">Descripción</label><textarea id="project-description" style="min-height:90px"></textarea>
+    <div class="row"><div><label for="project-keywords">Tecnologías (separadas por coma)</label><input id="project-keywords"></div><div><label for="project-entity">Tipo</label><select id="project-entity"><option>Personal Project</option><option>Personal Lab</option><option>Open Source Contribution</option><option>Learning Project</option></select></div></div>
+    <div class="row"><label><input id="project-featured" type="checkbox" style="width:auto"> Destacado en inicio</label><label><input id="project-visible" type="checkbox" checked style="width:auto"> Visible</label></div>
+    <label for="project-order">Orden</label><input id="project-order" type="number" value="0">
+    <div class="actions" style="margin-top:.8rem"><button type="submit">Guardar proyecto</button><button type="button" id="project-cancel" class="secondary">Limpiar</button><span class="status" id="project-status" role="status"></span></div>
+  </form></div></section>
+  <section class="panel"><h2>Artículos Hashnode</h2><p>Hashnode mantiene título, resumen, URL y fecha. Aquí puedes controlar visibilidad y orden.</p><div id="articles"></div></section>
+</main>
+<script src="/admin.js" defer></script>
+</body></html>

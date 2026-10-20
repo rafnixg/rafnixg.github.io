@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="es">
+<head>
+  {% include "components/seo_head.html" %}
+  <link rel="icon" href="/assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/tailwind.css">
+  {% block head_extra %}{% endblock %}
+  <style>body{background:#090e1b;color:#e8edf8;font-family:system-ui,sans-serif}a{color:#8ab4ff}.shell{max-width:1120px;margin:auto;padding:0 1.25rem}.top{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.2rem 0;border-bottom:1px solid #26344e}.top nav{display:flex;gap:1.2rem;flex-wrap:wrap}.hero{padding:5rem 0 3rem}.hero h1{font-size:clamp(2.5rem,7vw,5rem);line-height:1.1;font-weight:750}.muted{color:#aebbd3}.section{padding:3rem 0;border-top:1px solid #26344e}.section h2{font-size:2rem;font-weight:700;margin-bottom:1.3rem}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}.card{padding:1.35rem;border:1px solid #293954;border-radius:1rem;background:#111b2e}.card h3{font-size:1.15rem;font-weight:700}.card p{margin:.65rem 0;color:#bdc9dc}.tag{display:inline-block;margin:.3rem .3rem 0 0;padding:.25rem .6rem;border-radius:99px;background:#233553;color:#c7ddff;font-size:.8rem}.btn{display:inline-block;padding:.7rem 1.1rem;background:#5376eb;color:#fff;border-radius:.65rem;text-decoration:none;font-weight:650}.prose{max-width:800px;line-height:1.75}.prose p,.prose ul,.prose ol{margin:.9rem 0}.prose ul,.prose ol{padding-left:1.5rem}.prose h2{font-size:1.7rem;margin-top:2rem}.prose h3{font-size:1.3rem;margin-top:1.5rem}.prose img{max-width:100%;border-radius:.5rem}footer{padding:2rem 0;color:#9fb0ca;border-top:1px solid #26344e}@media(max-width:600px){.top{align-items:flex-start;flex-direction:column}.hero{padding:3rem 0}}</style>
+</head>
+<body class="{% block body_class %}{% endblock %}">
+<div class="shell">
+  {% include "components/public_header.html" %}
+  <main>{% block body %}{% endblock %}</main>
+  {% include "components/public_footer.html" %}
+</div>
+<script defer src="https://umami.rafnixg.dev/script.js" data-website-id="de845f91-cb4e-4381-aeda-12aced209665"></script>
+{% block scripts_extra %}{% endblock %}
+</body>
+</html>

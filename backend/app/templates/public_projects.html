@@ -1,0 +1,34 @@
+{% extends "public_base.html" %}
+{% block body_class %}projects-page{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="/tokens.css"><link rel="stylesheet" href="/assets/css/projects.css">{% endblock %}
+{% block body %}
+<div class="projects-index">
+  <header class="projects-intro">
+    <p class="projects-kicker">Rafnix Guzman · código y sistemas</p>
+    <h1>{{ content.get('projects_page_title', 'Proyectos') }}</h1>
+    <p class="projects-lede">{{ content.get('projects_page_description', '') }}</p>
+  </header>
+
+  <section class="projects-browser" aria-labelledby="projects-browser-title">
+    <div class="projects-browser-head">
+      <div>
+        <h2 id="projects-browser-title">Explorar el archivo</h2>
+        <p><span id="project-count">{{ projects|length }}</span> proyectos publicados</p>
+      </div>
+      <label class="projects-search">
+        <span>Buscar</span>
+        <input id="project-search" type="search" placeholder="Nombre o tecnología" autocomplete="off">
+      </label>
+    </div>
+    <div class="projects-filters" role="group" aria-label="Filtrar proyectos">
+      <button type="button" class="projects-filter is-active" data-project-filter="all" aria-pressed="true">Todos</button>
+      {% for entity in projects|map(attribute='entity')|list|unique %}<button type="button" class="projects-filter" data-project-filter="{{ entity|lower }}" aria-pressed="false">{{ entity }}</button>{% endfor %}
+    </div>
+    <div class="projects-list" id="projects-list">
+      {% for project in projects %}{% include "components/project_index_row.html" %}{% else %}<p class="projects-empty">Aún no hay proyectos publicados.</p>{% endfor %}
+    </div>
+    <p class="projects-empty projects-no-results" id="projects-no-results" hidden>No hay proyectos que coincidan con esa búsqueda.</p>
+  </section>
+</div>
+{% endblock %}
+{% block scripts_extra %}<script defer src="/assets/js/project-filter.js"></script>{% endblock %}

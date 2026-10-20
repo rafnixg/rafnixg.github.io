@@ -1,0 +1,60 @@
+{% extends "public_base.html" %}
+{% block body_class %}home-page{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="/tokens.css"><link rel="stylesheet" href="/assets/css/home.css">{% endblock %}
+{% block body %}
+<div class="home-index">
+  <section class="home-intro" aria-labelledby="home-title">
+    <div class="home-intro-main">
+      <p class="home-identity">Rafnix Guzman</p>
+      <h1 id="home-title">{{ content.get('hero_title_prefix', '') }}{{ content.get('hero_title_suffix', '') }}</h1>
+    </div>
+    <div class="home-intro-aside">
+      <p class="home-lede">{{ content.get('hero_description', '') }}</p>
+      <div class="home-intro-links">
+        <a href="#projects" data-umami-event="projects_jump" data-umami-event-surface="home">{{ content.get('hero_projects_label', 'Ver mi trabajo') }}</a>
+        <a href="#contact" data-umami-event="contact_jump" data-umami-event-surface="home">{{ content.get('hero_contact_label', 'Contáctame') }}</a>
+        {% if content.get('cv_url', 'https://resume.rafnixg.dev')|https_url %}<a href="{{ content.get('cv_url', 'https://resume.rafnixg.dev') }}" data-umami-event="cv_open" data-umami-event-surface="home">{{ content.get('cv_label', 'Ver CV') }}</a>{% endif %}
+      </div>
+    </div>
+  </section>
+
+  {% if content.get('specialties') %}
+  <section class="home-specialties" aria-label="{{ content.get('specialties_label', 'Especialidades') }}">
+    <span>{{ content.get('specialties_label', 'Especialidades') }}</span>
+    <ul>{% for skill in content.get('specialties', []) %}<li>{{ skill }}</li>{% endfor %}</ul>
+  </section>
+  {% endif %}
+
+  <section class="home-section" id="projects" aria-labelledby="home-projects-title">
+    <div class="home-section-heading">
+      <h2 id="home-projects-title">{{ content.get('projects_title', 'Proyectos') }}</h2>
+      {% if content.get('projects_description') %}<p>{{ content.projects_description }}</p>{% endif %}
+    </div>
+    <div class="home-list">
+      {% for project in projects %}{% include "components/home_project_row.html" %}{% else %}<p class="home-empty">Aún no hay proyectos destacados.</p>{% endfor %}
+    </div>
+    <a class="home-section-link" href="/projects.html" data-umami-event="projects_open" data-umami-event-surface="home">{{ content.get('projects_more_label', 'Ver más proyectos') }} <span aria-hidden="true">↗</span></a>
+  </section>
+
+  <section class="home-section" id="articles" aria-labelledby="home-articles-title">
+    <div class="home-section-heading">
+      <h2 id="home-articles-title">{{ content.get('articles_title', 'Artículos recientes') }}</h2>
+      {% if content.get('articles_description') %}<p>{{ content.articles_description }}</p>{% endif %}
+    </div>
+    <div class="home-list">
+      {% for article in articles %}{% include "components/home_article_row.html" %}{% else %}<p class="home-empty">Aún no hay artículos publicados.</p>{% endfor %}
+    </div>
+    {% if content.get('articles_url', 'https://blog.rafnixg.dev')|https_url %}<a class="home-section-link" href="{{ content.get('articles_url', 'https://blog.rafnixg.dev') }}" rel="noopener noreferrer" target="_blank" data-umami-event="articles_open" data-umami-event-surface="home">{{ content.get('articles_all_label', 'Ver todos los artículos') }} <span aria-hidden="true">↗</span></a>{% endif %}
+  </section>
+
+  <section class="home-contact" id="contact" aria-labelledby="home-contact-title">
+    <div>
+      <h2 id="home-contact-title">{{ content.get('contact_title', 'Contacto') }}</h2>
+      <p>{{ content.get('contact_description', '') }}</p>
+    </div>
+    <nav aria-label="{{ content.get('contact_links_label', 'Enlaces de contacto') }}">
+      {% for link in content.get('social_links', []) %}{% if link.url|https_url %}<a href="{{ link.url }}" rel="noopener noreferrer" target="_blank" data-umami-event="social_open" data-umami-event-network="{{ link.label }}" data-umami-event-surface="home">{{ link.label }} <span aria-hidden="true">↗</span></a>{% endif %}{% endfor %}
+    </nav>
+  </section>
+</div>
+{% endblock %}

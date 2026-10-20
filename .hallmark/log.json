@@ -1,0 +1,23 @@
+[
+  {
+    "date": "2026-09-27",
+    "macrostructure": "Index-First",
+    "theme": "existing dark-blue system",
+    "enrichment": "none",
+    "brief": "Card-free public home with project and article index rows"
+  },
+  {
+    "date": "2026-09-27",
+    "macrostructure": "Long Document",
+    "theme": "existing dark-blue system",
+    "enrichment": "none",
+    "brief": "Card-free public CV inspired by three document-style portfolios"
+  },
+  {
+    "date": "2026-09-27",
+    "macrostructure": "Workbench",
+    "theme": "Midnight",
+    "enrichment": "none",
+    "brief": "Single-owner CMS workbench for website, resume, pages and media"
+  }
+]

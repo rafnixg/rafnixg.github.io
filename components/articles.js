@@ -3,11 +3,12 @@ async function renderArticles() {
   if (!container) return;
 
   try {
-    const response = await fetch("/data/articles.json", { cache: "no-cache" });
+    const apiBase = window.CMS_API_BASE_URL || 'https://api.rafnixg.dev/api';
+    const response = await fetch(`${apiBase}/articles`, { cache: "no-cache" });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
     const payload = await response.json();
-    const posts = Array.isArray(payload.posts) ? payload.posts : [];
+    const posts = Array.isArray(payload) ? payload : [];
 
     if (posts.length === 0) {
       container.innerHTML = '<p class="text-center text-muted-foreground">No se pudieron cargar los articulos</p>';
@@ -29,6 +30,4 @@ async function renderArticles() {
   }
 }
 
-renderArticles();
-
-document.addEventListener("DOMContentLoaded", renderArticles);
+document.addEventListener("DOMContentLoaded", renderArticles, { once: true });

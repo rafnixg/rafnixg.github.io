@@ -1,0 +1,7 @@
+<article class="home-row home-article-row">
+  <div class="home-row-main">
+    <h3><a href="{{ article.url|https_url }}" rel="noopener noreferrer" target="_blank" data-umami-event="article_open" data-umami-event-title="{{ article.title }}" data-umami-event-surface="home">{{ article.title }}</a></h3>
+    {% if article.brief %}<p>{{ article.brief }}</p>{% endif %}
+  </div>
+  {% if article.date_added %}<time class="home-row-date" datetime="{{ article.date_added.strftime('%Y-%m-%d') }}">{{ article.date_added.strftime('%d/%m/%Y') }}</time>{% endif %}
+</article>

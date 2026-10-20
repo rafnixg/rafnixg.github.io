@@ -1,0 +1,9 @@
+{
+  "scanned_at": "2026-09-27",
+  "framework": "FastAPI/Jinja and vanilla JavaScript with Tailwind CSS 3",
+  "font": "Mona Sans (local variable font)",
+  "palette": "dark blue/cyan CSS custom properties in assets/css/input.css",
+  "motion": "no animation library",
+  "spacing": "Tailwind default scale",
+  "preserved": ["Mona Sans", "dark blue brand identity", "Tailwind build"]
+}

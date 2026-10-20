@@ -23,15 +23,17 @@
   <link rel="preload" href="/assets/fonts/Mona-Sans.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="assets/css/tailwind.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="components/api-config.js" defer></script>
   <script src="components/site-nav.js" defer></script>
   <script src="components/site-footer.js" defer></script>
   <script src="components/section-header.js" defer></script>
   <script src="components/project-card.js" defer></script>
   <script src="components/projects-grid.js" defer></script>
+  <script src="components/site-content.js" defer></script>
   <script defer src="https://umami.rafnixg.dev/script.js" data-website-id="de845f91-cb4e-4381-aeda-12aced209665"></script>
-  <title>Proyectos — Rafnix Guzman</title>
+  <title data-content-key="projects_meta_title">Proyectos — Rafnix Guzman</title>
 </head>
-<body class="dark">
+<body class="dark" data-page="projects">
   <main class="overflow-hidden">
 
     <site-nav back page="Proyectos"></site-nav>
@@ -40,18 +42,18 @@
     <section class="px-4 pt-16 pb-8 md:px-6">
       <div class="container mx-auto max-w-6xl space-y-8">
         <div class="space-y-4">
-          <h1 class="text-4xl font-bold md:text-5xl">Mis Proyectos</h1>
-          <p class="max-w-2xl text-lg text-muted-foreground">
+          <h1 class="text-4xl font-bold md:text-5xl" data-content-key="projects_page_title">Mis Proyectos</h1>
+          <p class="max-w-2xl text-lg text-muted-foreground" data-content-key="projects_page_description">
             Coleccion completa de proyectos personales, contribuciones de codigo abierto y experimentos de aprendizaje.
           </p>
         </div>
 
         <!-- Filtros -->
         <div class="flex flex-wrap gap-2" role="group" aria-label="Filtrar proyectos">
-          <button data-filter="all"      class="filter-btn rounded-lg px-4 py-2 text-sm font-medium transition-colors">Todos</button>
-          <button data-filter="personal" class="filter-btn rounded-lg px-4 py-2 text-sm font-medium transition-colors">Personales</button>
-          <button data-filter="oss"      class="filter-btn rounded-lg px-4 py-2 text-sm font-medium transition-colors">Open Source</button>
-          <button data-filter="learning" class="filter-btn rounded-lg px-4 py-2 text-sm font-medium transition-colors">Aprendizaje</button>
+          <button data-filter="all" data-content-key="project_filters.all" class="filter-btn rounded-lg px-4 py-2 text-sm font-medium transition-colors">Todos</button>
+          <button data-filter="personal" data-content-key="project_filters.personal" class="filter-btn rounded-lg px-4 py-2 text-sm font-medium transition-colors">Personales</button>
+          <button data-filter="oss" data-content-key="project_filters.oss" class="filter-btn rounded-lg px-4 py-2 text-sm font-medium transition-colors">Open Source</button>
+          <button data-filter="learning" data-content-key="project_filters.learning" class="filter-btn rounded-lg px-4 py-2 text-sm font-medium transition-colors">Aprendizaje</button>
         </div>
       </div>
     </section>

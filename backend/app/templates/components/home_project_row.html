@@ -1,0 +1,7 @@
+<article class="home-row home-project-row">
+  <div class="home-row-main">
+    <h3><a href="{{ project.url|https_url }}" rel="noopener noreferrer" target="_blank" data-umami-event="project_open" data-umami-event-project="{{ project.name }}" data-umami-event-surface="home">{{ project.name }}</a></h3>
+    {% if project.description %}<p>{{ project.description }}</p>{% endif %}
+  </div>
+  {% if project.keywords %}<ul class="home-row-meta" aria-label="Tecnologías">{% for keyword in project.keywords[:3] %}<li>{{ keyword }}</li>{% endfor %}</ul>{% endif %}
+</article>

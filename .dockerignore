@@ -1,0 +1,11 @@
+.git
+.github
+node_modules
+build
+openspec
+repomix-output.xml
+CHANGELOG.md
+*.log
+.env*
+backend/__pycache__
+backend/.venv

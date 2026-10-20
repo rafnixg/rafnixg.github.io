@@ -1,0 +1,11 @@
+<article class="project-index-row" data-project-name="{{ project.name|lower }} {{ project.description|lower }} {{ project.keywords|join(' ')|lower }}" data-project-entity="{{ project.entity|lower }}">
+  <div class="project-index-main">
+    <p class="project-index-entity">{{ project.entity }}</p>
+    <h3><a href="{{ project.url }}" rel="noopener noreferrer" target="_blank" data-umami-event="project_open" data-umami-event-project="{{ project.name }}" data-umami-event-surface="projects">{{ project.name }}</a></h3>
+    {% if project.description %}<p class="project-index-description">{{ project.description }}</p>{% endif %}
+  </div>
+  <div class="project-index-side">
+    {% if project.keywords %}<ul aria-label="Tecnologías">{% for keyword in project.keywords %}<li>{{ keyword }}</li>{% endfor %}</ul>{% endif %}
+    <a class="project-index-open" href="{{ project.url }}" rel="noopener noreferrer" target="_blank" data-umami-event="project_open" data-umami-event-project="{{ project.name }}" data-umami-event-surface="projects">Abrir proyecto <span aria-hidden="true">↗</span></a>
+  </div>
+</article>
