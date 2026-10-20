@@ -1,6 +1,6 @@
 # Estado del proyecto
 
-Última actualización: 2026-10-18
+Última actualización: 2026-10-19
 
 Este archivo es el seguimiento operativo del proceso de migración a CMS. Cada cambio
 de alcance debe actualizar las listas de completadas y pendientes.
@@ -27,11 +27,15 @@ de alcance debe actualizar las listas de completadas y pendientes.
 - [x] Comentarios de Copilot corregidos: escape XSS en redes sociales, validación
       estructural del CV, credenciales PostgreSQL seguras en Compose y archivos de
       descubrimiento incluidos en la imagen de producción.
+- [x] Dependencias directas de PostCSS y Autoprefixer actualizadas a versiones
+      compatibles con los parches disponibles; se mantiene Tailwind 3 para evitar
+      una migración visual fuera de alcance.
 
 ## Pendientes
 
 - [ ] Revisar y fusionar PR #1 cuando los checks de GitHub estén verdes.
-- [ ] Revisar las 12 alertas de Dependabot reportadas por GitHub (5 altas, 6 moderadas y 1 baja).
+- [ ] Revisar las alertas restantes de Dependabot (principalmente Tailwind 3, Quill
+      y dependencias transitivas sin parche compatible).
 - [ ] Confirmar que los checks de la PR #1 quedan verdes después de estos cambios.
 - [ ] Confirmar en el panel Umami que los eventos aparecen después de publicar.
 - [ ] Configurar dominios/DNS/TLS finales en Dokploy.
